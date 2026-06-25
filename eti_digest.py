@@ -185,9 +185,11 @@ def send_whatsapp(message):
     )
     try:
         with urllib.request.urlopen(url, timeout=15) as resp:
-            print(f"  CallMeBot: {resp.status} ({len(message)} chars)")
+            body = resp.read().decode("utf-8", errors="ignore")[:200]
+            print(f"  CallMeBot: {resp.status} — {body}")
     except urllib.error.HTTPError as e:
-        print(f"  CallMeBot error: {e.code} — skipping")
+        body = e.read().decode("utf-8", errors="ignore")[:200]
+        print(f"  CallMeBot error: {e.code} — {body}")
 
 
 def main():
