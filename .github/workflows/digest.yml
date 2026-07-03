@@ -2,27 +2,58 @@ name: ETI Prospection Digest
 
 on:
   schedule:
-    - cron: '0 6 * * 1-5'
+    # FALLBACK ONLY — GitHub's cron is best-effort and has been observed firing
+    # 3-4h late on this repo. The primary trigger should be an external
+    # scheduler (cron-job.org) calling workflow_dispatch at 06:00 UTC
+    # Mon-Fri — see NOTES.md for the exact setup.
+    # Offset from the top of the hour to reduce scheduler congestion.
+    - cron: '30 6 * * 1-5'
   workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
 
 jobs:
   digest:
     runs-on: ubuntu-latest
 
     steps:
+      # Scheduled runs are only a fallback: skip if the digest already ran
+      # successfully today (e.g. via the external workflow_dispatch trigger),
+      # to avoid duplicate WhatsApp sends burning the CallMeBot quota.
+      - name: Skip scheduled run if digest already succeeded today
+        id: dedup
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          today=$(date -u +%Y-%m-%d)
+          count=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow digest.yml \
+            --status success --created "$today" --json databaseId --jq 'length')
+          echo "Successful digest runs today: $count"
+          if [ "$count" -gt 0 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Digest already sent today — skipping duplicate scheduled run."
+          fi
+
       - name: Checkout
+        if: steps.dedup.outputs.skip != 'true'
         uses: actions/checkout@v4
 
       - name: Set up Python
+        if: steps.dedup.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
+        if: steps.dedup.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       - name: Run ETI digest
+        if: steps.dedup.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}

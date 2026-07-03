@@ -5,6 +5,8 @@ sends a daily prospection briefing to WhatsApp.
 """
 
 import os
+import re
+import sys
 import json
 import time
 import urllib.request
@@ -211,7 +213,7 @@ Signal : [4-6 mots]
 Contexte : [1 phrase]
 Opportunité : [1 phrase]
 
-Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uniquement (‘).
+Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uniquement (').
 """
 
     message = client.messages.create(
@@ -221,23 +223,59 @@ Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uni
     )
 
     text = message.content[0].text
-    text = text.replace("’", "’").replace("‘", "’")
+    text = text.replace("’", "'").replace("‘", "'")
     return text
 
 
+# CallMeBot returns HTTP 200 even on failure (invalid apikey, exhausted message
+# quota, unauthorized number...) with the error only in the HTML body — so the
+# body MUST be checked, not just the status code.
+CALLMEBOT_OK_MARKERS = ("message queued", "added into the queue", "message sent")
+CALLMEBOT_FAIL_MARKERS = (
+    "<b>0</b> messages left",
+    "have 0 messages left",
+    "apikey is invalid",
+    "invalid parameter",
+    "not registered",
+    "error:",
+)
+
+TAG_RE = re.compile(r"<[^>]+>")
+
+
 def send_whatsapp(message):
+    """Send a WhatsApp message via CallMeBot.
+
+    Returns True only if CallMeBot's response body confirms the message was
+    queued for delivery. Any other outcome is logged loudly and returns False.
+    """
     encoded = urllib.parse.quote(message)
     url = (
         f"https://api.callmebot.com/whatsapp.php"
         f"?phone={CALLMEBOT_PHONE}&text={encoded}&apikey={CALLMEBOT_APIKEY}"
     )
     try:
-        with urllib.request.urlopen(url, timeout=15) as resp:
-            body = resp.read().decode("utf-8", errors="ignore")[:200]
-            print(f"  CallMeBot: {resp.status} — {body}")
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            status = resp.status
+            body = resp.read().decode("utf-8", errors="ignore")
     except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="ignore")[:200]
-        print(f"  CallMeBot error: {e.code} — {body}")
+        status = e.code
+        body = e.read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"  CallMeBot: FAILED — network error: {e}")
+        return False
+
+    lower = body.lower()
+    ok = status in (200, 210) and any(
+        m in lower for m in CALLMEBOT_OK_MARKERS
+    ) and not any(m in lower for m in CALLMEBOT_FAIL_MARKERS)
+
+    if ok:
+        print(f"  CallMeBot: {status} OK — message queued ({len(message)} chars)")
+    else:
+        snippet = " ".join(TAG_RE.sub(" ", body).split())[:300]
+        print(f"  CallMeBot: FAILED (HTTP {status}) — {snippet}")
+    return ok
 
 
 def main():
@@ -264,12 +302,23 @@ def main():
     header = f"\U0001f3af *ETI du {date_str}* — {len(blocks)} opportunités"
 
     print(f"Sending {len(blocks) + 1} WhatsApp messages...")
-    send_whatsapp(header)
+    failures = 0 if send_whatsapp(header) else 1
 
     for i, block in enumerate(blocks):
         time.sleep(15)
         print(f"  [{i+1}/{len(blocks)}] {block[:60]}...")
-        send_whatsapp(block)
+        if not send_whatsapp(block):
+            failures += 1
+
+    if failures:
+        print(
+            f"\nERROR: {failures}/{len(blocks) + 1} WhatsApp messages were NOT "
+            "delivered by CallMeBot (see responses above). Common causes: "
+            "message quota exhausted, invalid apikey, or the phone number is "
+            "no longer authorized (re-send 'I allow callmebot to send me "
+            "messages' to the CallMeBot WhatsApp bot)."
+        )
+        sys.exit(1)
 
     print("Done.")
 
