@@ -306,8 +306,9 @@ def main():
 
     for i, block in enumerate(blocks):
         time.sleep(15)
+        tagged_block = f"\U0001f3af {block}"
         print(f"  [{i+1}/{len(blocks)}] {block[:60]}...")
-        if not send_whatsapp(block):
+        if not send_whatsapp(tagged_block):
             failures += 1
 
     if failures:
