@@ -17,6 +17,12 @@ from datetime import datetime, timedelta, timezone
 import feedparser
 import anthropic
 
+APOSTROPHE_RE = re.compile("[‘’‚‛ʼʻ′‵]")
+
+
+def normalize_apostrophes(text):
+    return APOSTROPHE_RE.sub("'", text)
+
 CALLMEBOT_PHONE = os.environ["CALLMEBOT_PHONE"].strip()
 CALLMEBOT_APIKEY = os.environ["CALLMEBOT_APIKEY"].strip()
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
@@ -111,7 +117,7 @@ def fetch_rss_news():
     return articles
 
 
-CA_MIN = 20_000_000
+CA_MIN = 50_000_000
 CA_MAX = 200_000_000
 PAPPERS_CALLS_MAX = 30
 
@@ -192,9 +198,9 @@ def build_digest(bodacc_events, rss_articles):
         for e in rss_articles
     ) or "Aucun article presse aujourd’hui."
 
-    prompt = f"""Tu es un expert en développement commercial B2B ciblant les ETI françaises.
+    prompt = f"""Tu es un expert en développement commercial B2B ciblant les ETI françaises (250-4999 salariés, 50M€-1,5Md€ de CA).
 
-Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : celles avec un CA vérifié sont dans la fourchette 20-200M€. Les autres ont un CA non vérifié.
+Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : celles avec un CA vérifié sont dans la fourchette 50-200M€. Les autres ont un CA non vérifié.
 
 ## Annonces Bodacc (24 dernières heures)
 {bodacc_text}
@@ -205,6 +211,10 @@ Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : c
 Sélectionne les 3 à 5 meilleures opportunités de prospection parmi ces signaux.
 
 Critères : moment de vie fort (transmission, cession, procédure collective, fusion, changement de dirigeant), fenêtre de prospection ouverte, entreprise de taille ETI.
+
+REGLE DE TAILLE (stricte) : si le CA n'est pas vérifié, ne selectionne l'entreprise QUE si le texte source contient un indice fort et explicite de taille ETI (effectif >= 250 salaries mentionne, chiffre d'affaires mentionne dans le texte, groupe/filiale connue, notoriete manifeste). En cas de doute sur la taille, EXCLUS l'entreprise plutot que de la retenir — mieux vaut 2 opportunites solides que 5 dont certaines sont des PME/TPE.
+
+REGLE DE TEXTE : chaque bloc doit etre 100% autoporteur (un lecteur qui ne voit que ce bloc doit tout comprendre, sans avoir besoin des autres messages) et rediger avec des phrases completes, sans pronom sans antecedent dans le meme bloc.
 
 IMPORTANT : réponds UNIQUEMENT avec les blocs ETI, sans introduction ni conclusion. Format strict :
 
@@ -223,8 +233,7 @@ Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uni
     )
 
     text = message.content[0].text
-    text = text.replace("’", "'").replace("‘", "'")
-    return text
+    return normalize_apostrophes(text)
 
 
 # CallMeBot returns HTTP 200 even on failure (invalid apikey, exhausted message
