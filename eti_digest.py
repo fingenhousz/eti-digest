@@ -36,6 +36,14 @@ RSS_FEEDS = [
     ("Google News", "https://news.google.com/rss/search?q=rachat+acquisition+PME+ETI+France&hl=fr&gl=FR&ceid=FR:fr"),
     ("Google News", "https://news.google.com/rss/search?q=redressement+judiciaire+entreprise+France&hl=fr&gl=FR&ceid=FR:fr"),
     ("Google News", "https://news.google.com/rss/search?q=changement+dirigeant+PDG+entreprise+France&hl=fr&gl=FR&ceid=FR:fr"),
+    # Site-restricted queries targeting business/finance press directly — raw
+    # RSS feeds from these publishers block scraping (403), but Google News
+    # indexes and serves their articles fine via a site: search, and this
+    # skews strongly toward genuine mid/large-cap deals rather than the
+    # TPE-heavy noise from Bodacc.
+    ("Les Echos / La Tribune", "https://news.google.com/rss/search?q=(cession+OR+rachat+OR+LBO+OR+fusion)+ETI+France+site:lesechos.fr+OR+site:latribune.fr&hl=fr&gl=FR&ceid=FR:fr"),
+    ("Capital / Usine Nouvelle", "https://news.google.com/rss/search?q=(rachat+OR+acquisition+OR+cession)+groupe+France+site:capital.fr+OR+site:usinenouvelle.com&hl=fr&gl=FR&ceid=FR:fr"),
+    ("Private equity", "https://news.google.com/rss/search?q=private+equity+OR+LBO+ETI+France+millions+CA&hl=fr&gl=FR&ceid=FR:fr"),
 ]
 
 ETI_SIGNAL_WORDS = {
@@ -175,7 +183,10 @@ def filter_with_pappers(events):
                 filtered.append(e)
             # else: confirmed non-ETI → drop silently
         else:
-            # No Pappers data → keep, Claude will judge
+            # No CA data, but effectif alone can still be a strong ETI signal
+            # (was previously discarded here even when Pappers returned it)
+            if effectif:
+                e["effectif"] = effectif
             filtered.append(e)
 
     print(f"  Pappers: {calls} calls, {len(filtered)}/{len(events)} events kept")
@@ -187,9 +198,10 @@ def build_digest(bodacc_events, rss_articles):
 
     def fmt_event(e):
         ca_str = str(e.get("ca", "")) + "M€ CA" if e.get("ca") else "CA non vérifié"
-        return "- [{}] {} ({}) | {} | SIREN {} : {}".format(
+        effectif_str = f", effectif Pappers: {e['effectif']}" if e.get("effectif") else ""
+        return "- [{}] {} ({}) | {}{} | SIREN {} : {}".format(
             e.get("type", ""), e.get("company", ""), e.get("city", ""),
-            ca_str, e.get("siren", ""), e.get("content", "")
+            ca_str, effectif_str, e.get("siren", ""), e.get("content", "")
         )
 
     bodacc_text = "\n".join(fmt_event(e) for e in bodacc_events) or "Aucune annonce Bodacc aujourd’hui."
