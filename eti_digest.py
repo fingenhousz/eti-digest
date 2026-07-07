@@ -28,6 +28,49 @@ CALLMEBOT_APIKEY = os.environ["CALLMEBOT_APIKEY"].strip()
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
 PAPPERS_API_KEY = os.environ.get("PAPPERS_API_KEY", "").strip()
 
+SENT_HISTORY_FILE = "sent_history.json"
+DEDUP_WINDOW_DAYS = 14
+
+
+def load_sent_history():
+    """Returns {company_name: 'YYYY-MM-DD'}, pruned to the dedup window."""
+    if not os.path.exists(SENT_HISTORY_FILE):
+        return {}
+    try:
+        with open(SENT_HISTORY_FILE, encoding="utf-8") as f:
+            history = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
+    cutoff = datetime.now(timezone.utc) - timedelta(days=DEDUP_WINDOW_DAYS)
+    pruned = {}
+    for name, date_str in history.items():
+        try:
+            if datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc) >= cutoff:
+                pruned[name] = date_str
+        except ValueError:
+            continue
+    return pruned
+
+
+def save_sent_history(history):
+    with open(SENT_HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2, sort_keys=True)
+
+
+BLOCK_HEADER_RE = re.compile(r"\*([^*]+)\*")
+
+
+def extract_company_names(digest_text):
+    """Pull company names out of '*Emoji Nom entreprise*' block headers
+    (strips the leading emoji token)."""
+    names = []
+    for raw in BLOCK_HEADER_RE.findall(digest_text):
+        parts = raw.strip().split(None, 1)
+        name = parts[1].strip() if len(parts) == 2 else (parts[0].strip() if parts else "")
+        if name:
+            names.append(name)
+    return names
+
 BODACC_BASE = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets"
 
 # Google News RSS — works server-side, no auth needed
@@ -193,7 +236,7 @@ def filter_with_pappers(events):
     return filtered
 
 
-def build_digest(bodacc_events, rss_articles):
+def build_digest(bodacc_events, rss_articles, excluded_companies=None):
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     def fmt_event(e):
@@ -210,10 +253,20 @@ def build_digest(bodacc_events, rss_articles):
         for e in rss_articles
     ) or "Aucun article presse aujourd’hui."
 
+    excluded_companies = excluded_companies or []
+    exclusion_block = (
+        "\nEntreprises DEJA envoyees ces {} derniers jours — NE LES RESELECTIONNE PAS, "
+        "meme si elles ressortent dans les signaux ci-dessous (sauf actualite manifestement "
+        "nouvelle et distincte, ex: un second signal fort sur la meme boite) :\n{}\n".format(
+            DEDUP_WINDOW_DAYS, ", ".join(excluded_companies)
+        )
+        if excluded_companies else ""
+    )
+
     prompt = f"""Tu es un expert en développement commercial B2B ciblant les ETI françaises (250-4999 salariés, 50M€-1,5Md€ de CA).
 
 Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : celles avec un CA vérifié sont dans la fourchette 50-200M€. Les autres ont un CA non vérifié.
-
+{exclusion_block}
 ## Annonces Bodacc (24 dernières heures)
 {bodacc_text}
 
@@ -315,8 +368,11 @@ def main():
     print("Filtering with Pappers...")
     bodacc_events = filter_with_pappers(bodacc_events)
 
+    history = load_sent_history()
+    print(f"  {len(history)} companie(s) sent in the last {DEDUP_WINDOW_DAYS} days, excluded from re-selection")
+
     print("Building digest with Claude...")
-    digest = build_digest(bodacc_events, rss_articles)
+    digest = build_digest(bodacc_events, rss_articles, excluded_companies=list(history.keys()))
 
     blocks = [b.strip() for b in digest.split("---SPLIT---") if b.strip()]
     date_str = datetime.now().strftime("%d %B %Y")
@@ -331,6 +387,11 @@ def main():
         print(f"  [{i+1}/{len(blocks)}] {block[:60]}...")
         if not send_whatsapp(tagged_block):
             failures += 1
+
+    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    for name in extract_company_names(digest):
+        history[name] = today_str
+    save_sent_history(history)
 
     if failures:
         print(
