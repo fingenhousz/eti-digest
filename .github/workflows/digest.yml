@@ -21,7 +21,7 @@ jobs:
     steps:
       # Scheduled runs are only a fallback: skip if the digest already ran
       # successfully today (e.g. via the external workflow_dispatch trigger),
-      # to avoid duplicate WhatsApp sends burning the CallMeBot quota.
+      # to avoid sending the same digest twice.
       - name: Skip scheduled run if digest already succeeded today
         id: dedup
         if: github.event_name == 'schedule'
@@ -56,8 +56,8 @@ jobs:
         if: steps.dedup.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
-          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
         run: python eti_digest.py
 

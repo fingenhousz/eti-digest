@@ -1,7 +1,7 @@
 """
-ETI Digest → WhatsApp via CallMeBot
+ETI Digest → Telegram
 Fetches ETI signals from Bodacc + press RSS, selects 3-5 prospects with Claude,
-sends a daily prospection briefing to WhatsApp.
+sends a daily prospection briefing to Telegram.
 """
 
 import os
@@ -23,8 +23,8 @@ APOSTROPHE_RE = re.compile("[‘’‚‛ʼʻ′‵]")
 def normalize_apostrophes(text):
     return APOSTROPHE_RE.sub("'", text)
 
-CALLMEBOT_PHONE = os.environ["CALLMEBOT_PHONE"].strip()
-CALLMEBOT_APIKEY = os.environ["CALLMEBOT_APIKEY"].strip()
+TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"].strip()
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
 PAPPERS_API_KEY = os.environ.get("PAPPERS_API_KEY", "").strip()
 
@@ -301,55 +301,40 @@ Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uni
     return normalize_apostrophes(text)
 
 
-# CallMeBot returns HTTP 200 even on failure (invalid apikey, exhausted message
-# quota, unauthorized number...) with the error only in the HTML body — so the
-# body MUST be checked, not just the status code.
-CALLMEBOT_OK_MARKERS = ("message queued", "added into the queue", "message sent")
-CALLMEBOT_FAIL_MARKERS = (
-    "<b>0</b> messages left",
-    "have 0 messages left",
-    "apikey is invalid",
-    "invalid parameter",
-    "not registered",
-    "error:",
-)
+def send_telegram(message):
+    """Send a message via the Telegram bot.
 
-TAG_RE = re.compile(r"<[^>]+>")
-
-
-def send_whatsapp(message):
-    """Send a WhatsApp message via CallMeBot.
-
-    Returns True only if CallMeBot's response body confirms the message was
-    queued for delivery. Any other outcome is logged loudly and returns False.
+    Telegram's API gives a proper JSON {"ok": bool, ...} response with a
+    real HTTP status — unlike CallMeBot, no HTML-body-sniffing needed.
     """
-    encoded = urllib.parse.quote(message)
-    url = (
-        f"https://api.callmebot.com/whatsapp.php"
-        f"?phone={CALLMEBOT_PHONE}&text={encoded}&apikey={CALLMEBOT_APIKEY}"
-    )
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    data = urllib.parse.urlencode({
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": message,
+        "parse_mode": "Markdown",
+    }).encode("utf-8")
     try:
-        with urllib.request.urlopen(url, timeout=30) as resp:
+        with urllib.request.urlopen(url, data=data, timeout=30) as resp:
             status = resp.status
             body = resp.read().decode("utf-8", errors="ignore")
     except urllib.error.HTTPError as e:
         status = e.code
         body = e.read().decode("utf-8", errors="ignore")
     except Exception as e:
-        print(f"  CallMeBot: FAILED — network error: {e}")
+        print(f"  Telegram: FAILED — network error: {e}")
         return False
 
-    lower = body.lower()
-    ok = status in (200, 210) and any(
-        m in lower for m in CALLMEBOT_OK_MARKERS
-    ) and not any(m in lower for m in CALLMEBOT_FAIL_MARKERS)
+    try:
+        result = json.loads(body)
+    except json.JSONDecodeError:
+        print(f"  Telegram: FAILED (HTTP {status}) — invalid response: {body[:300]}")
+        return False
 
-    if ok:
-        print(f"  CallMeBot: {status} OK — message queued ({len(message)} chars)")
-    else:
-        snippet = " ".join(TAG_RE.sub(" ", body).split())[:300]
-        print(f"  CallMeBot: FAILED (HTTP {status}) — {snippet}")
-    return ok
+    if result.get("ok"):
+        print(f"  Telegram: {status} OK — message sent ({len(message)} chars)")
+        return True
+    print(f"  Telegram: FAILED (HTTP {status}) — {result.get('description', body[:300])}")
+    return False
 
 
 def main():
@@ -392,14 +377,14 @@ def main():
     date_str = datetime.now().strftime("%d %B %Y")
     header = f"\U0001f3af *ETI du {date_str}* — {len(blocks)} opportunités"
 
-    print(f"Sending {len(blocks) + 1} WhatsApp messages...")
-    failures = 0 if send_whatsapp(header) else 1
+    print(f"Sending {len(blocks) + 1} Telegram messages...")
+    failures = 0 if send_telegram(header) else 1
 
     for i, block in enumerate(blocks):
-        time.sleep(15)
+        time.sleep(3)
         tagged_block = f"\U0001f3af {block}"
         print(f"  [{i+1}/{len(blocks)}] {block[:60]}...")
-        if not send_whatsapp(tagged_block):
+        if not send_telegram(tagged_block):
             failures += 1
 
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -409,11 +394,9 @@ def main():
 
     if failures:
         print(
-            f"\nERROR: {failures}/{len(blocks) + 1} WhatsApp messages were NOT "
-            "delivered by CallMeBot (see responses above). Common causes: "
-            "message quota exhausted, invalid apikey, or the phone number is "
-            "no longer authorized (re-send 'I allow callmebot to send me "
-            "messages' to the CallMeBot WhatsApp bot)."
+            f"\nERROR: {failures}/{len(blocks) + 1} Telegram messages were NOT "
+            "delivered (see responses above). Common causes: invalid bot "
+            "token, wrong chat ID, or the bot was blocked."
         )
         sys.exit(1)
 
