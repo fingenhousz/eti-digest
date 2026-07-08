@@ -255,11 +255,11 @@ def build_digest(bodacc_events, rss_articles, excluded_companies=None):
 
     excluded_companies = excluded_companies or []
     exclusion_block = (
-        "\nEntreprises DEJA envoyees ces {} derniers jours — NE LES RESELECTIONNE PAS, "
-        "meme si elles ressortent dans les signaux ci-dessous (sauf actualite manifestement "
-        "nouvelle et distincte, ex: un second signal fort sur la meme boite) :\n{}\n".format(
-            DEDUP_WINDOW_DAYS, ", ".join(excluded_companies)
-        )
+        "\nEntreprises DEJA envoyees ces {} derniers jours — EXCLUSION ABSOLUE, aucune "
+        "exception : ne les reselectionne sous aucun pretexte, meme si un nouveau signal "
+        "Bodacc/presse les mentionne a nouveau (procedure en plusieurs etapes, relance "
+        "presse, etc). Traite-les comme si elles n'existaient pas dans les signaux du jour "
+        ":\n{}\n".format(DEDUP_WINDOW_DAYS, ", ".join(excluded_companies))
         if excluded_companies else ""
     )
 
@@ -375,6 +375,20 @@ def main():
     digest = build_digest(bodacc_events, rss_articles, excluded_companies=list(history.keys()))
 
     blocks = [b.strip() for b in digest.split("---SPLIT---") if b.strip()]
+
+    # Mechanical safety net: don't just rely on the prompt instruction — if
+    # Claude re-selects an excluded company anyway (e.g. a multi-step legal
+    # procedure reads as "new"), drop that block before it's ever sent.
+    excluded_lower = {name.lower() for name in history}
+    kept_blocks = []
+    for block in blocks:
+        names = extract_company_names(block)
+        if names and names[0].lower() in excluded_lower:
+            print(f"  Dropping block for '{names[0]}' — already sent within the last {DEDUP_WINDOW_DAYS} days")
+            continue
+        kept_blocks.append(block)
+    blocks = kept_blocks
+
     date_str = datetime.now().strftime("%d %B %Y")
     header = f"\U0001f3af *ETI du {date_str}* — {len(blocks)} opportunités"
 
