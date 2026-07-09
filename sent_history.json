@@ -1,22 +1,152 @@
 {
-  "Afibel": "2026-07-08",
-  "ChapsVision": "2026-07-08",
-  "Durisotti": "2026-07-08",
-  "Fibre Excellence": "2026-07-07",
-  "Fonderie de Bretagne": "2026-07-07",
-  "Groupe Baudaire (La Boucherie / Courtepaille)": "2026-07-08",
-  "Groupe Bowi": "2026-07-08",
-  "Groupe Gibert": "2026-07-09",
-  "Groupe Nosoli (Furet du Nord / Decitre)": "2026-07-07",
-  "Groupe Océalliance": "2026-07-08",
-  "Groupe Pandora": "2026-07-08",
-  "Groupe Penet": "2026-07-09",
-  "Groupe Positive / Sigilium": "2026-07-08",
-  "In Extenso": "2026-07-09",
-  "Instant System": "2026-07-08",
-  "Lamberet": "2026-07-07",
-  "Novasep": "2026-07-09",
-  "Transports Brelet": "2026-07-07",
-  "Werzalit France": "2026-07-08",
-  "Ziegler France": "2026-07-09"
+  "0a3c884e7bea": {
+    "date": "2026-07-08",
+    "name": "Groupe Pandora",
+    "sector": null,
+    "status": "pending"
+  },
+  "0cfd9b95d215": {
+    "date": "2026-07-07",
+    "name": "Fibre Excellence",
+    "sector": null,
+    "status": "pending"
+  },
+  "27ac87c51d1c": {
+    "date": "2026-07-08",
+    "name": "Afibel",
+    "sector": null,
+    "status": "pending"
+  },
+  "2c08a23937db": {
+    "date": "2026-07-08",
+    "name": "Durisotti",
+    "sector": null,
+    "status": "pending"
+  },
+  "3026d08dff14": {
+    "date": "2026-07-07",
+    "name": "Groupe Nosoli (Furet du Nord / Decitre)",
+    "sector": null,
+    "status": "pending"
+  },
+  "38a7bdef6e10": {
+    "date": "2026-07-09",
+    "name": "Novasep",
+    "sector": null,
+    "status": "pending"
+  },
+  "42ff5deb3bda": {
+    "date": "2026-07-09",
+    "name": "Meubles Parisot",
+    "sector": "Industrie / Ameublement",
+    "status": "pending"
+  },
+  "43978eaf1a1c": {
+    "date": "2026-07-07",
+    "name": "Fonderie de Bretagne",
+    "sector": null,
+    "status": "pending"
+  },
+  "573c558c1878": {
+    "date": "2026-07-09",
+    "name": "Duralex",
+    "sector": "Industrie / Arts de la table",
+    "status": "pending"
+  },
+  "591d67f0fa18": {
+    "date": "2026-07-09",
+    "name": "Groupe Bruneau",
+    "sector": "Distribution B2B / Fournitures bureau",
+    "status": "pending"
+  },
+  "5a985b1c0f21": {
+    "date": "2026-07-09",
+    "name": "Ziegler France",
+    "sector": null,
+    "status": "pending"
+  },
+  "5ab8db7d1bf4": {
+    "date": "2026-07-07",
+    "name": "Transports Brelet",
+    "sector": null,
+    "status": "pending"
+  },
+  "78bbb597fd39": {
+    "date": "2026-07-09",
+    "name": "Air Antilles",
+    "sector": "Transport aérien",
+    "status": "pending"
+  },
+  "79ecf85020a3": {
+    "date": "2026-07-09",
+    "name": "In Extenso",
+    "sector": null,
+    "status": "pending"
+  },
+  "9ae7d3dbdb0a": {
+    "date": "2026-07-08",
+    "name": "Groupe Baudaire (La Boucherie / Courtepaille)",
+    "sector": null,
+    "status": "pending"
+  },
+  "bc20fc39b254": {
+    "date": "2026-07-08",
+    "name": "Groupe Positive / Sigilium",
+    "sector": null,
+    "status": "pending"
+  },
+  "bc51221e026e": {
+    "date": "2026-07-09",
+    "name": "Groupe Penet",
+    "sector": null,
+    "status": "pending"
+  },
+  "bd6c38fa993c": {
+    "date": "2026-07-08",
+    "name": "Groupe Bowi",
+    "sector": null,
+    "status": "pending"
+  },
+  "c94cfa2b8a4c": {
+    "date": "2026-07-08",
+    "name": "Werzalit France",
+    "sector": null,
+    "status": "pending"
+  },
+  "e04f64d478ca": {
+    "date": "2026-07-09",
+    "name": "Glass Express France",
+    "sector": "Distribution / Vitrage automobile",
+    "status": "pending"
+  },
+  "e6bfaa9da01c": {
+    "date": "2026-07-08",
+    "name": "ChapsVision",
+    "sector": null,
+    "status": "pending"
+  },
+  "ee33169f59ba": {
+    "date": "2026-07-08",
+    "name": "Instant System",
+    "sector": null,
+    "status": "pending"
+  },
+  "f2d1fa1c40ab": {
+    "date": "2026-07-07",
+    "name": "Lamberet",
+    "sector": null,
+    "status": "pending"
+  },
+  "f7a5838af0ec": {
+    "date": "2026-07-08",
+    "name": "Groupe Océalliance",
+    "sector": null,
+    "status": "pending"
+  },
+  "f83c6c86aff5": {
+    "date": "2026-07-09",
+    "name": "Groupe Gibert",
+    "sector": null,
+    "status": "pending"
+  }
 }
