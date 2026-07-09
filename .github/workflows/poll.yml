@@ -1,0 +1,44 @@
+name: Poll Telegram buttons
+
+on:
+  schedule:
+    # Fallback only — primary trigger is cron-job.org calling workflow_dispatch
+    # every ~5 min, since GitHub's own schedule can lag by hours.
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Poll for button clicks
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python poll_telegram.py
+
+      - name: Commit updated state
+        if: always()
+        run: |
+          FILES="telegram_offset.json sent_history.json"
+          if [ -n "$(git status --porcelain $FILES)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add $FILES
+            git commit -m "chore: update telegram offset and pipeline status [skip ci]"
+            git pull --rebase
+            git push
+          else
+            echo "No change to state files"
+          fi

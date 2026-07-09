@@ -9,9 +9,11 @@ import re
 import sys
 import json
 import time
+import hashlib
 import urllib.request
 import urllib.parse
 import urllib.error
+from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 import feedparser
@@ -32,21 +34,39 @@ SENT_HISTORY_FILE = "sent_history.json"
 DEDUP_WINDOW_DAYS = 14
 
 
+def company_id(name):
+    """Short, stable id for a company — used as both the sent_history key and
+    the Telegram callback_data for the Interesse/Pass buttons (callback_data
+    is capped at 64 bytes, so the full company name can't be used there)."""
+    return hashlib.sha1(name.strip().lower().encode("utf-8")).hexdigest()[:12]
+
+
 def load_sent_history():
-    """Returns {company_name: 'YYYY-MM-DD'}, pruned to the dedup window."""
+    """Returns {company_id: {"name", "date", "status", "sector"}}, pruned to
+    the dedup window. Transparently migrates the legacy {name: date_str}
+    format from before pipeline-status tracking existed."""
     if not os.path.exists(SENT_HISTORY_FILE):
         return {}
     try:
         with open(SENT_HISTORY_FILE, encoding="utf-8") as f:
-            history = json.load(f)
+            raw = json.load(f)
     except (json.JSONDecodeError, OSError):
         return {}
     cutoff = datetime.now(timezone.utc) - timedelta(days=DEDUP_WINDOW_DAYS)
     pruned = {}
-    for name, date_str in history.items():
+    for key, value in raw.items():
+        if isinstance(value, str):
+            name, date_str, status, sector = key, value, "pending", None
+            cid = company_id(name)
+        else:
+            cid = key
+            name = value.get("name", key)
+            date_str = value.get("date", "")
+            status = value.get("status", "pending")
+            sector = value.get("sector")
         try:
-            if datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc) >= cutoff:
-                pruned[name] = date_str
+            if date_str and datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc) >= cutoff:
+                pruned[cid] = {"name": name, "date": date_str, "status": status, "sector": sector}
         except ValueError:
             continue
     return pruned
@@ -70,6 +90,16 @@ def extract_company_names(digest_text):
         if name:
             names.append(name)
     return names
+
+
+SECTOR_RE = re.compile(r"Secteur\s*:\s*(.+)")
+
+
+def extract_sector(block):
+    """Pull the 'Secteur : ...' line out of a single company block, or None
+    if absent (e.g. Claude omitted it)."""
+    match = SECTOR_RE.search(block)
+    return match.group(1).strip() if match else None
 
 BODACC_BASE = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets"
 
@@ -284,6 +314,7 @@ REGLE DE TEXTE : chaque bloc doit etre 100% autoporteur (un lecteur qui ne voit 
 IMPORTANT : réponds UNIQUEMENT avec les blocs ETI, sans introduction ni conclusion. Format strict :
 
 *[Emoji] [Nom entreprise]* — [Ville] | [CA]M€
+Secteur : [secteur d'activite en 1-3 mots, ex: "Distribution", "BTP", "Agroalimentaire"]
 Signal : [4-6 mots]
 Contexte : [1 phrase]
 Opportunité : [1 phrase]
@@ -301,18 +332,21 @@ Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uni
     return normalize_apostrophes(text)
 
 
-def send_telegram(message):
+def send_telegram(message, reply_markup=None):
     """Send a message via the Telegram bot.
 
     Telegram's API gives a proper JSON {"ok": bool, ...} response with a
     real HTTP status — unlike CallMeBot, no HTML-body-sniffing needed.
     """
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    data = urllib.parse.urlencode({
+    payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": message,
         "parse_mode": "Markdown",
-    }).encode("utf-8")
+    }
+    if reply_markup is not None:
+        payload["reply_markup"] = json.dumps(reply_markup)
+    data = urllib.parse.urlencode(payload).encode("utf-8")
     try:
         with urllib.request.urlopen(url, data=data, timeout=30) as resp:
             status = resp.status
@@ -337,6 +371,32 @@ def send_telegram(message):
     return False
 
 
+def detect_sector_patterns(history, todays_names):
+    """Flag sectors where >=2 companies within the dedup window share a
+    sector, when today's fresh selection contributes at least one of them —
+    a stronger prospecting signal than an isolated hit, and this ensures the
+    alert fires once per new contribution rather than repeating stale news."""
+    by_sector = defaultdict(list)
+    display_name = {}
+    for v in history.values():
+        sector = (v.get("sector") or "").strip()
+        if not sector:
+            continue
+        key = sector.lower()
+        display_name.setdefault(key, sector)
+        by_sector[key].append(v["name"])
+
+    patterns = []
+    for key, names in by_sector.items():
+        unique_names = sorted(set(names))
+        if len(unique_names) < 2:
+            continue
+        if not any(n in todays_names for n in unique_names):
+            continue
+        patterns.append((display_name[key], unique_names))
+    return patterns
+
+
 def main():
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Fetching Bodacc events...")
     bodacc_events = fetch_bodacc_events()
@@ -354,17 +414,18 @@ def main():
     bodacc_events = filter_with_pappers(bodacc_events)
 
     history = load_sent_history()
+    excluded_names = [v["name"] for v in history.values()]
     print(f"  {len(history)} companie(s) sent in the last {DEDUP_WINDOW_DAYS} days, excluded from re-selection")
 
     print("Building digest with Claude...")
-    digest = build_digest(bodacc_events, rss_articles, excluded_companies=list(history.keys()))
+    digest = build_digest(bodacc_events, rss_articles, excluded_companies=excluded_names)
 
     blocks = [b.strip() for b in digest.split("---SPLIT---") if b.strip()]
 
     # Mechanical safety net: don't just rely on the prompt instruction — if
     # Claude re-selects an excluded company anyway (e.g. a multi-step legal
     # procedure reads as "new"), drop that block before it's ever sent.
-    excluded_lower = {name.lower() for name in history}
+    excluded_lower = {name.lower() for name in excluded_names}
     kept_blocks = []
     for block in blocks:
         names = extract_company_names(block)
@@ -380,23 +441,48 @@ def main():
     print(f"Sending {len(blocks) + 1} Telegram messages...")
     failures = 0 if send_telegram(header) else 1
 
+    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    todays_names = []
     for i, block in enumerate(blocks):
         time.sleep(3)
         tagged_block = f"\U0001f3af {block}"
         print(f"  [{i+1}/{len(blocks)}] {block[:60]}...")
-        if not send_telegram(tagged_block):
+
+        names = extract_company_names(block)
+        name = names[0] if names else None
+        reply_markup = None
+        if name:
+            todays_names.append(name)
+            cid = company_id(name)
+            history[cid] = {
+                "name": name, "date": today_str,
+                "status": "pending", "sector": extract_sector(block),
+            }
+            reply_markup = {"inline_keyboard": [[
+                {"text": "✅ Interesse", "callback_data": f"pipeline:{cid}:interested"},
+                {"text": "❌ Pass", "callback_data": f"pipeline:{cid}:pass"},
+            ]]}
+
+        if not send_telegram(tagged_block, reply_markup=reply_markup):
             failures += 1
 
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    for name in extract_company_names(digest):
-        history[name] = today_str
     save_sent_history(history)
+
+    for sector, names in detect_sector_patterns(history, todays_names):
+        time.sleep(3)
+        pattern_msg = (
+            f"\U0001f4ca *Pattern sectoriel detecte : {sector}*\n"
+            f"{len(names)} entreprises de ce secteur signalees en {DEDUP_WINDOW_DAYS} jours : "
+            f"{', '.join(names)} — signal de consolidation, opportunite de prospection elargie sur ce secteur."
+        )
+        if not send_telegram(pattern_msg):
+            failures += 1
 
     if failures:
         print(
-            f"\nERROR: {failures}/{len(blocks) + 1} Telegram messages were NOT "
-            "delivered (see responses above). Common causes: invalid bot "
-            "token, wrong chat ID, or the bot was blocked."
+            f"\nERROR: {failures} Telegram message(s) were NOT delivered "
+            "(see responses above). Common causes: invalid bot token, "
+            "wrong chat ID, or the bot was blocked."
         )
         sys.exit(1)
 
