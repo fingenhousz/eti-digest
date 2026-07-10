@@ -458,9 +458,10 @@ def main():
                 "name": name, "date": today_str,
                 "status": "pending", "sector": extract_sector(block),
             }
+            # Only "Interesse" — by definition the other outcome is "no
+            # action taken", not a state worth a button of its own.
             reply_markup = {"inline_keyboard": [[
                 {"text": "✅ Interesse", "callback_data": f"pipeline:{cid}:interested"},
-                {"text": "❌ Pass", "callback_data": f"pipeline:{cid}:pass"},
             ]]}
 
         if not send_telegram(tagged_block, reply_markup=reply_markup):
