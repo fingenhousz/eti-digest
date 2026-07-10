@@ -5,6 +5,12 @@
     "sector": null,
     "status": "pending"
   },
+  "0cc301de5388": {
+    "date": "2026-07-10",
+    "name": "Vacher (rachat d'Innodec)",
+    "sector": "Machines d'emballage / Industrie",
+    "status": "pending"
+  },
   "0cfd9b95d215": {
     "date": "2026-07-07",
     "name": "Fibre Excellence",
@@ -89,6 +95,18 @@
     "sector": null,
     "status": "pending"
   },
+  "a61e88c9b05e": {
+    "date": "2026-07-10",
+    "name": "La Boite Immo",
+    "sector": "Logiciels / Proptech",
+    "status": "pending"
+  },
+  "b629a7bb7762": {
+    "date": "2026-07-10",
+    "name": "Baker Tilly",
+    "sector": "Conseil / Audit",
+    "status": "pending"
+  },
   "bc20fc39b254": {
     "date": "2026-07-08",
     "name": "Groupe Positive / Sigilium",
@@ -111,6 +129,12 @@
     "date": "2026-07-08",
     "name": "Werzalit France",
     "sector": null,
+    "status": "pending"
+  },
+  "cdde7ea8cca9": {
+    "date": "2026-07-10",
+    "name": "Valeo (usine d'Angers)",
+    "sector": "Industrie automobile / Equipementier",
     "status": "pending"
   },
   "e04f64d478ca": {
@@ -147,6 +171,12 @@
     "date": "2026-07-09",
     "name": "Groupe Gibert",
     "sector": null,
+    "status": "pending"
+  },
+  "ffabbb7c21db": {
+    "date": "2026-07-10",
+    "name": "Groupe Allez (intégration SNER)",
+    "sector": "BTP / Travaux",
     "status": "pending"
   }
 }
