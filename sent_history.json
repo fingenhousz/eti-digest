@@ -29,6 +29,12 @@
     "sector": null,
     "status": "pending"
   },
+  "212f1bf16216": {
+    "date": "2026-07-13",
+    "name": "DV Group",
+    "sector": "Numérique / Services informatiques",
+    "status": "pending"
+  },
   "27ac87c51d1c": {
     "date": "2026-07-08",
     "name": "Afibel",
@@ -77,6 +83,12 @@
     "sector": "Médias / Presse spécialisée",
     "status": "pending"
   },
+  "4abebd2924f2": {
+    "date": "2026-07-13",
+    "name": "KEP Technologies",
+    "sector": "Industrie / Instrumentation",
+    "status": "pending"
+  },
   "573c558c1878": {
     "date": "2026-07-09",
     "name": "Duralex",
@@ -113,6 +125,12 @@
     "sector": null,
     "status": "pending"
   },
+  "7e4ae3b981c2": {
+    "date": "2026-07-13",
+    "name": "Urbasolar",
+    "sector": "Energie / Solaire",
+    "status": "pending"
+  },
   "88519ffd838e": {
     "date": "2026-07-13",
     "name": "Lebronze Alloys",
@@ -129,6 +147,12 @@
     "date": "2026-07-10",
     "name": "La Boite Immo",
     "sector": "Logiciels / Proptech",
+    "status": "pending"
+  },
+  "a6fe545d1ce8": {
+    "date": "2026-07-13",
+    "name": "Marionnaud",
+    "sector": "Distribution / Parfumerie",
     "status": "pending"
   },
   "b629a7bb7762": {

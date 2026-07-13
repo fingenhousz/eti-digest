@@ -1,0 +1,446 @@
+{
+  "410674790": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:14.812404+00:00",
+    "effectif": null
+  },
+  "431785724": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:19.804797+00:00",
+    "effectif": null
+  },
+  "441916970": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:51.998064+00:00",
+    "effectif": null
+  },
+  "479224206": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:24.304931+00:00",
+    "effectif": null
+  },
+  "487915225": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:30.950067+00:00",
+    "effectif": null
+  },
+  "491698163": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:07.654354+00:00",
+    "effectif": null
+  },
+  "493862007": {
+    "ca": 2.5,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:47.778459+00:00",
+    "effectif": null
+  },
+  "497531244": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:26.386751+00:00",
+    "effectif": null
+  },
+  "508211588": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:12.568184+00:00",
+    "effectif": null
+  },
+  "510157571": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:00.471138+00:00",
+    "effectif": null
+  },
+  "511277907": {
+    "ca": 6.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:38.411855+00:00",
+    "effectif": null
+  },
+  "513028894": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:47.079630+00:00",
+    "effectif": null
+  },
+  "518981220": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:14.067151+00:00",
+    "effectif": null
+  },
+  "519719009": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:13.582588+00:00",
+    "effectif": null
+  },
+  "520441130": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:12.877464+00:00",
+    "effectif": null
+  },
+  "539528414": {
+    "ca": 13.2,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:25.681954+00:00",
+    "effectif": null
+  },
+  "539541805": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:40.254475+00:00",
+    "effectif": null
+  },
+  "750525289": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:27.072528+00:00",
+    "effectif": null
+  },
+  "753467133": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:45.594992+00:00",
+    "effectif": null
+  },
+  "791664808": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:09.345279+00:00",
+    "effectif": null
+  },
+  "797790623": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:59.780789+00:00",
+    "effectif": null
+  },
+  "799134226": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:16.415378+00:00",
+    "effectif": null
+  },
+  "800055840": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:57.723349+00:00",
+    "effectif": null
+  },
+  "802000778": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:07.932171+00:00",
+    "effectif": null
+  },
+  "804933190": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:59:06.951584+00:00",
+    "effectif": "0 salarié"
+  },
+  "807734249": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:21.212165+00:00",
+    "effectif": null
+  },
+  "812583532": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:03.570730+00:00",
+    "effectif": null
+  },
+  "817836232": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:55.650425+00:00",
+    "effectif": null
+  },
+  "818258766": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:33.017851+00:00",
+    "effectif": null
+  },
+  "819409772": {
+    "ca": 0.0,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:54.934895+00:00",
+    "effectif": null
+  },
+  "820910750": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:01.942725+00:00",
+    "effectif": null
+  },
+  "821402401": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:02.637997+00:00",
+    "effectif": null
+  },
+  "822408837": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:23.514091+00:00",
+    "effectif": null
+  },
+  "823694237": {
+    "ca": 0.9,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:01.209766+00:00",
+    "effectif": null
+  },
+  "824467070": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:58:42.499331+00:00",
+    "effectif": "Entre 3 et 5 salariés"
+  },
+  "827834045": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:31.633507+00:00",
+    "effectif": null
+  },
+  "827929514": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:17.188678+00:00",
+    "effectif": null
+  },
+  "830382990": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:10.137146+00:00",
+    "effectif": null
+  },
+  "832628978": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:49.246479+00:00",
+    "effectif": null
+  },
+  "833291487": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:59.090511+00:00",
+    "effectif": null
+  },
+  "834082802": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:52.700078+00:00",
+    "effectif": null
+  },
+  "835050006": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:58:09.820757+00:00",
+    "effectif": "0 salarié"
+  },
+  "839604998": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:46.364809+00:00",
+    "effectif": null
+  },
+  "840388771": {
+    "ca": 0.0,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:32.317203+00:00",
+    "effectif": null
+  },
+  "841185499": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:04.255857+00:00",
+    "effectif": null
+  },
+  "843620147": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:10.832678+00:00",
+    "effectif": null
+  },
+  "844454975": {
+    "ca": 0.5,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:53.393215+00:00",
+    "effectif": null
+  },
+  "845111368": {
+    "ca": 3.6,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:40.951661+00:00",
+    "effectif": null
+  },
+  "850967571": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:10.587557+00:00",
+    "effectif": null
+  },
+  "877476135": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:58.414488+00:00",
+    "effectif": null
+  },
+  "877811752": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:27.844252+00:00",
+    "effectif": null
+  },
+  "877860130": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:08.537631+00:00",
+    "effectif": null
+  },
+  "883660425": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:57.039294+00:00",
+    "effectif": null
+  },
+  "884586454": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:48.558149+00:00",
+    "effectif": null
+  },
+  "887804854": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:59:08.629807+00:00",
+    "effectif": null
+  },
+  "889119400": {
+    "ca": 0.4,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:24.987179+00:00",
+    "effectif": null
+  },
+  "893474114": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:20.524365+00:00",
+    "effectif": null
+  },
+  "893620211": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:43.188237+00:00",
+    "effectif": null
+  },
+  "894070887": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:18.027406+00:00",
+    "effectif": null
+  },
+  "900066069": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:06.050235+00:00",
+    "effectif": null
+  },
+  "902122233": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:15.590093+00:00",
+    "effectif": null
+  },
+  "903829117": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:56.352802+00:00",
+    "effectif": null
+  },
+  "910579390": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:21.917989+00:00",
+    "effectif": null
+  },
+  "910754811": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:43.884058+00:00",
+    "effectif": null
+  },
+  "912184843": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:37.697577+00:00",
+    "effectif": null
+  },
+  "912582962": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:54.238800+00:00",
+    "effectif": null
+  },
+  "913002879": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:18.788400+00:00",
+    "effectif": null
+  },
+  "921823126": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:06.875913+00:00",
+    "effectif": null
+  },
+  "932659105": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:58:30.116223+00:00",
+    "effectif": "0 salarié"
+  },
+  "933814030": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:58:11.790531+00:00",
+    "effectif": "Au moins 1 salarié"
+  },
+  "934987728": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:59:12.162632+00:00",
+    "effectif": "Au moins 1 salarié"
+  },
+  "940281967": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-07-13T14:58:22.822352+00:00",
+    "effectif": "Au moins 1 salarié"
+  },
+  "947732046": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:13.374187+00:00",
+    "effectif": null
+  },
+  "981358617": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-07-13T14:58:28.538691+00:00",
+    "effectif": null
+  }
+}
