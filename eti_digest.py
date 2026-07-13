@@ -103,7 +103,8 @@ def extract_sector(block):
 
 BODACC_BASE = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets"
 
-# Google News RSS — works server-side, no auth needed
+# Google News RSS — works server-side, no auth needed, no quota to worry
+# about (unlike Pappers/GitHub) so this is the one place safe to diversify.
 RSS_FEEDS = [
     ("Google News", "https://news.google.com/rss/search?q=cession+transmission+entreprise+France&hl=fr&gl=FR&ceid=FR:fr"),
     ("Google News", "https://news.google.com/rss/search?q=rachat+acquisition+PME+ETI+France&hl=fr&gl=FR&ceid=FR:fr"),
@@ -117,15 +118,37 @@ RSS_FEEDS = [
     ("Les Echos / La Tribune", "https://news.google.com/rss/search?q=(cession+OR+rachat+OR+LBO+OR+fusion)+ETI+France+site:lesechos.fr+OR+site:latribune.fr&hl=fr&gl=FR&ceid=FR:fr"),
     ("Capital / Usine Nouvelle", "https://news.google.com/rss/search?q=(rachat+OR+acquisition+OR+cession)+groupe+France+site:capital.fr+OR+site:usinenouvelle.com&hl=fr&gl=FR&ceid=FR:fr"),
     ("Private equity", "https://news.google.com/rss/search?q=private+equity+OR+LBO+ETI+France+millions+CA&hl=fr&gl=FR&ceid=FR:fr"),
+    # Added to diversify beyond the original 7 feeds — different publishers
+    # and different signal types (succession, mass layoffs) than pure M&A.
+    ("BFM Business", "https://news.google.com/rss/search?q=(cession+OR+rachat+OR+fusion+OR+LBO)+entreprise+France+site:bfmtv.com&hl=fr&gl=FR&ceid=FR:fr"),
+    ("Figaro / Monde", "https://news.google.com/rss/search?q=(cession+OR+rachat+OR+redressement)+entreprise+France+site:lefigaro.fr+OR+site:lemonde.fr&hl=fr&gl=FR&ceid=FR:fr"),
+    ("Transmission familiale", "https://news.google.com/rss/search?q=transmission+entreprise+familiale+ETI+France+succession+dirigeant&hl=fr&gl=FR&ceid=FR:fr"),
+    ("Plan social / PSE", "https://news.google.com/rss/search?q=plan+de+sauvegarde+emploi+PSE+entreprise+France&hl=fr&gl=FR&ceid=FR:fr"),
 ]
 
+# Trimmed from the original list: single generic words like "capital",
+# "president" and "actionnaire" matched almost any business article and
+# flooded the RSS pass with noise unrelated to an actual ETI signal.
 ETI_SIGNAL_WORDS = {
     "cession", "transmission", "rachat", "acquisition", "reprise",
     "redressement", "liquidation", "sauvegarde", "restructur",
-    "dirigeant", "pdg", "directeur general", "president",
-    "actionnaire", "capital", "lbo", "private equity",
-    "fusion", "rapprochement", "nouveau directeur",
+    "dirigeant", "pdg", "directeur general", "lbo", "private equity",
+    "fusion", "rapprochement", "nouveau directeur", "plan de sauvegarde de l'emploi",
 }
+
+# Legal forms that are essentially never ETI-scale — skipping Pappers calls
+# for these before they're even queued saves the bulk of wasted API quota
+# (confirmed: most burned calls were EURL/associations returning no CA).
+SMALL_FORM_RE = re.compile(r"\b(EURL|SCI|ASSOCIATION|ENTREPRISE INDIVIDUELLE|AUTO-ENTREPRENEUR)\b", re.IGNORECASE)
+SIZE_SIGNAL_RE = re.compile(r"\b(groupe|holding|filiale|salaries|effectif|industries|international)\b", re.IGNORECASE)
+
+
+def looks_like_small_business(name, content):
+    """True if the legal form alone rules out ETI scale, unless the source
+    text itself carries an explicit size signal that overrides the heuristic."""
+    if SMALL_FORM_RE.search(name or ""):
+        return not SIZE_SIGNAL_RE.search(content or "")
+    return False
 
 
 def _extract_bodacc_record(record):
@@ -200,13 +223,41 @@ def fetch_rss_news():
 
 CA_MIN = 50_000_000
 CA_MAX = 200_000_000
-PAPPERS_CALLS_MAX = 30
+# Lowered from 30: pre-filtering (dedup + small-legal-form skip) plus the
+# cache below already cut most of the wasted calls, this is now a backstop.
+PAPPERS_CALLS_MAX = 15
+
+PAPPERS_CACHE_FILE = "pappers_cache.json"
+PAPPERS_CACHE_WINDOW_DAYS = 30
 
 
-def check_pappers(siren):
-    """Returns (ca_millions, effectif) or (None, None) if unavailable."""
-    if not PAPPERS_API_KEY or not siren:
-        return None, None
+def load_pappers_cache():
+    if not os.path.exists(PAPPERS_CACHE_FILE):
+        return {}
+    try:
+        with open(PAPPERS_CACHE_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
+    cutoff = datetime.now(timezone.utc) - timedelta(days=PAPPERS_CACHE_WINDOW_DAYS)
+    kept = {}
+    for siren, v in raw.items():
+        try:
+            if datetime.fromisoformat(v["checked"]) >= cutoff:
+                kept[siren] = v
+        except (KeyError, ValueError):
+            continue
+    return kept
+
+
+def save_pappers_cache(cache):
+    with open(PAPPERS_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False, indent=2, sort_keys=True)
+
+
+def _fetch_pappers(siren):
+    """Raw Pappers lookup — always hits the API. Go through filter_with_pappers's
+    cache instead of calling this directly."""
     try:
         params = urllib.parse.urlencode({
             "api_token": PAPPERS_API_KEY,
@@ -232,23 +283,35 @@ def check_pappers(siren):
 
 
 def filter_with_pappers(events):
-    """Enrich events with CA from Pappers, filter out confirmed non-ETIs."""
+    """Enrich events with CA from Pappers, filter out confirmed non-ETIs.
+
+    Reuses a 30-day SIREN cache before spending a fresh API call — Bodacc
+    procedures routinely re-mention the same company across several
+    filings, and re-checking each time was most of the wasted quota."""
     if not PAPPERS_API_KEY:
         return events
 
+    cache = load_pappers_cache()
     calls = 0
     filtered = []
     for e in events:
-        if calls >= PAPPERS_CALLS_MAX:
-            # Keep remaining without validation rather than silently dropping them
-            filtered.append(e)
-            continue
         siren = e.get("siren", "")
         if not siren:
             filtered.append(e)
             continue
-        ca, effectif = check_pappers(siren)
-        calls += 1
+
+        cached = cache.get(siren)
+        if cached:
+            ca, effectif = cached.get("ca"), cached.get("effectif")
+        elif calls >= PAPPERS_CALLS_MAX:
+            # Keep remaining without validation rather than silently dropping them
+            filtered.append(e)
+            continue
+        else:
+            ca, effectif = _fetch_pappers(siren)
+            calls += 1
+            cache[siren] = {"ca": ca, "effectif": effectif, "checked": datetime.now(timezone.utc).isoformat()}
+
         if ca is not None:
             if CA_MIN <= ca * 1_000_000 <= CA_MAX:
                 e["ca"] = ca
@@ -262,7 +325,8 @@ def filter_with_pappers(events):
                 e["effectif"] = effectif
             filtered.append(e)
 
-    print(f"  Pappers: {calls} calls, {len(filtered)}/{len(events)} events kept")
+    save_pappers_cache(cache)
+    print(f"  Pappers: {calls} new call(s), {len(cache)} SIREN(s) cached, {len(filtered)}/{len(events)} events kept")
     return filtered
 
 
@@ -303,11 +367,11 @@ Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : c
 ## Presse spécialisée
 {rss_text}
 
-Sélectionne les 3 à 5 meilleures opportunités de prospection parmi ces signaux.
+Sélectionne entre 0 et 5 opportunités de prospection parmi ces signaux — UNIQUEMENT celles qui remplissent réellement les critères. S'il n'y a aucun signal suffisamment solide aujourd'hui, n'en sélectionne aucune plutôt que de forcer un choix médiocre : réponds alors avec une chaîne vide, sans aucun texte.
 
 Critères : moment de vie fort (transmission, cession, procédure collective, fusion, changement de dirigeant), fenêtre de prospection ouverte, entreprise de taille ETI.
 
-REGLE DE TAILLE (stricte) : si le CA n'est pas vérifié, ne selectionne l'entreprise QUE si le texte source contient un indice fort et explicite de taille ETI (effectif >= 250 salaries mentionne, chiffre d'affaires mentionne dans le texte, groupe/filiale connue, notoriete manifeste). En cas de doute sur la taille, EXCLUS l'entreprise plutot que de la retenir — mieux vaut 2 opportunites solides que 5 dont certaines sont des PME/TPE.
+REGLE DE TAILLE (stricte) : si le CA n'est pas vérifié, ne selectionne l'entreprise QUE si le texte source contient un indice fort et explicite de taille ETI (effectif >= 250 salaries mentionne, chiffre d'affaires mentionne dans le texte, groupe/filiale connue, notoriete manifeste). En cas de doute sur la taille, EXCLUS l'entreprise plutot que de la retenir — mieux vaut 2 opportunites solides (ou meme 0) que 5 dont certaines sont des PME/TPE.
 
 REGLE DE TEXTE : chaque bloc doit etre 100% autoporteur (un lecteur qui ne voit que ce bloc doit tout comprendre, sans avoir besoin des autres messages) et rediger avec des phrases completes, sans pronom sans antecedent dans le meme bloc.
 
@@ -410,12 +474,20 @@ def main():
         print("No data — skipping.")
         return
 
-    print("Filtering with Pappers...")
-    bodacc_events = filter_with_pappers(bodacc_events)
-
     history = load_sent_history()
     excluded_names = [v["name"] for v in history.values()]
     print(f"  {len(history)} companie(s) sent in the last {DEDUP_WINDOW_DAYS} days, excluded from re-selection")
+
+    # Selectivity + Pappers-quota savings: drop obvious non-candidates BEFORE
+    # spending a call on them, rather than filtering them out afterwards.
+    excluded_lower = {n.lower() for n in excluded_names}
+    before = len(bodacc_events)
+    bodacc_events = [e for e in bodacc_events if e["company"].lower() not in excluded_lower]
+    bodacc_events = [e for e in bodacc_events if not looks_like_small_business(e["company"], e["content"])]
+    print(f"  Pre-filter: {before} -> {len(bodacc_events)} Bodacc events (dropped dedup/non-ETI legal forms)")
+
+    print("Filtering with Pappers...")
+    bodacc_events = filter_with_pappers(bodacc_events)
 
     print("Building digest with Claude...")
     digest = build_digest(bodacc_events, rss_articles, excluded_companies=excluded_names)
@@ -425,7 +497,6 @@ def main():
     # Mechanical safety net: don't just rely on the prompt instruction — if
     # Claude re-selects an excluded company anyway (e.g. a multi-step legal
     # procedure reads as "new"), drop that block before it's ever sent.
-    excluded_lower = {name.lower() for name in excluded_names}
     kept_blocks = []
     for block in blocks:
         names = extract_company_names(block)
@@ -434,6 +505,10 @@ def main():
             continue
         kept_blocks.append(block)
     blocks = kept_blocks
+
+    if not blocks:
+        print("No opportunity solid enough today — nothing sent (this is expected, not an error).")
+        return
 
     date_str = datetime.now().strftime("%d %B %Y")
     header = f"\U0001f3af *ETI du {date_str}* — {len(blocks)} opportunités"
