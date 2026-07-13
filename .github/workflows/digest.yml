@@ -61,19 +61,21 @@ jobs:
           PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
         run: python eti_digest.py
 
-      # Persist the dedup history the script just wrote locally — GitHub
-      # Actions runners are ephemeral, so without this every run would start
-      # from a blank history and re-send the same companies daily.
-      - name: Commit updated dedup history
+      # Persist the dedup history and the company-size cache the script just
+      # wrote locally — GitHub Actions runners are ephemeral, so without this
+      # every run starts from blank state (re-sending the same companies AND
+      # re-spending a Pappers call on every SIREN, every single day).
+      - name: Commit updated state files
         if: always() && steps.dedup.outputs.skip != 'true'
         run: |
-          if [ -n "$(git status --porcelain sent_history.json)" ]; then
+          FILES="sent_history.json company_size_cache.json"
+          if [ -n "$(git status --porcelain $FILES)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add sent_history.json
-            git commit -m "chore: update sent-company dedup history [skip ci]"
+            git add $FILES
+            git commit -m "chore: update dedup history and company-size cache [skip ci]"
             git pull --rebase
             git push
           else
-            echo "No change to sent_history.json"
+            echo "No change to state files"
           fi

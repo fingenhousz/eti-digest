@@ -223,23 +223,34 @@ def fetch_rss_news():
 
 CA_MIN = 50_000_000
 CA_MAX = 200_000_000
-# Lowered from 30: pre-filtering (dedup + small-legal-form skip) plus the
-# cache below already cut most of the wasted calls, this is now a backstop.
+# Backstop only now — the free government API below covers almost every
+# case, so Pappers is called for the rare SIREN it has no data on at all.
 PAPPERS_CALLS_MAX = 15
 
-PAPPERS_CACHE_FILE = "pappers_cache.json"
-PAPPERS_CACHE_WINDOW_DAYS = 30
+SIZE_CACHE_FILE = "company_size_cache.json"
+SIZE_CACHE_WINDOW_DAYS = 30
+
+# Free, unlimited, no API key: the official "Recherche d'entreprises" API
+# (entreprise.data.gouv.fr, INSEE+INPI data) already computes the exact
+# TPE/PME/ETI/GE classification we were approximating via a CA band — this
+# is authoritative where Pappers was a guess, and it costs nothing.
+RECHERCHE_ENTREPRISES_BASE = "https://recherche-entreprises.api.gouv.fr/search"
+
+# INSEE "tranche d'effectif salarie" codes -> minimum headcount in that
+# bracket. Only brackets >= 250 (ETI floor) are listed; anything else maps
+# to None, meaning "known to be below ETI headcount".
+TRANCHE_EFFECTIF_MIN = {"32": 250, "41": 500, "42": 1000, "51": 2000, "52": 5000, "53": 10000}
 
 
-def load_pappers_cache():
-    if not os.path.exists(PAPPERS_CACHE_FILE):
+def load_size_cache():
+    if not os.path.exists(SIZE_CACHE_FILE):
         return {}
     try:
-        with open(PAPPERS_CACHE_FILE, encoding="utf-8") as f:
+        with open(SIZE_CACHE_FILE, encoding="utf-8") as f:
             raw = json.load(f)
     except (json.JSONDecodeError, OSError):
         return {}
-    cutoff = datetime.now(timezone.utc) - timedelta(days=PAPPERS_CACHE_WINDOW_DAYS)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=SIZE_CACHE_WINDOW_DAYS)
     kept = {}
     for siren, v in raw.items():
         try:
@@ -250,14 +261,42 @@ def load_pappers_cache():
     return kept
 
 
-def save_pappers_cache(cache):
-    with open(PAPPERS_CACHE_FILE, "w", encoding="utf-8") as f:
+def save_size_cache(cache):
+    with open(SIZE_CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2, sort_keys=True)
 
 
+def check_recherche_entreprises(siren):
+    """Returns (ca_millions, effectif_min, categorie) from the free
+    government API, or (None, None, None) if the SIREN has no data there."""
+    try:
+        params = urllib.parse.urlencode({"q": siren, "per_page": 1})
+        req = urllib.request.Request(
+            f"{RECHERCHE_ENTREPRISES_BASE}?{params}", headers={"Accept": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        results = [r for r in data.get("results", []) if r.get("siren") == siren]
+        if not results:
+            return None, None, None
+        r = results[0]
+        categorie = r.get("categorie_entreprise")
+        finances = r.get("finances") or {}
+        ca_m = None
+        if finances:
+            latest_year = max(finances, key=int)
+            ca = finances[latest_year].get("ca")
+            ca_m = round(ca / 1_000_000, 1) if ca else None
+        effectif_min = TRANCHE_EFFECTIF_MIN.get(r.get("tranche_effectif_salarie"))
+        return ca_m, effectif_min, categorie
+    except Exception as ex:
+        print(f"    Recherche entreprises {siren}: erreur {ex}")
+        return None, None, None
+
+
 def _fetch_pappers(siren):
-    """Raw Pappers lookup — always hits the API. Go through filter_with_pappers's
-    cache instead of calling this directly."""
+    """Raw Pappers lookup — always hits the API. Only called as a fallback
+    when the free source above has nothing at all for a SIREN."""
     try:
         params = urllib.parse.urlencode({
             "api_token": PAPPERS_API_KEY,
@@ -282,17 +321,14 @@ def _fetch_pappers(siren):
         return None, None
 
 
-def filter_with_pappers(events):
-    """Enrich events with CA from Pappers, filter out confirmed non-ETIs.
+def filter_with_size_data(events):
+    """Enrich events with company-size data, filter out confirmed non-ETIs.
 
-    Reuses a 30-day SIREN cache before spending a fresh API call — Bodacc
-    procedures routinely re-mention the same company across several
-    filings, and re-checking each time was most of the wasted quota."""
-    if not PAPPERS_API_KEY:
-        return events
-
-    cache = load_pappers_cache()
-    calls = 0
+    Primary source is the free government API (checked for every event,
+    no cap needed); Pappers only runs when that source has literally no
+    data, and even then is capped and cached for 30 days."""
+    cache = load_size_cache()
+    pappers_calls = 0
     filtered = []
     for e in events:
         siren = e.get("siren", "")
@@ -302,16 +338,26 @@ def filter_with_pappers(events):
 
         cached = cache.get(siren)
         if cached:
-            ca, effectif = cached.get("ca"), cached.get("effectif")
-        elif calls >= PAPPERS_CALLS_MAX:
-            # Keep remaining without validation rather than silently dropping them
+            ca, effectif, categorie = cached.get("ca"), cached.get("effectif"), cached.get("categorie")
+        else:
+            ca, effectif, categorie = check_recherche_entreprises(siren)
+            time.sleep(0.2)  # courtesy delay on the free public API
+            if ca is None and effectif is None and categorie is None and PAPPERS_API_KEY and pappers_calls < PAPPERS_CALLS_MAX:
+                ca, effectif = _fetch_pappers(siren)
+                pappers_calls += 1
+            cache[siren] = {"ca": ca, "effectif": effectif, "categorie": categorie, "checked": datetime.now(timezone.utc).isoformat()}
+
+        if categorie == "GE":
+            continue  # above ETI range — confirmed too big, drop silently
+        if categorie in ("PME", "TPE"):
+            continue  # official INSEE classification says too small — confident drop
+        if categorie == "ETI":
+            e["ca"], e["effectif"], e["categorie"] = ca, effectif, categorie
             filtered.append(e)
             continue
-        else:
-            ca, effectif = _fetch_pappers(siren)
-            calls += 1
-            cache[siren] = {"ca": ca, "effectif": effectif, "checked": datetime.now(timezone.utc).isoformat()}
 
+        # No official categorie available (SIREN unknown to both sources) —
+        # fall back to the CA-band heuristic as before.
         if ca is not None:
             if CA_MIN <= ca * 1_000_000 <= CA_MAX:
                 e["ca"] = ca
@@ -325,8 +371,8 @@ def filter_with_pappers(events):
                 e["effectif"] = effectif
             filtered.append(e)
 
-    save_pappers_cache(cache)
-    print(f"  Pappers: {calls} new call(s), {len(cache)} SIREN(s) cached, {len(filtered)}/{len(events)} events kept")
+    save_size_cache(cache)
+    print(f"  Size check: {pappers_calls} Pappers fallback call(s), {len(cache)} SIREN(s) cached, {len(filtered)}/{len(events)} events kept")
     return filtered
 
 
@@ -335,10 +381,11 @@ def build_digest(bodacc_events, rss_articles, excluded_companies=None):
 
     def fmt_event(e):
         ca_str = str(e.get("ca", "")) + "M€ CA" if e.get("ca") else "CA non vérifié"
-        effectif_str = f", effectif Pappers: {e['effectif']}" if e.get("effectif") else ""
-        return "- [{}] {} ({}) | {}{} | SIREN {} : {}".format(
+        effectif_str = f", effectif >= {e['effectif']}" if e.get("effectif") else ""
+        categorie_str = f", categorie INSEE: {e['categorie']}" if e.get("categorie") else ""
+        return "- [{}] {} ({}) | {}{}{} | SIREN {} : {}".format(
             e.get("type", ""), e.get("company", ""), e.get("city", ""),
-            ca_str, effectif_str, e.get("siren", ""), e.get("content", "")
+            ca_str, effectif_str, categorie_str, e.get("siren", ""), e.get("content", "")
         )
 
     bodacc_text = "\n".join(fmt_event(e) for e in bodacc_events) or "Aucune annonce Bodacc aujourd’hui."
@@ -359,7 +406,7 @@ def build_digest(bodacc_events, rss_articles, excluded_companies=None):
 
     prompt = f"""Tu es un expert en développement commercial B2B ciblant les ETI françaises (250-4999 salariés, 50M€-1,5Md€ de CA).
 
-Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : celles avec un CA vérifié sont dans la fourchette 50-200M€. Les autres ont un CA non vérifié.
+Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : celles marquées "categorie INSEE: ETI" ont une classification officielle ETI (fiable, fais-y confiance directement). Les autres ont un CA vérifié dans la fourchette 50-200M€, ou aucune donnée fiable (CA non vérifié).
 {exclusion_block}
 ## Annonces Bodacc (24 dernières heures)
 {bodacc_text}
@@ -486,8 +533,8 @@ def main():
     bodacc_events = [e for e in bodacc_events if not looks_like_small_business(e["company"], e["content"])]
     print(f"  Pre-filter: {before} -> {len(bodacc_events)} Bodacc events (dropped dedup/non-ETI legal forms)")
 
-    print("Filtering with Pappers...")
-    bodacc_events = filter_with_pappers(bodacc_events)
+    print("Checking company size (free government API + Pappers fallback)...")
+    bodacc_events = filter_with_size_data(bodacc_events)
 
     print("Building digest with Claude...")
     digest = build_digest(bodacc_events, rss_articles, excluded_companies=excluded_names)
