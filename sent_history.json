@@ -1,4 +1,10 @@
 {
+  "037473c3c4c4": {
+    "date": "2026-07-13",
+    "name": "Somfy",
+    "sector": "Industrie / Domotique",
+    "status": "pending"
+  },
   "0823651d697c": {
     "date": "2026-07-13",
     "name": "Groupe Poncin Metal",
@@ -47,6 +53,12 @@
     "sector": null,
     "status": "pending"
   },
+  "4096f7e745f0": {
+    "date": "2026-07-13",
+    "name": "Groupe Olga",
+    "sector": "Agroalimentaire",
+    "status": "pending"
+  },
   "42ff5deb3bda": {
     "date": "2026-07-09",
     "name": "Meubles Parisot",
@@ -57,6 +69,12 @@
     "date": "2026-07-07",
     "name": "Fonderie de Bretagne",
     "sector": null,
+    "status": "pending"
+  },
+  "47f08dac2e2d": {
+    "date": "2026-07-13",
+    "name": "Le Journal des Entreprises",
+    "sector": "Médias / Presse spécialisée",
     "status": "pending"
   },
   "573c558c1878": {
@@ -153,6 +171,12 @@
     "date": "2026-07-10",
     "name": "Valeo (usine d'Angers)",
     "sector": "Industrie automobile / Equipementier",
+    "status": "pending"
+  },
+  "d6d4fad09f12": {
+    "date": "2026-07-13",
+    "name": "Flauraud",
+    "sector": "Distribution automobile",
     "status": "pending"
   },
   "e04f64d478ca": {
