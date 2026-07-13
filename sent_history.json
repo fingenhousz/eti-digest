@@ -1,4 +1,10 @@
 {
+  "0823651d697c": {
+    "date": "2026-07-13",
+    "name": "Groupe Poncin Metal",
+    "sector": "Industrie métallique",
+    "status": "pending"
+  },
   "0a3c884e7bea": {
     "date": "2026-07-08",
     "name": "Groupe Pandora",
@@ -89,6 +95,12 @@
     "sector": null,
     "status": "pending"
   },
+  "88519ffd838e": {
+    "date": "2026-07-13",
+    "name": "Lebronze Alloys",
+    "sector": "Métallurgie / Industrie",
+    "status": "pending"
+  },
   "9ae7d3dbdb0a": {
     "date": "2026-07-08",
     "name": "Groupe Baudaire (La Boucherie / Courtepaille)",
@@ -125,6 +137,12 @@
     "sector": null,
     "status": "pending"
   },
+  "c5462c329529": {
+    "date": "2026-07-13",
+    "name": "NSI Groupe",
+    "sector": "Services / Distribution B2B",
+    "status": "pending"
+  },
   "c94cfa2b8a4c": {
     "date": "2026-07-08",
     "name": "Werzalit France",
@@ -149,6 +167,12 @@
     "sector": null,
     "status": "pending"
   },
+  "e80c366379d4": {
+    "date": "2026-07-13",
+    "name": "Rydge Conseil",
+    "sector": "Conseil / Expertise comptable",
+    "status": "pending"
+  },
   "ee33169f59ba": {
     "date": "2026-07-08",
     "name": "Instant System",
@@ -165,6 +189,12 @@
     "date": "2026-07-08",
     "name": "Groupe Océalliance",
     "sector": null,
+    "status": "pending"
+  },
+  "f802e0705f48": {
+    "date": "2026-07-13",
+    "name": "Groupe Urban Loisirs",
+    "sector": "Loisirs / Tourisme",
     "status": "pending"
   },
   "f83c6c86aff5": {
