@@ -113,6 +113,12 @@
     "sector": null,
     "status": "pending"
   },
+  "77c8f287e56c": {
+    "date": "2026-07-15",
+    "name": "Polyart",
+    "sector": "Emballage / Etiquettes",
+    "status": "pending"
+  },
   "78bbb597fd39": {
     "date": "2026-07-09",
     "name": "Air Antilles",
@@ -137,6 +143,12 @@
     "sector": "Métallurgie / Industrie",
     "status": "pending"
   },
+  "9513c6a61f47": {
+    "date": "2026-07-15",
+    "name": "Agena 3000",
+    "sector": "Distribution automatique",
+    "status": "pending"
+  },
   "9ae7d3dbdb0a": {
     "date": "2026-07-08",
     "name": "Groupe Baudaire (La Boucherie / Courtepaille)",
@@ -159,6 +171,12 @@
     "date": "2026-07-14",
     "name": "ARC France",
     "sector": "Industrie / Emballage",
+    "status": "pending"
+  },
+  "afdf55c048c5": {
+    "date": "2026-07-15",
+    "name": "Groupe Fauché",
+    "sector": "Electricité / BTP",
     "status": "pending"
   },
   "b629a7bb7762": {
