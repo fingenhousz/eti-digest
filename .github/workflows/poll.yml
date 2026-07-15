@@ -3,8 +3,9 @@ name: Poll Telegram buttons
 on:
   schedule:
     # Fallback only — primary trigger is cron-job.org calling workflow_dispatch
-    # every ~5 min, since GitHub's own schedule can lag by hours.
-    - cron: '*/15 * * * *'
+    # hourly. Button clicks aren't time-critical, so hourly keeps both
+    # cron-job.org's free-tier execution count and GitHub Actions usage low.
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
