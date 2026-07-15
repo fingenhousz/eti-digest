@@ -18,7 +18,12 @@ OFFSET_FILE = "telegram_offset.json"
 SENT_HISTORY_FILE = "sent_history.json"
 API = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 
-STATUS_LABELS = {"interested": "✅ Marque : Interesse", "pass": "❌ Marque : Pass"}
+# Deliberately different symbol family from the "✅ Interesse" action
+# button — a lock reads clearly as "figé, plus d'action possible" instead of
+# looking like a slight variant of the same checkmark. Text spells out what
+# actually happened (captured into the pipeline) instead of just echoing
+# the button's own label back.
+STATUS_LABELS = {"interested": "\U0001f512 Interet enregistre", "pass": "\U0001f512 Ignore"}
 
 
 def load_offset():
