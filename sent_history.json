@@ -41,6 +41,13 @@
     "sector": null,
     "status": "pending"
   },
+  "2b762f2549bc": {
+    "date": "2026-07-15",
+    "dirigeant": null,
+    "name": "Sauramps",
+    "sector": "Distribution / Librairie",
+    "status": "pending"
+  },
   "2c08a23937db": {
     "date": "2026-07-08",
     "name": "Durisotti",
@@ -113,6 +120,20 @@
     "sector": null,
     "status": "pending"
   },
+  "673dfcdadce8": {
+    "date": "2026-07-15",
+    "dirigeant": null,
+    "name": "Hydrokit",
+    "sector": "Industrie / Hydraulique",
+    "status": "pending"
+  },
+  "7540122d44af": {
+    "date": "2026-07-15",
+    "dirigeant": null,
+    "name": "France Teinture",
+    "sector": "Textile / Teinturerie industrielle",
+    "status": "pending"
+  },
   "77c8f287e56c": {
     "date": "2026-07-15",
     "name": "Polyart",
@@ -141,6 +162,13 @@
     "date": "2026-07-13",
     "name": "Lebronze Alloys",
     "sector": "Métallurgie / Industrie",
+    "status": "pending"
+  },
+  "93d5a9606dfb": {
+    "date": "2026-07-15",
+    "dirigeant": null,
+    "name": "Groupe Bayard",
+    "sector": "Médias / Edition",
     "status": "pending"
   },
   "9513c6a61f47": {
