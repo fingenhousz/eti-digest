@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETI Digest — Pipeline</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1a1d23; --muted: #6b7280;
+    --border: #e5e7eb; --accent: #2563eb; --warn: #b45309; --warn-bg: #fff7ed;
+    --ok: #15803d; --ok-bg: #f0fdf4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #1a1d23; --text: #e5e7eb; --muted: #9aa1ac;
+      --border: #2a2e37; --accent: #60a5fa; --warn: #fbbf24; --warn-bg: #2b2210;
+      --ok: #4ade80; --ok-bg: #10261a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+  .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  select, input[type="text"] {
+    background: var(--card); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 12px; font-size: 14px;
+  }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .columns { grid-template-columns: 1fr; } }
+  .col h2 {
+    font-size: 15px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--muted); margin: 0 0 12px; display: flex; justify-content: space-between;
+  }
+  .count { background: var(--border); border-radius: 999px; padding: 2px 10px; font-size: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 10px;
+  }
+  .card.overdue { border-color: var(--warn); background: var(--warn-bg); }
+  .card .name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .card .meta { color: var(--muted); font-size: 13px; line-height: 1.5; }
+  .badge {
+    display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    background: var(--border); color: var(--muted); margin-left: 6px;
+  }
+  .badge.overdue { background: var(--warn); color: #1a1d23; }
+  .empty { color: var(--muted); font-size: 14px; padding: 20px 0; text-align: center; }
+  a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎯 ETI Digest — Pipeline</h1>
+  <div class="sub">Vue d'ensemble des prospects — <span id="updated">chargement…</span></div>
+
+  <div class="controls">
+    <select id="sectorFilter"><option value="">Tous les secteurs</option></select>
+    <input type="text" id="search" placeholder="Rechercher une entreprise…">
+  </div>
+
+  <div class="columns">
+    <div class="col">
+      <h2>Intéressé <span class="count" id="countInteresse">0</span></h2>
+      <div id="listInteresse"></div>
+    </div>
+    <div class="col">
+      <h2>En attente <span class="count" id="countPending">0</span></h2>
+      <div id="listPending"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = "https://raw.githubusercontent.com/fingenhousz/eti-digest/main/sent_history.json";
+const REMINDER_AFTER_DAYS = 7;
+
+function daysSince(isoStr) {
+  if (!isoStr) return null;
+  const then = new Date(isoStr);
+  if (isNaN(then)) return null;
+  return Math.floor((Date.now() - then.getTime()) / 86400000);
+}
+
+function cardHtml(entry, days) {
+  const overdue = entry.status === "interested" && days !== null && days >= REMINDER_AFTER_DAYS;
+  const bits = [];
+  if (entry.sector) bits.push(entry.sector);
+  if (entry.ca) bits.push(entry.ca + "M€ CA");
+  if (entry.categorie) bits.push(entry.categorie);
+  if (entry.dirigeant) bits.push("👤 " + entry.dirigeant);
+  const dayLabel = days === null ? "" : (days === 0 ? "aujourd'hui" : days + "j");
+  return `<div class="card ${overdue ? "overdue" : ""}" data-sector="${(entry.sector||"").toLowerCase()}" data-name="${entry.name.toLowerCase()}">
+    <div class="name">${entry.name} <span class="badge ${overdue ? "overdue" : ""}">${dayLabel}</span></div>
+    <div class="meta">${bits.join(" · ") || "—"}</div>
+  </div>`;
+}
+
+function render(history) {
+  const entries = Object.values(history).filter(e => e && typeof e === "object" && e.name);
+  const interesse = entries.filter(e => e.status === "interested")
+    .sort((a, b) => (daysSince(b.interested_at) || 0) - (daysSince(a.interested_at) || 0));
+  const pending = entries.filter(e => e.status !== "interested")
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  document.getElementById("countInteresse").textContent = interesse.length;
+  document.getElementById("countPending").textContent = pending.length;
+
+  document.getElementById("listInteresse").innerHTML =
+    interesse.map(e => cardHtml(e, daysSince(e.interested_at))).join("") ||
+    '<div class="empty">Aucun prospect marqué intéressé</div>';
+  document.getElementById("listPending").innerHTML =
+    pending.map(e => cardHtml(e, daysSince(e.date))).join("") ||
+    '<div class="empty">Aucun prospect en attente</div>';
+
+  const sectors = [...new Set(entries.map(e => e.sector).filter(Boolean))].sort();
+  const sel = document.getElementById("sectorFilter");
+  sectors.forEach(s => {
+    const opt = document.createElement("option");
+    opt.value = s.toLowerCase();
+    opt.textContent = s;
+    sel.appendChild(opt);
+  });
+}
+
+function applyFilters() {
+  const sector = document.getElementById("sectorFilter").value;
+  const query = document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card => {
+    const matchSector = !sector || card.dataset.sector === sector;
+    const matchQuery = !query || card.dataset.name.includes(query);
+    card.style.display = (matchSector && matchQuery) ? "" : "none";
+  });
+}
+
+document.getElementById("sectorFilter").addEventListener("change", applyFilters);
+document.getElementById("search").addEventListener("input", applyFilters);
+
+fetch(DATA_URL + "?t=" + Date.now())
+  .then(r => r.json())
+  .then(history => {
+    render(history);
+    document.getElementById("updated").textContent =
+      "mis à jour à l'instant (" + new Date().toLocaleTimeString("fr-FR") + ")";
+  })
+  .catch(err => {
+    document.getElementById("updated").textContent = "Erreur de chargement";
+    console.error(err);
+  });
+</script>
+</body>
+</html>

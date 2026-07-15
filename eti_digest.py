@@ -42,9 +42,11 @@ def company_id(name):
 
 
 def load_sent_history():
-    """Returns {company_id: {"name", "date", "status", "sector"}}, pruned to
-    the dedup window. Transparently migrates the legacy {name: date_str}
-    format from before pipeline-status tracking existed."""
+    """Returns {company_id: {...}}, pruned to the dedup window. Transparently
+    migrates the legacy {name: date_str} format from before pipeline-status
+    tracking existed. Preserves any extra fields (dirigeant, interested_at,
+    reminded_at) added by poll_telegram.py / send_reminders.py — this script
+    only needs a few of them but must not silently drop the rest."""
     if not os.path.exists(SENT_HISTORY_FILE):
         return {}
     try:
@@ -56,17 +58,18 @@ def load_sent_history():
     pruned = {}
     for key, value in raw.items():
         if isinstance(value, str):
-            name, date_str, status, sector = key, value, "pending", None
-            cid = company_id(name)
+            entry = {"name": key, "date": value, "status": "pending", "sector": None}
+            cid = company_id(key)
         else:
             cid = key
-            name = value.get("name", key)
-            date_str = value.get("date", "")
-            status = value.get("status", "pending")
-            sector = value.get("sector")
+            entry = dict(value)
+            entry.setdefault("name", key)
+            entry.setdefault("date", "")
+            entry.setdefault("status", "pending")
+            entry.setdefault("sector", None)
         try:
-            if date_str and datetime.fromisoformat(date_str).replace(tzinfo=timezone.utc) >= cutoff:
-                pruned[cid] = {"name": name, "date": date_str, "status": status, "sector": sector}
+            if entry["date"] and datetime.fromisoformat(entry["date"]).replace(tzinfo=timezone.utc) >= cutoff:
+                pruned[cid] = entry
         except ValueError:
             continue
     return pruned
@@ -100,6 +103,18 @@ def extract_sector(block):
     if absent (e.g. Claude omitted it)."""
     match = SECTOR_RE.search(block)
     return match.group(1).strip() if match else None
+
+
+DIRIGEANT_LINE_RE = re.compile(r"Dirigeant\s*:\s*(.+)")
+
+
+def extract_dirigeant_line(block):
+    """Pull the 'Dirigeant : ...' line out of a single company block."""
+    match = DIRIGEANT_LINE_RE.search(block)
+    if not match:
+        return None
+    value = match.group(1).strip()
+    return None if value.lower().startswith("non identifi") else value
 
 BODACC_BASE = "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets"
 
@@ -266,9 +281,36 @@ def save_size_cache(cache):
         json.dump(cache, f, ensure_ascii=False, indent=2, sort_keys=True)
 
 
+# Priority order for picking which "dirigeant" entry to surface as THE
+# contact — a personne morale (holding company) isn't someone you can call,
+# and among individuals the most senior title is the most useful default.
+DIRIGEANT_TITLE_PRIORITY = ["président", "directeur général", "gérant", "directeur"]
+
+
+def extract_dirigeant(dirigeants):
+    """Pick the most senior physical-person leader from the API's dirigeants
+    list — that's who to actually contact for prospecting."""
+    physiques = [d for d in (dirigeants or []) if d.get("type_dirigeant") == "personne physique"]
+    if not physiques:
+        return None
+
+    def fmt(d):
+        nom = re.sub(r"\s*\(.*?\)\s*", " ", d.get("nom", "")).strip()
+        prenom = (d.get("prenoms") or "").split()[0].capitalize() if d.get("prenoms") else ""
+        qualite = d.get("qualite", "")
+        return f"{prenom} {nom}".strip() + (f" ({qualite})" if qualite else "")
+
+    for keyword in DIRIGEANT_TITLE_PRIORITY:
+        for d in physiques:
+            if keyword in (d.get("qualite") or "").lower():
+                return fmt(d)
+    return fmt(physiques[0])
+
+
 def check_recherche_entreprises(siren):
-    """Returns (ca_millions, effectif_min, categorie) from the free
-    government API, or (None, None, None) if the SIREN has no data there."""
+    """Returns (ca_millions, effectif_min, categorie, dirigeant) from the
+    free government API, or (None, None, None, None) if the SIREN has no
+    data there."""
     try:
         params = urllib.parse.urlencode({"q": siren, "per_page": 1})
         req = urllib.request.Request(
@@ -278,7 +320,7 @@ def check_recherche_entreprises(siren):
             data = json.loads(resp.read())
         results = [r for r in data.get("results", []) if r.get("siren") == siren]
         if not results:
-            return None, None, None
+            return None, None, None, None
         r = results[0]
         categorie = r.get("categorie_entreprise")
         finances = r.get("finances") or {}
@@ -288,10 +330,11 @@ def check_recherche_entreprises(siren):
             ca = finances[latest_year].get("ca")
             ca_m = round(ca / 1_000_000, 1) if ca else None
         effectif_min = TRANCHE_EFFECTIF_MIN.get(r.get("tranche_effectif_salarie"))
-        return ca_m, effectif_min, categorie
+        dirigeant = extract_dirigeant(r.get("dirigeants"))
+        return ca_m, effectif_min, categorie, dirigeant
     except Exception as ex:
         print(f"    Recherche entreprises {siren}: erreur {ex}")
-        return None, None, None
+        return None, None, None, None
 
 
 def _fetch_pappers(siren):
@@ -338,21 +381,26 @@ def filter_with_size_data(events):
 
         cached = cache.get(siren)
         if cached:
-            ca, effectif, categorie = cached.get("ca"), cached.get("effectif"), cached.get("categorie")
+            ca, effectif, categorie, dirigeant = (
+                cached.get("ca"), cached.get("effectif"), cached.get("categorie"), cached.get("dirigeant"),
+            )
         else:
-            ca, effectif, categorie = check_recherche_entreprises(siren)
+            ca, effectif, categorie, dirigeant = check_recherche_entreprises(siren)
             time.sleep(0.2)  # courtesy delay on the free public API
             if ca is None and effectif is None and categorie is None and PAPPERS_API_KEY and pappers_calls < PAPPERS_CALLS_MAX:
                 ca, effectif = _fetch_pappers(siren)
                 pappers_calls += 1
-            cache[siren] = {"ca": ca, "effectif": effectif, "categorie": categorie, "checked": datetime.now(timezone.utc).isoformat()}
+            cache[siren] = {
+                "ca": ca, "effectif": effectif, "categorie": categorie, "dirigeant": dirigeant,
+                "checked": datetime.now(timezone.utc).isoformat(),
+            }
 
         if categorie == "GE":
             continue  # above ETI range — confirmed too big, drop silently
         if categorie in ("PME", "TPE"):
             continue  # official INSEE classification says too small — confident drop
         if categorie == "ETI":
-            e["ca"], e["effectif"], e["categorie"] = ca, effectif, categorie
+            e["ca"], e["effectif"], e["categorie"], e["dirigeant"] = ca, effectif, categorie, dirigeant
             filtered.append(e)
             continue
 
@@ -362,6 +410,7 @@ def filter_with_size_data(events):
             if CA_MIN <= ca * 1_000_000 <= CA_MAX:
                 e["ca"] = ca
                 e["effectif"] = effectif
+                e["dirigeant"] = dirigeant
                 filtered.append(e)
             # else: confirmed non-ETI → drop silently
         else:
@@ -369,6 +418,8 @@ def filter_with_size_data(events):
             # (was previously discarded here even when Pappers returned it)
             if effectif:
                 e["effectif"] = effectif
+            if dirigeant:
+                e["dirigeant"] = dirigeant
             filtered.append(e)
 
     save_size_cache(cache)
@@ -383,9 +434,10 @@ def build_digest(bodacc_events, rss_articles, excluded_companies=None):
         ca_str = str(e.get("ca", "")) + "M€ CA" if e.get("ca") else "CA non vérifié"
         effectif_str = f", effectif >= {e['effectif']}" if e.get("effectif") else ""
         categorie_str = f", categorie INSEE: {e['categorie']}" if e.get("categorie") else ""
-        return "- [{}] {} ({}) | {}{}{} | SIREN {} : {}".format(
+        dirigeant_str = f", dirigeant identifie: {e['dirigeant']}" if e.get("dirigeant") else ""
+        return "- [{}] {} ({}) | {}{}{}{} | SIREN {} : {}".format(
             e.get("type", ""), e.get("company", ""), e.get("city", ""),
-            ca_str, effectif_str, categorie_str, e.get("siren", ""), e.get("content", "")
+            ca_str, effectif_str, categorie_str, dirigeant_str, e.get("siren", ""), e.get("content", "")
         )
 
     bodacc_text = "\n".join(fmt_event(e) for e in bodacc_events) or "Aucune annonce Bodacc aujourd’hui."
@@ -426,6 +478,7 @@ IMPORTANT : réponds UNIQUEMENT avec les blocs ETI, sans introduction ni conclus
 
 *[Emoji] [Nom entreprise]* — [Ville] | [CA]M€
 Secteur : [secteur d'activite en 1-3 mots, ex: "Distribution", "BTP", "Agroalimentaire"]
+Dirigeant : [nom identifie dans les donnees ci-dessus, ou "non identifie" si absent — n'invente jamais un nom]
 Signal : [4-6 mots]
 Contexte : [1 phrase]
 Opportunité : [1 phrase]
@@ -579,6 +632,7 @@ def main():
             history[cid] = {
                 "name": name, "date": today_str,
                 "status": "pending", "sector": extract_sector(block),
+                "dirigeant": extract_dirigeant_line(block),
             }
             # Only "Interesse" — by definition the other outcome is "no
             # action taken", not a state worth a button of its own.

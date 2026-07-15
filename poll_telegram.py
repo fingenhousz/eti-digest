@@ -10,6 +10,7 @@ import json
 import urllib.request
 import urllib.parse
 import urllib.error
+from datetime import datetime, timezone
 
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"].strip()
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"].strip()
@@ -121,6 +122,10 @@ def main():
             continue
 
         entry["status"] = action
+        if action == "interested" and not entry.get("interested_at"):
+            # Marks when the clock starts for the follow-up reminder job —
+            # only set once, so re-clicking doesn't reset the countdown.
+            entry["interested_at"] = datetime.now(timezone.utc).isoformat()
         history_changed = True
         label = STATUS_LABELS.get(action, action)
         answer_callback(cq_id, label)
