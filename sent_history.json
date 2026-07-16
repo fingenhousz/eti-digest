@@ -120,6 +120,13 @@
     "sector": null,
     "status": "pending"
   },
+  "62e4e012916d": {
+    "date": "2026-07-16",
+    "dirigeant": null,
+    "name": "Eolane",
+    "sector": "Electronique / Défense",
+    "status": "pending"
+  },
   "673dfcdadce8": {
     "date": "2026-07-15",
     "dirigeant": null,
@@ -150,6 +157,13 @@
     "date": "2026-07-09",
     "name": "In Extenso",
     "sector": null,
+    "status": "pending"
+  },
+  "7d03cd5243b8": {
+    "date": "2026-07-16",
+    "dirigeant": "Paul Lhotellier",
+    "name": "Groupe Lhotellier",
+    "sector": "BTP",
     "status": "pending"
   },
   "7e4ae3b981c2": {
@@ -253,6 +267,13 @@
     "date": "2026-07-13",
     "name": "Flauraud",
     "sector": "Distribution automobile",
+    "status": "pending"
+  },
+  "dec3a664ff45": {
+    "date": "2026-07-16",
+    "dirigeant": "Sébastien Pillard",
+    "name": "Groupe Intermarché (Sébastien Pillard)",
+    "sector": "Distribution alimentaire",
     "status": "pending"
   },
   "e04f64d478ca": {
