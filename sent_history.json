@@ -172,6 +172,13 @@
     "sector": "Energie / Solaire",
     "status": "pending"
   },
+  "81e7f820fa93": {
+    "date": "2026-07-17",
+    "dirigeant": null,
+    "name": "MYMIKA",
+    "sector": "Distribution / Commerce",
+    "status": "pending"
+  },
   "88519ffd838e": {
     "date": "2026-07-13",
     "name": "Lebronze Alloys",
@@ -304,6 +311,13 @@
     "date": "2026-07-08",
     "name": "Instant System",
     "sector": null,
+    "status": "pending"
+  },
+  "f0ae4c1351ef": {
+    "date": "2026-07-17",
+    "dirigeant": null,
+    "name": "SAS CANNES TONNER ROUBINE",
+    "sector": "Viticulture / Agroalimentaire",
     "status": "pending"
   },
   "f2d1fa1c40ab": {
