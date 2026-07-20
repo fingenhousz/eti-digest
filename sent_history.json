@@ -17,6 +17,13 @@
     "sector": null,
     "status": "pending"
   },
+  "0b9bc5391dee": {
+    "date": "2026-07-20",
+    "dirigeant": null,
+    "name": "Acteon",
+    "sector": "Industrie / Matériel médical",
+    "status": "pending"
+  },
   "0cc301de5388": {
     "date": "2026-07-10",
     "name": "Vacher (rachat d'Innodec)",
@@ -240,6 +247,13 @@
     "sector": null,
     "status": "pending"
   },
+  "bc47637d775f": {
+    "date": "2026-07-20",
+    "dirigeant": null,
+    "name": "Aginode",
+    "sector": "Industrie manufacturière",
+    "status": "pending"
+  },
   "bc51221e026e": {
     "date": "2026-07-09",
     "name": "Groupe Penet",
@@ -324,6 +338,13 @@
     "date": "2026-07-07",
     "name": "Lamberet",
     "sector": null,
+    "status": "pending"
+  },
+  "f58bc6c42484": {
+    "date": "2026-07-20",
+    "dirigeant": null,
+    "name": "Calip Group",
+    "sector": "Industrie / Sous-traitance",
     "status": "pending"
   },
   "f7a5838af0ec": {
