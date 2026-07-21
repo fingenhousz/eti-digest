@@ -31,9 +31,10 @@
     "status": "pending"
   },
   "0cfd9b95d215": {
-    "date": "2026-07-07",
+    "date": "2026-07-21",
+    "dirigeant": null,
     "name": "Fibre Excellence",
-    "sector": null,
+    "sector": "Industrie papetière",
     "status": "pending"
   },
   "212f1bf16216": {
@@ -61,12 +62,6 @@
     "sector": null,
     "status": "pending"
   },
-  "3026d08dff14": {
-    "date": "2026-07-07",
-    "name": "Groupe Nosoli (Furet du Nord / Decitre)",
-    "sector": null,
-    "status": "pending"
-  },
   "38a7bdef6e10": {
     "date": "2026-07-09",
     "name": "Novasep",
@@ -86,9 +81,10 @@
     "status": "interested"
   },
   "43978eaf1a1c": {
-    "date": "2026-07-07",
+    "date": "2026-07-21",
+    "dirigeant": null,
     "name": "Fonderie de Bretagne",
-    "sector": null,
+    "sector": "Métallurgie / Fonderie",
     "status": "pending"
   },
   "47f08dac2e2d": {
@@ -118,12 +114,6 @@
   "5a985b1c0f21": {
     "date": "2026-07-09",
     "name": "Ziegler France",
-    "sector": null,
-    "status": "pending"
-  },
-  "5ab8db7d1bf4": {
-    "date": "2026-07-07",
-    "name": "Transports Brelet",
     "sector": null,
     "status": "pending"
   },
@@ -332,12 +322,6 @@
     "dirigeant": null,
     "name": "SAS CANNES TONNER ROUBINE",
     "sector": "Viticulture / Agroalimentaire",
-    "status": "pending"
-  },
-  "f2d1fa1c40ab": {
-    "date": "2026-07-07",
-    "name": "Lamberet",
-    "sector": null,
     "status": "pending"
   },
   "f58bc6c42484": {
