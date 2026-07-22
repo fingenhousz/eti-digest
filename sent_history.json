@@ -11,12 +11,6 @@
     "sector": "Industrie métallique",
     "status": "pending"
   },
-  "0a3c884e7bea": {
-    "date": "2026-07-08",
-    "name": "Groupe Pandora",
-    "sector": null,
-    "status": "pending"
-  },
   "0b9bc5391dee": {
     "date": "2026-07-20",
     "dirigeant": null,
@@ -43,23 +37,11 @@
     "sector": "Numérique / Services informatiques",
     "status": "pending"
   },
-  "27ac87c51d1c": {
-    "date": "2026-07-08",
-    "name": "Afibel",
-    "sector": null,
-    "status": "pending"
-  },
   "2b762f2549bc": {
     "date": "2026-07-15",
     "dirigeant": null,
     "name": "Sauramps",
     "sector": "Distribution / Librairie",
-    "status": "pending"
-  },
-  "2c08a23937db": {
-    "date": "2026-07-08",
-    "name": "Durisotti",
-    "sector": null,
     "status": "pending"
   },
   "38a7bdef6e10": {
@@ -195,12 +177,6 @@
     "sector": "Distribution automatique",
     "status": "pending"
   },
-  "9ae7d3dbdb0a": {
-    "date": "2026-07-08",
-    "name": "Groupe Baudaire (La Boucherie / Courtepaille)",
-    "sector": null,
-    "status": "pending"
-  },
   "a61e88c9b05e": {
     "date": "2026-07-10",
     "name": "La Boite Immo",
@@ -232,9 +208,10 @@
     "status": "pending"
   },
   "bc20fc39b254": {
-    "date": "2026-07-08",
+    "date": "2026-07-22",
+    "dirigeant": null,
     "name": "Groupe Positive / Sigilium",
-    "sector": null,
+    "sector": "Services numériques / Industrie",
     "status": "pending"
   },
   "bc47637d775f": {
@@ -250,22 +227,10 @@
     "sector": null,
     "status": "pending"
   },
-  "bd6c38fa993c": {
-    "date": "2026-07-08",
-    "name": "Groupe Bowi",
-    "sector": null,
-    "status": "pending"
-  },
   "c5462c329529": {
     "date": "2026-07-13",
     "name": "NSI Groupe",
     "sector": "Services / Distribution B2B",
-    "status": "pending"
-  },
-  "c94cfa2b8a4c": {
-    "date": "2026-07-08",
-    "name": "Werzalit France",
-    "sector": null,
     "status": "pending"
   },
   "cdde7ea8cca9": {
@@ -293,10 +258,25 @@
     "sector": "Distribution / Vitrage automobile",
     "status": "pending"
   },
+  "e1edd38cf6db": {
+    "date": "2026-07-22",
+    "dirigeant": null,
+    "name": "CHANOAR",
+    "sector": "Services / Industrie",
+    "status": "pending"
+  },
+  "e5f5b02e9c4c": {
+    "date": "2026-07-22",
+    "dirigeant": null,
+    "name": "Groupe Bowi / Menuiserie Roux Frères",
+    "sector": "BTP / Menuiserie",
+    "status": "pending"
+  },
   "e6bfaa9da01c": {
-    "date": "2026-07-08",
+    "date": "2026-07-22",
+    "dirigeant": null,
     "name": "ChapsVision",
-    "sector": null,
+    "sector": "Logiciels / Intelligence artificielle",
     "status": "pending"
   },
   "e80c366379d4": {
@@ -311,12 +291,6 @@
     "sector": "Electronique industrielle",
     "status": "pending"
   },
-  "ee33169f59ba": {
-    "date": "2026-07-08",
-    "name": "Instant System",
-    "sector": null,
-    "status": "pending"
-  },
   "f0ae4c1351ef": {
     "date": "2026-07-17",
     "dirigeant": null,
@@ -329,12 +303,6 @@
     "dirigeant": null,
     "name": "Calip Group",
     "sector": "Industrie / Sous-traitance",
-    "status": "pending"
-  },
-  "f7a5838af0ec": {
-    "date": "2026-07-08",
-    "name": "Groupe Océalliance",
-    "sector": null,
     "status": "pending"
   },
   "f802e0705f48": {
