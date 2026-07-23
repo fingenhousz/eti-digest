@@ -11,6 +11,13 @@
     "sector": "Industrie métallique",
     "status": "pending"
   },
+  "0a3c884e7bea": {
+    "date": "2026-07-23",
+    "dirigeant": null,
+    "name": "Groupe Pandora",
+    "sector": "Distribution / Retail",
+    "status": "pending"
+  },
   "0b9bc5391dee": {
     "date": "2026-07-20",
     "dirigeant": null,
@@ -45,9 +52,10 @@
     "status": "pending"
   },
   "38a7bdef6e10": {
-    "date": "2026-07-09",
+    "date": "2026-07-23",
+    "dirigeant": null,
     "name": "Novasep",
-    "sector": null,
+    "sector": "Industrie pharmaceutique / CDMO",
     "status": "pending"
   },
   "4096f7e745f0": {
@@ -55,12 +63,6 @@
     "name": "Groupe Olga",
     "sector": "Agroalimentaire",
     "status": "pending"
-  },
-  "42ff5deb3bda": {
-    "date": "2026-07-09",
-    "name": "Meubles Parisot",
-    "sector": "Industrie / Ameublement",
-    "status": "interested"
   },
   "43978eaf1a1c": {
     "date": "2026-07-21",
@@ -81,22 +83,11 @@
     "sector": "Industrie / Instrumentation",
     "status": "pending"
   },
-  "573c558c1878": {
-    "date": "2026-07-09",
-    "name": "Duralex",
-    "sector": "Industrie / Arts de la table",
-    "status": "pending"
-  },
   "591d67f0fa18": {
-    "date": "2026-07-09",
+    "date": "2026-07-23",
+    "dirigeant": null,
     "name": "Groupe Bruneau",
-    "sector": "Distribution B2B / Fournitures bureau",
-    "status": "interested"
-  },
-  "5a985b1c0f21": {
-    "date": "2026-07-09",
-    "name": "Ziegler France",
-    "sector": null,
+    "sector": "Distribution fournitures bureau / B2B",
     "status": "pending"
   },
   "62e4e012916d": {
@@ -126,18 +117,6 @@
     "sector": "Emballage / Etiquettes",
     "status": "interested"
   },
-  "78bbb597fd39": {
-    "date": "2026-07-09",
-    "name": "Air Antilles",
-    "sector": "Transport aérien",
-    "status": "pending"
-  },
-  "79ecf85020a3": {
-    "date": "2026-07-09",
-    "name": "In Extenso",
-    "sector": null,
-    "status": "pending"
-  },
   "7d03cd5243b8": {
     "date": "2026-07-16",
     "dirigeant": "Paul Lhotellier",
@@ -149,6 +128,13 @@
     "date": "2026-07-13",
     "name": "Urbasolar",
     "sector": "Energie / Solaire",
+    "status": "pending"
+  },
+  "7f0ea4bd37f0": {
+    "date": "2026-07-23",
+    "dirigeant": null,
+    "name": "Penet",
+    "sector": "BTP",
     "status": "pending"
   },
   "81e7f820fa93": {
@@ -221,12 +207,6 @@
     "sector": "Industrie manufacturière",
     "status": "pending"
   },
-  "bc51221e026e": {
-    "date": "2026-07-09",
-    "name": "Groupe Penet",
-    "sector": null,
-    "status": "pending"
-  },
   "c5462c329529": {
     "date": "2026-07-13",
     "name": "NSI Groupe",
@@ -250,12 +230,6 @@
     "dirigeant": "Sébastien Pillard",
     "name": "Groupe Intermarché (Sébastien Pillard)",
     "sector": "Distribution alimentaire",
-    "status": "pending"
-  },
-  "e04f64d478ca": {
-    "date": "2026-07-09",
-    "name": "Glass Express France",
-    "sector": "Distribution / Vitrage automobile",
     "status": "pending"
   },
   "e1edd38cf6db": {
@@ -311,10 +285,11 @@
     "sector": "Loisirs / Tourisme",
     "status": "pending"
   },
-  "f83c6c86aff5": {
-    "date": "2026-07-09",
-    "name": "Groupe Gibert",
-    "sector": null,
+  "fd8c4510c7ad": {
+    "date": "2026-07-23",
+    "dirigeant": null,
+    "name": "ID Verde",
+    "sector": "Services environnement / espaces verts",
     "status": "pending"
   },
   "ffabbb7c21db": {
