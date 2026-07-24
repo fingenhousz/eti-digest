@@ -25,17 +25,18 @@
     "sector": "Industrie / Matériel médical",
     "status": "pending"
   },
-  "0cc301de5388": {
-    "date": "2026-07-10",
-    "name": "Vacher (rachat d'Innodec)",
-    "sector": "Machines d'emballage / Industrie",
-    "status": "pending"
-  },
   "0cfd9b95d215": {
     "date": "2026-07-21",
     "dirigeant": null,
     "name": "Fibre Excellence",
     "sector": "Industrie papetière",
+    "status": "pending"
+  },
+  "16c8deb2b1ae": {
+    "date": "2026-07-24",
+    "dirigeant": "Augusto FERREIRA QUINTEIRO",
+    "name": "NSD",
+    "sector": "Services",
     "status": "pending"
   },
   "212f1bf16216": {
@@ -49,6 +50,13 @@
     "dirigeant": null,
     "name": "Sauramps",
     "sector": "Distribution / Librairie",
+    "status": "pending"
+  },
+  "2c08a23937db": {
+    "date": "2026-07-24",
+    "dirigeant": null,
+    "name": "Durisotti",
+    "sector": "Carrosserie industrielle / Transformation véhicules",
     "status": "pending"
   },
   "38a7bdef6e10": {
@@ -144,6 +152,13 @@
     "sector": "Distribution / Commerce",
     "status": "pending"
   },
+  "86b37e9b29d1": {
+    "date": "2026-07-24",
+    "dirigeant": null,
+    "name": "Baudaire (La Boucherie / Courtepaille)",
+    "sector": "Restauration / Franchise",
+    "status": "pending"
+  },
   "88519ffd838e": {
     "date": "2026-07-13",
     "name": "Lebronze Alloys",
@@ -163,12 +178,6 @@
     "sector": "Distribution automatique",
     "status": "pending"
   },
-  "a61e88c9b05e": {
-    "date": "2026-07-10",
-    "name": "La Boite Immo",
-    "sector": "Logiciels / Proptech",
-    "status": "pending"
-  },
   "a6fe545d1ce8": {
     "date": "2026-07-13",
     "name": "Marionnaud",
@@ -186,12 +195,6 @@
     "name": "Groupe Fauché",
     "sector": "Electricité / BTP",
     "status": "interested"
-  },
-  "b629a7bb7762": {
-    "date": "2026-07-10",
-    "name": "Baker Tilly",
-    "sector": "Conseil / Audit",
-    "status": "pending"
   },
   "bc20fc39b254": {
     "date": "2026-07-22",
@@ -213,10 +216,11 @@
     "sector": "Services / Distribution B2B",
     "status": "pending"
   },
-  "cdde7ea8cca9": {
-    "date": "2026-07-10",
-    "name": "Valeo (usine d'Angers)",
-    "sector": "Industrie automobile / Equipementier",
+  "d242082da66b": {
+    "date": "2026-07-24",
+    "dirigeant": null,
+    "name": "Nosoli (Furet du Nord / Decitre)",
+    "sector": "Distribution / Librairie",
     "status": "pending"
   },
   "d6d4fad09f12": {
@@ -290,12 +294,6 @@
     "dirigeant": null,
     "name": "ID Verde",
     "sector": "Services environnement / espaces verts",
-    "status": "pending"
-  },
-  "ffabbb7c21db": {
-    "date": "2026-07-10",
-    "name": "Groupe Allez (intégration SNER)",
-    "sector": "BTP / Travaux",
     "status": "pending"
   }
 }
