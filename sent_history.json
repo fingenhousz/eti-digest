@@ -1,14 +1,9 @@
 {
-  "037473c3c4c4": {
-    "date": "2026-07-13",
-    "name": "Somfy",
-    "sector": "Industrie / Domotique",
-    "status": "pending"
-  },
-  "0823651d697c": {
-    "date": "2026-07-13",
-    "name": "Groupe Poncin Metal",
-    "sector": "Industrie métallique",
+  "0a099551eeb2": {
+    "date": "2026-07-27",
+    "dirigeant": null,
+    "name": "Gibert (Groupe)",
+    "sector": "Distribution / Librairie",
     "status": "pending"
   },
   "0a3c884e7bea": {
@@ -39,10 +34,11 @@
     "sector": "Services",
     "status": "pending"
   },
-  "212f1bf16216": {
-    "date": "2026-07-13",
-    "name": "DV Group",
-    "sector": "Numérique / Services informatiques",
+  "27ac87c51d1c": {
+    "date": "2026-07-27",
+    "dirigeant": null,
+    "name": "Afibel",
+    "sector": "Commerce / Textile",
     "status": "pending"
   },
   "2b762f2549bc": {
@@ -66,29 +62,11 @@
     "sector": "Industrie pharmaceutique / CDMO",
     "status": "pending"
   },
-  "4096f7e745f0": {
-    "date": "2026-07-13",
-    "name": "Groupe Olga",
-    "sector": "Agroalimentaire",
-    "status": "pending"
-  },
   "43978eaf1a1c": {
     "date": "2026-07-21",
     "dirigeant": null,
     "name": "Fonderie de Bretagne",
     "sector": "Métallurgie / Fonderie",
-    "status": "pending"
-  },
-  "47f08dac2e2d": {
-    "date": "2026-07-13",
-    "name": "Le Journal des Entreprises",
-    "sector": "Médias / Presse spécialisée",
-    "status": "pending"
-  },
-  "4abebd2924f2": {
-    "date": "2026-07-13",
-    "name": "KEP Technologies",
-    "sector": "Industrie / Instrumentation",
     "status": "pending"
   },
   "591d67f0fa18": {
@@ -132,12 +110,6 @@
     "sector": "BTP",
     "status": "pending"
   },
-  "7e4ae3b981c2": {
-    "date": "2026-07-13",
-    "name": "Urbasolar",
-    "sector": "Energie / Solaire",
-    "status": "pending"
-  },
   "7f0ea4bd37f0": {
     "date": "2026-07-23",
     "dirigeant": null,
@@ -159,12 +131,6 @@
     "sector": "Restauration / Franchise",
     "status": "pending"
   },
-  "88519ffd838e": {
-    "date": "2026-07-13",
-    "name": "Lebronze Alloys",
-    "sector": "Métallurgie / Industrie",
-    "status": "pending"
-  },
   "93d5a9606dfb": {
     "date": "2026-07-15",
     "dirigeant": null,
@@ -178,10 +144,11 @@
     "sector": "Distribution automatique",
     "status": "pending"
   },
-  "a6fe545d1ce8": {
-    "date": "2026-07-13",
-    "name": "Marionnaud",
-    "sector": "Distribution / Parfumerie",
+  "aaf6fc5c08f7": {
+    "date": "2026-07-27",
+    "dirigeant": null,
+    "name": "Wifirst",
+    "sector": "Tech / WiFi managé",
     "status": "pending"
   },
   "ab9bc191ee3d": {
@@ -210,23 +177,11 @@
     "sector": "Industrie manufacturière",
     "status": "pending"
   },
-  "c5462c329529": {
-    "date": "2026-07-13",
-    "name": "NSI Groupe",
-    "sector": "Services / Distribution B2B",
-    "status": "pending"
-  },
   "d242082da66b": {
     "date": "2026-07-24",
     "dirigeant": null,
     "name": "Nosoli (Furet du Nord / Decitre)",
     "sector": "Distribution / Librairie",
-    "status": "pending"
-  },
-  "d6d4fad09f12": {
-    "date": "2026-07-13",
-    "name": "Flauraud",
-    "sector": "Distribution automobile",
     "status": "pending"
   },
   "dec3a664ff45": {
@@ -257,16 +212,17 @@
     "sector": "Logiciels / Intelligence artificielle",
     "status": "pending"
   },
-  "e80c366379d4": {
-    "date": "2026-07-13",
-    "name": "Rydge Conseil",
-    "sector": "Conseil / Expertise comptable",
-    "status": "pending"
-  },
   "ec18cde05632": {
     "date": "2026-07-14",
     "name": "Tech Power Electronics",
     "sector": "Electronique industrielle",
+    "status": "pending"
+  },
+  "ee33169f59ba": {
+    "date": "2026-07-27",
+    "dirigeant": null,
+    "name": "Instant System",
+    "sector": "Mobilité / Tech (MaaS)",
     "status": "pending"
   },
   "f0ae4c1351ef": {
@@ -281,12 +237,6 @@
     "dirigeant": null,
     "name": "Calip Group",
     "sector": "Industrie / Sous-traitance",
-    "status": "pending"
-  },
-  "f802e0705f48": {
-    "date": "2026-07-13",
-    "name": "Groupe Urban Loisirs",
-    "sector": "Loisirs / Tourisme",
     "status": "pending"
   },
   "fd8c4510c7ad": {
