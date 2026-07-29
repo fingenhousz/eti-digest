@@ -55,13 +55,6 @@
     "sector": "Commerce / Textile",
     "status": "pending"
   },
-  "2b762f2549bc": {
-    "date": "2026-07-15",
-    "dirigeant": null,
-    "name": "Sauramps",
-    "sector": "Distribution / Librairie",
-    "status": "pending"
-  },
   "2c08a23937db": {
     "date": "2026-07-24",
     "dirigeant": null,
@@ -90,32 +83,19 @@
     "sector": "Distribution fournitures bureau / B2B",
     "status": "pending"
   },
+  "5a985b1c0f21": {
+    "date": "2026-07-29",
+    "dirigeant": null,
+    "name": "Ziegler France",
+    "sector": "Transport / Logistique",
+    "status": "pending"
+  },
   "62e4e012916d": {
     "date": "2026-07-16",
     "dirigeant": null,
     "name": "Eolane",
     "sector": "Electronique / Défense",
     "status": "pending"
-  },
-  "673dfcdadce8": {
-    "date": "2026-07-15",
-    "dirigeant": null,
-    "name": "Hydrokit",
-    "sector": "Industrie / Hydraulique",
-    "status": "pending"
-  },
-  "7540122d44af": {
-    "date": "2026-07-15",
-    "dirigeant": null,
-    "name": "France Teinture",
-    "sector": "Textile / Teinturerie industrielle",
-    "status": "pending"
-  },
-  "77c8f287e56c": {
-    "date": "2026-07-15",
-    "name": "Polyart",
-    "sector": "Emballage / Etiquettes",
-    "status": "interested"
   },
   "7d03cd5243b8": {
     "date": "2026-07-16",
@@ -145,19 +125,6 @@
     "sector": "Restauration / Franchise",
     "status": "pending"
   },
-  "93d5a9606dfb": {
-    "date": "2026-07-15",
-    "dirigeant": null,
-    "name": "Groupe Bayard",
-    "sector": "Médias / Edition",
-    "status": "pending"
-  },
-  "9513c6a61f47": {
-    "date": "2026-07-15",
-    "name": "Agena 3000",
-    "sector": "Distribution automatique",
-    "status": "pending"
-  },
   "aaf6fc5c08f7": {
     "date": "2026-07-27",
     "dirigeant": null,
@@ -165,11 +132,12 @@
     "sector": "Tech / WiFi managé",
     "status": "pending"
   },
-  "afdf55c048c5": {
-    "date": "2026-07-15",
-    "name": "Groupe Fauché",
-    "sector": "Electricité / BTP",
-    "status": "interested"
+  "b188284f297d": {
+    "date": "2026-07-29",
+    "dirigeant": null,
+    "name": "Okaïdi",
+    "sector": "Distribution / Retail enfant",
+    "status": "pending"
   },
   "bc20fc39b254": {
     "date": "2026-07-22",
@@ -211,6 +179,13 @@
     "dirigeant": null,
     "name": "CHANOAR",
     "sector": "Services / Industrie",
+    "status": "pending"
+  },
+  "e382e486244f": {
+    "date": "2026-07-29",
+    "dirigeant": "Marine Serre",
+    "name": "Marine Serre",
+    "sector": "Mode / Luxe",
     "status": "pending"
   },
   "e5f5b02e9c4c": {
