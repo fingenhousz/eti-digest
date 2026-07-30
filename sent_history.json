@@ -76,6 +76,13 @@
     "sector": "Métallurgie / Fonderie",
     "status": "pending"
   },
+  "44e2732d1f28": {
+    "date": "2026-07-30",
+    "dirigeant": null,
+    "name": "Climb Up",
+    "sector": "Loisirs / Sport",
+    "status": "pending"
+  },
   "591d67f0fa18": {
     "date": "2026-07-23",
     "dirigeant": null,
@@ -90,18 +97,18 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
-  "62e4e012916d": {
-    "date": "2026-07-16",
+  "77c8f287e56c": {
+    "date": "2026-07-30",
     "dirigeant": null,
-    "name": "Eolane",
-    "sector": "Electronique / Défense",
+    "name": "Polyart",
+    "sector": "Industrie / Etiquettes",
     "status": "pending"
   },
-  "7d03cd5243b8": {
-    "date": "2026-07-16",
-    "dirigeant": "Paul Lhotellier",
-    "name": "Groupe Lhotellier",
-    "sector": "BTP",
+  "79ecf85020a3": {
+    "date": "2026-07-30",
+    "dirigeant": null,
+    "name": "In Extenso",
+    "sector": "Expertise comptable / Conseil",
     "status": "pending"
   },
   "7f0ea4bd37f0": {
@@ -167,18 +174,18 @@
     "sector": "Distribution / Pièces automobiles",
     "status": "pending"
   },
-  "dec3a664ff45": {
-    "date": "2026-07-16",
-    "dirigeant": "Sébastien Pillard",
-    "name": "Groupe Intermarché (Sébastien Pillard)",
-    "sector": "Distribution alimentaire",
-    "status": "pending"
-  },
   "e1edd38cf6db": {
     "date": "2026-07-22",
     "dirigeant": null,
     "name": "CHANOAR",
     "sector": "Services / Industrie",
+    "status": "pending"
+  },
+  "e2fe16bdfd0f": {
+    "date": "2026-07-30",
+    "dirigeant": "Sébastien Pillard",
+    "name": "Intermarché (groupe régional Sébastien Pillard)",
+    "sector": "Distribution alimentaire",
     "status": "pending"
   },
   "e382e486244f": {
