@@ -83,6 +83,20 @@
     "sector": "Loisirs / Sport",
     "status": "pending"
   },
+  "47f08dac2e2d": {
+    "date": "2026-07-31",
+    "dirigeant": null,
+    "name": "Le Journal des Entreprises",
+    "sector": "Médias / Presse économique",
+    "status": "pending"
+  },
+  "573c558c1878": {
+    "date": "2026-07-31",
+    "dirigeant": null,
+    "name": "Duralex",
+    "sector": "Industrie verrière",
+    "status": "pending"
+  },
   "591d67f0fa18": {
     "date": "2026-07-23",
     "dirigeant": null,
@@ -111,18 +125,18 @@
     "sector": "Expertise comptable / Conseil",
     "status": "pending"
   },
+  "7e4ae3b981c2": {
+    "date": "2026-07-31",
+    "dirigeant": null,
+    "name": "Urbasolar",
+    "sector": "Energies renouvelables",
+    "status": "pending"
+  },
   "7f0ea4bd37f0": {
     "date": "2026-07-23",
     "dirigeant": null,
     "name": "Penet",
     "sector": "BTP",
-    "status": "pending"
-  },
-  "81e7f820fa93": {
-    "date": "2026-07-17",
-    "dirigeant": null,
-    "name": "MYMIKA",
-    "sector": "Distribution / Commerce",
     "status": "pending"
   },
   "86b37e9b29d1": {
@@ -174,6 +188,13 @@
     "sector": "Distribution / Pièces automobiles",
     "status": "pending"
   },
+  "e04f64d478ca": {
+    "date": "2026-07-31",
+    "dirigeant": "Samuel BRIGANTINO",
+    "name": "Glass Express France",
+    "sector": "Vitrage automobile",
+    "status": "pending"
+  },
   "e1edd38cf6db": {
     "date": "2026-07-22",
     "dirigeant": null,
@@ -214,13 +235,6 @@
     "dirigeant": null,
     "name": "Instant System",
     "sector": "Mobilité / Tech (MaaS)",
-    "status": "pending"
-  },
-  "f0ae4c1351ef": {
-    "date": "2026-07-17",
-    "dirigeant": null,
-    "name": "SAS CANNES TONNER ROUBINE",
-    "sector": "Viticulture / Agroalimentaire",
     "status": "pending"
   },
   "f58bc6c42484": {
