@@ -20,13 +20,6 @@
     "sector": "Distribution / Retail",
     "status": "pending"
   },
-  "0b9bc5391dee": {
-    "date": "2026-07-20",
-    "dirigeant": null,
-    "name": "Acteon",
-    "sector": "Industrie / Matériel médical",
-    "status": "pending"
-  },
   "0cfd9b95d215": {
     "date": "2026-07-21",
     "dirigeant": null,
@@ -146,6 +139,13 @@
     "sector": "Restauration / Franchise",
     "status": "pending"
   },
+  "8f078cc689dd": {
+    "date": "2026-08-03",
+    "dirigeant": null,
+    "name": "Triballat (Rians)",
+    "sector": "Agroalimentaire",
+    "status": "pending"
+  },
   "aaf6fc5c08f7": {
     "date": "2026-07-27",
     "dirigeant": null,
@@ -160,6 +160,20 @@
     "sector": "Distribution / Retail enfant",
     "status": "pending"
   },
+  "b92d92a42f9f": {
+    "date": "2026-08-03",
+    "dirigeant": null,
+    "name": "De Dietrich (groupe)",
+    "sector": "Chimie / Industrie",
+    "status": "pending"
+  },
+  "b965edbf5af2": {
+    "date": "2026-08-03",
+    "dirigeant": null,
+    "name": "Boralex France",
+    "sector": "Energie renouvelable",
+    "status": "pending"
+  },
   "bc20fc39b254": {
     "date": "2026-07-22",
     "dirigeant": null,
@@ -167,11 +181,11 @@
     "sector": "Services numériques / Industrie",
     "status": "pending"
   },
-  "bc47637d775f": {
-    "date": "2026-07-20",
-    "dirigeant": null,
-    "name": "Aginode",
-    "sector": "Industrie manufacturière",
+  "cc9181f524d6": {
+    "date": "2026-08-03",
+    "dirigeant": "Youssef Tagemouati (nouveau directeur général)",
+    "name": "GLS France",
+    "sector": "Transport / Logistique",
     "status": "pending"
   },
   "d242082da66b": {
@@ -186,6 +200,13 @@
     "dirigeant": null,
     "name": "Flauraud",
     "sector": "Distribution / Pièces automobiles",
+    "status": "pending"
+  },
+  "dbecef286d76": {
+    "date": "2026-08-03",
+    "dirigeant": "Allan Swan (nouveau directeur général)",
+    "name": "ACC (Automotive Cells Company)",
+    "sector": "Industrie / Batteries électriques",
     "status": "pending"
   },
   "e04f64d478ca": {
@@ -235,13 +256,6 @@
     "dirigeant": null,
     "name": "Instant System",
     "sector": "Mobilité / Tech (MaaS)",
-    "status": "pending"
-  },
-  "f58bc6c42484": {
-    "date": "2026-07-20",
-    "dirigeant": null,
-    "name": "Calip Group",
-    "sector": "Industrie / Sous-traitance",
     "status": "pending"
   },
   "fd8c4510c7ad": {
