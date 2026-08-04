@@ -1,4 +1,11 @@
 {
+  "007d8cd98f2a": {
+    "date": "2026-08-04",
+    "dirigeant": null,
+    "name": "Maisons du Monde",
+    "sector": "Ameublement / Décoration",
+    "status": "pending"
+  },
   "037473c3c4c4": {
     "date": "2026-07-28",
     "dirigeant": null,
@@ -21,7 +28,7 @@
     "status": "pending"
   },
   "0cfd9b95d215": {
-    "date": "2026-07-21",
+    "date": "2026-08-04",
     "dirigeant": null,
     "name": "Fibre Excellence",
     "sector": "Industrie papetière",
@@ -60,13 +67,6 @@
     "dirigeant": null,
     "name": "Novasep",
     "sector": "Industrie pharmaceutique / CDMO",
-    "status": "pending"
-  },
-  "43978eaf1a1c": {
-    "date": "2026-07-21",
-    "dirigeant": null,
-    "name": "Fonderie de Bretagne",
-    "sector": "Métallurgie / Fonderie",
     "status": "pending"
   },
   "44e2732d1f28": {
