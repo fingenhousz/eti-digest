@@ -83,6 +83,13 @@
     "sector": "Médias / Presse économique",
     "status": "pending"
   },
+  "4abebd2924f2": {
+    "date": "2026-08-05",
+    "dirigeant": null,
+    "name": "KEP Technologies",
+    "sector": "Industrie / Technologie",
+    "status": "pending"
+  },
   "573c558c1878": {
     "date": "2026-07-31",
     "dirigeant": null,
@@ -118,6 +125,13 @@
     "sector": "Expertise comptable / Conseil",
     "status": "pending"
   },
+  "7d03cd5243b8": {
+    "date": "2026-08-05",
+    "dirigeant": "Paul Lhotellier",
+    "name": "Groupe Lhotellier",
+    "sector": "BTP",
+    "status": "pending"
+  },
   "7e4ae3b981c2": {
     "date": "2026-07-31",
     "dirigeant": null,
@@ -146,6 +160,13 @@
     "sector": "Agroalimentaire",
     "status": "pending"
   },
+  "93d5a9606dfb": {
+    "date": "2026-08-05",
+    "dirigeant": null,
+    "name": "Groupe Bayard",
+    "sector": "Médias / Edition",
+    "status": "pending"
+  },
   "aaf6fc5c08f7": {
     "date": "2026-07-27",
     "dirigeant": null,
@@ -172,13 +193,6 @@
     "dirigeant": null,
     "name": "Boralex France",
     "sector": "Energie renouvelable",
-    "status": "pending"
-  },
-  "bc20fc39b254": {
-    "date": "2026-07-22",
-    "dirigeant": null,
-    "name": "Groupe Positive / Sigilium",
-    "sector": "Services numériques / Industrie",
     "status": "pending"
   },
   "cc9181f524d6": {
@@ -216,13 +230,6 @@
     "sector": "Vitrage automobile",
     "status": "pending"
   },
-  "e1edd38cf6db": {
-    "date": "2026-07-22",
-    "dirigeant": null,
-    "name": "CHANOAR",
-    "sector": "Services / Industrie",
-    "status": "pending"
-  },
   "e2fe16bdfd0f": {
     "date": "2026-07-30",
     "dirigeant": "Sébastien Pillard",
@@ -235,20 +242,6 @@
     "dirigeant": "Marine Serre",
     "name": "Marine Serre",
     "sector": "Mode / Luxe",
-    "status": "pending"
-  },
-  "e5f5b02e9c4c": {
-    "date": "2026-07-22",
-    "dirigeant": null,
-    "name": "Groupe Bowi / Menuiserie Roux Frères",
-    "sector": "BTP / Menuiserie",
-    "status": "pending"
-  },
-  "e6bfaa9da01c": {
-    "date": "2026-07-22",
-    "dirigeant": null,
-    "name": "ChapsVision",
-    "sector": "Logiciels / Intelligence artificielle",
     "status": "pending"
   },
   "ee33169f59ba": {
