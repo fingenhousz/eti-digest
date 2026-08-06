@@ -21,7 +21,7 @@
     "status": "pending"
   },
   "0a3c884e7bea": {
-    "date": "2026-07-23",
+    "date": "2026-08-06",
     "dirigeant": null,
     "name": "Groupe Pandora",
     "sector": "Distribution / Retail",
@@ -62,11 +62,11 @@
     "sector": "Carrosserie industrielle / Transformation véhicules",
     "status": "pending"
   },
-  "38a7bdef6e10": {
-    "date": "2026-07-23",
+  "3088ecd1c4fa": {
+    "date": "2026-08-06",
     "dirigeant": null,
-    "name": "Novasep",
-    "sector": "Industrie pharmaceutique / CDMO",
+    "name": "AU Group",
+    "sector": "Courtage / Assurance-crédit",
     "status": "pending"
   },
   "44e2732d1f28": {
@@ -95,13 +95,6 @@
     "dirigeant": null,
     "name": "Duralex",
     "sector": "Industrie verrière",
-    "status": "pending"
-  },
-  "591d67f0fa18": {
-    "date": "2026-07-23",
-    "dirigeant": null,
-    "name": "Groupe Bruneau",
-    "sector": "Distribution fournitures bureau / B2B",
     "status": "pending"
   },
   "5a985b1c0f21": {
@@ -137,13 +130,6 @@
     "dirigeant": null,
     "name": "Urbasolar",
     "sector": "Energies renouvelables",
-    "status": "pending"
-  },
-  "7f0ea4bd37f0": {
-    "date": "2026-07-23",
-    "dirigeant": null,
-    "name": "Penet",
-    "sector": "BTP",
     "status": "pending"
   },
   "86b37e9b29d1": {
@@ -193,6 +179,13 @@
     "dirigeant": null,
     "name": "Boralex France",
     "sector": "Energie renouvelable",
+    "status": "pending"
+  },
+  "bd6c38fa993c": {
+    "date": "2026-08-06",
+    "dirigeant": null,
+    "name": "Groupe Bowi",
+    "sector": "Menuiserie / BTP",
     "status": "pending"
   },
   "cc9181f524d6": {
@@ -249,13 +242,6 @@
     "dirigeant": null,
     "name": "Instant System",
     "sector": "Mobilité / Tech (MaaS)",
-    "status": "pending"
-  },
-  "fd8c4510c7ad": {
-    "date": "2026-07-23",
-    "dirigeant": null,
-    "name": "ID Verde",
-    "sector": "Services environnement / espaces verts",
     "status": "pending"
   }
 }
