@@ -34,13 +34,6 @@
     "sector": "Industrie papetière",
     "status": "pending"
   },
-  "16c8deb2b1ae": {
-    "date": "2026-07-24",
-    "dirigeant": "Augusto FERREIRA QUINTEIRO",
-    "name": "NSD",
-    "sector": "Services",
-    "status": "pending"
-  },
   "20509f04f258": {
     "date": "2026-07-28",
     "dirigeant": null,
@@ -56,10 +49,10 @@
     "status": "pending"
   },
   "2c08a23937db": {
-    "date": "2026-07-24",
+    "date": "2026-08-07",
     "dirigeant": null,
     "name": "Durisotti",
-    "sector": "Carrosserie industrielle / Transformation véhicules",
+    "sector": "Industrie / Carrosserie véhicules",
     "status": "pending"
   },
   "3088ecd1c4fa": {
@@ -97,6 +90,13 @@
     "sector": "Industrie verrière",
     "status": "pending"
   },
+  "591d67f0fa18": {
+    "date": "2026-08-07",
+    "dirigeant": null,
+    "name": "Groupe Bruneau",
+    "sector": "Distribution / Fournitures bureau",
+    "status": "pending"
+  },
   "5a985b1c0f21": {
     "date": "2026-07-29",
     "dirigeant": null,
@@ -132,13 +132,6 @@
     "sector": "Energies renouvelables",
     "status": "pending"
   },
-  "86b37e9b29d1": {
-    "date": "2026-07-24",
-    "dirigeant": null,
-    "name": "Baudaire (La Boucherie / Courtepaille)",
-    "sector": "Restauration / Franchise",
-    "status": "pending"
-  },
   "8f078cc689dd": {
     "date": "2026-08-03",
     "dirigeant": null,
@@ -151,6 +144,13 @@
     "dirigeant": null,
     "name": "Groupe Bayard",
     "sector": "Médias / Edition",
+    "status": "pending"
+  },
+  "9dffcd4970fa": {
+    "date": "2026-08-07",
+    "dirigeant": null,
+    "name": "Lapierre",
+    "sector": "Industrie / Vélo",
     "status": "pending"
   },
   "aaf6fc5c08f7": {
@@ -195,13 +195,6 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
-  "d242082da66b": {
-    "date": "2026-07-24",
-    "dirigeant": null,
-    "name": "Nosoli (Furet du Nord / Decitre)",
-    "sector": "Distribution / Librairie",
-    "status": "pending"
-  },
   "d6d4fad09f12": {
     "date": "2026-07-28",
     "dirigeant": null,
@@ -235,6 +228,13 @@
     "dirigeant": "Marine Serre",
     "name": "Marine Serre",
     "sector": "Mode / Luxe",
+    "status": "pending"
+  },
+  "e6bfaa9da01c": {
+    "date": "2026-08-07",
+    "dirigeant": null,
+    "name": "ChapsVision",
+    "sector": "Editeur logiciels / IA",
     "status": "pending"
   },
   "ee33169f59ba": {
