@@ -6,13 +6,6 @@
     "sector": "Ameublement / Décoration",
     "status": "pending"
   },
-  "037473c3c4c4": {
-    "date": "2026-07-28",
-    "dirigeant": null,
-    "name": "Somfy",
-    "sector": "Industrie / Domotique",
-    "status": "pending"
-  },
   "0a3c884e7bea": {
     "date": "2026-08-06",
     "dirigeant": null,
@@ -25,13 +18,6 @@
     "dirigeant": null,
     "name": "Fibre Excellence",
     "sector": "Industrie papetière",
-    "status": "pending"
-  },
-  "20509f04f258": {
-    "date": "2026-07-28",
-    "dirigeant": null,
-    "name": "HYGIE",
-    "sector": "Services / Santé",
     "status": "pending"
   },
   "27ac87c51d1c": {
@@ -53,6 +39,13 @@
     "dirigeant": null,
     "name": "AU Group",
     "sector": "Courtage / Assurance-crédit",
+    "status": "pending"
+  },
+  "43978eaf1a1c": {
+    "date": "2026-08-11",
+    "dirigeant": null,
+    "name": "Fonderie de Bretagne",
+    "sector": "Industrie / Fonderie",
     "status": "pending"
   },
   "44e2732d1f28": {
@@ -109,6 +102,13 @@
     "dirigeant": null,
     "name": "Ziegler France",
     "sector": "Transport / Logistique",
+    "status": "pending"
+  },
+  "6c2797a27d14": {
+    "date": "2026-08-11",
+    "dirigeant": "Jean-Marc GUIHARD",
+    "name": "TALENDI",
+    "sector": "Services / RH",
     "status": "pending"
   },
   "77c8f287e56c": {
@@ -195,11 +195,11 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
-  "d6d4fad09f12": {
-    "date": "2026-07-28",
+  "ce3fa3373d13": {
+    "date": "2026-08-11",
     "dirigeant": null,
-    "name": "Flauraud",
-    "sector": "Distribution / Pièces automobiles",
+    "name": "Seqens",
+    "sector": "Industrie / Pharmacie",
     "status": "pending"
   },
   "dbecef286d76": {
