@@ -6,6 +6,13 @@
     "sector": "Ameublement / Décoration",
     "status": "pending"
   },
+  "037473c3c4c4": {
+    "date": "2026-08-12",
+    "dirigeant": null,
+    "name": "Somfy",
+    "sector": "Industrie / Domotique",
+    "status": "pending"
+  },
   "0a3c884e7bea": {
     "date": "2026-08-06",
     "dirigeant": null,
@@ -97,13 +104,6 @@
     "sector": "Distribution / Fournitures bureau",
     "status": "pending"
   },
-  "5a985b1c0f21": {
-    "date": "2026-07-29",
-    "dirigeant": null,
-    "name": "Ziegler France",
-    "sector": "Transport / Logistique",
-    "status": "pending"
-  },
   "6c2797a27d14": {
     "date": "2026-08-11",
     "dirigeant": "Jean-Marc GUIHARD",
@@ -160,11 +160,18 @@
     "sector": "Industrie / Vélo",
     "status": "pending"
   },
+  "aa574b07bc9b": {
+    "date": "2026-08-12",
+    "dirigeant": null,
+    "name": "Gibert",
+    "sector": "Distribution / Librairie",
+    "status": "pending"
+  },
   "b188284f297d": {
-    "date": "2026-07-29",
+    "date": "2026-08-12",
     "dirigeant": null,
     "name": "Okaïdi",
-    "sector": "Distribution / Retail enfant",
+    "sector": "Distribution / Mode enfant",
     "status": "pending"
   },
   "b92d92a42f9f": {
@@ -202,6 +209,13 @@
     "sector": "Industrie / Pharmacie",
     "status": "pending"
   },
+  "d6d4fad09f12": {
+    "date": "2026-08-12",
+    "dirigeant": null,
+    "name": "Flauraud",
+    "sector": "Distribution / Pièces automobiles",
+    "status": "pending"
+  },
   "dbecef286d76": {
     "date": "2026-08-03",
     "dirigeant": "Allan Swan (nouveau directeur général)",
@@ -221,13 +235,6 @@
     "dirigeant": "Sébastien Pillard",
     "name": "Intermarché (groupe régional Sébastien Pillard)",
     "sector": "Distribution alimentaire",
-    "status": "pending"
-  },
-  "e382e486244f": {
-    "date": "2026-07-29",
-    "dirigeant": "Marine Serre",
-    "name": "Marine Serre",
-    "sector": "Mode / Luxe",
     "status": "pending"
   },
   "e6bfaa9da01c": {
