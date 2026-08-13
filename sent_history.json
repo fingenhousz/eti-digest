@@ -56,7 +56,7 @@
     "status": "pending"
   },
   "44e2732d1f28": {
-    "date": "2026-07-30",
+    "date": "2026-08-13",
     "dirigeant": null,
     "name": "Climb Up",
     "sector": "Loisirs / Sport",
@@ -111,20 +111,6 @@
     "sector": "Services / RH",
     "status": "pending"
   },
-  "77c8f287e56c": {
-    "date": "2026-07-30",
-    "dirigeant": null,
-    "name": "Polyart",
-    "sector": "Industrie / Etiquettes",
-    "status": "pending"
-  },
-  "79ecf85020a3": {
-    "date": "2026-07-30",
-    "dirigeant": null,
-    "name": "In Extenso",
-    "sector": "Expertise comptable / Conseil",
-    "status": "pending"
-  },
   "7d03cd5243b8": {
     "date": "2026-08-05",
     "dirigeant": "Paul Lhotellier",
@@ -137,6 +123,13 @@
     "dirigeant": null,
     "name": "Urbasolar",
     "sector": "Energies renouvelables",
+    "status": "pending"
+  },
+  "810db999fc6a": {
+    "date": "2026-08-13",
+    "dirigeant": null,
+    "name": "Groupe Positive",
+    "sector": "Services / Numérique",
     "status": "pending"
   },
   "8f078cc689dd": {
@@ -195,6 +188,13 @@
     "sector": "Menuiserie / BTP",
     "status": "pending"
   },
+  "c547e70996e2": {
+    "date": "2026-08-13",
+    "dirigeant": null,
+    "name": "Meca Inox",
+    "sector": "Industrie / Equipements",
+    "status": "pending"
+  },
   "cc9181f524d6": {
     "date": "2026-08-03",
     "dirigeant": "Youssef Tagemouati (nouveau directeur général)",
@@ -228,13 +228,6 @@
     "dirigeant": "Samuel BRIGANTINO",
     "name": "Glass Express France",
     "sector": "Vitrage automobile",
-    "status": "pending"
-  },
-  "e2fe16bdfd0f": {
-    "date": "2026-07-30",
-    "dirigeant": "Sébastien Pillard",
-    "name": "Intermarché (groupe régional Sébastien Pillard)",
-    "sector": "Distribution alimentaire",
     "status": "pending"
   },
   "e6bfaa9da01c": {
