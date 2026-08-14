@@ -6,6 +6,13 @@
     "sector": "Ameublement / Décoration",
     "status": "pending"
   },
+  "01159f42eaea": {
+    "date": "2026-08-14",
+    "dirigeant": "Gad WEIL",
+    "name": "LA FONDERIE",
+    "sector": "Spectacle vivant / Culture",
+    "status": "pending"
+  },
   "037473c3c4c4": {
     "date": "2026-08-12",
     "dirigeant": null,
@@ -69,13 +76,6 @@
     "sector": "Retail / Agencement",
     "status": "pending"
   },
-  "47f08dac2e2d": {
-    "date": "2026-07-31",
-    "dirigeant": null,
-    "name": "Le Journal des Entreprises",
-    "sector": "Médias / Presse économique",
-    "status": "pending"
-  },
   "4abebd2924f2": {
     "date": "2026-08-05",
     "dirigeant": null,
@@ -88,13 +88,6 @@
     "dirigeant": null,
     "name": "Groupe Baudaire",
     "sector": "Restauration",
-    "status": "pending"
-  },
-  "573c558c1878": {
-    "date": "2026-07-31",
-    "dirigeant": null,
-    "name": "Duralex",
-    "sector": "Industrie verrière",
     "status": "pending"
   },
   "591d67f0fa18": {
@@ -119,9 +112,9 @@
     "status": "pending"
   },
   "7e4ae3b981c2": {
-    "date": "2026-07-31",
+    "date": "2026-08-14",
     "dirigeant": null,
-    "name": "Urbasolar",
+    "name": "URBASOLAR",
     "sector": "Energies renouvelables",
     "status": "pending"
   },
@@ -151,6 +144,13 @@
     "dirigeant": null,
     "name": "Lapierre",
     "sector": "Industrie / Vélo",
+    "status": "pending"
+  },
+  "a61e88c9b05e": {
+    "date": "2026-08-14",
+    "dirigeant": null,
+    "name": "LA BOITE IMMO",
+    "sector": "Édition de logiciels immobiliers",
     "status": "pending"
   },
   "aa574b07bc9b": {
@@ -221,13 +221,6 @@
     "dirigeant": "Allan Swan (nouveau directeur général)",
     "name": "ACC (Automotive Cells Company)",
     "sector": "Industrie / Batteries électriques",
-    "status": "pending"
-  },
-  "e04f64d478ca": {
-    "date": "2026-07-31",
-    "dirigeant": "Samuel BRIGANTINO",
-    "name": "Glass Express France",
-    "sector": "Vitrage automobile",
     "status": "pending"
   },
   "e6bfaa9da01c": {
