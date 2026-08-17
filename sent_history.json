@@ -20,6 +20,13 @@
     "sector": "Industrie / Domotique",
     "status": "pending"
   },
+  "03d709a3f065": {
+    "date": "2026-08-17",
+    "dirigeant": null,
+    "name": "ESSOR",
+    "sector": "Services / Social",
+    "status": "pending"
+  },
   "0a3c884e7bea": {
     "date": "2026-08-06",
     "dirigeant": null,
@@ -125,13 +132,6 @@
     "sector": "Services / Numérique",
     "status": "pending"
   },
-  "8f078cc689dd": {
-    "date": "2026-08-03",
-    "dirigeant": null,
-    "name": "Triballat (Rians)",
-    "sector": "Agroalimentaire",
-    "status": "pending"
-  },
   "93d5a9606dfb": {
     "date": "2026-08-05",
     "dirigeant": null,
@@ -160,6 +160,13 @@
     "sector": "Distribution / Librairie",
     "status": "pending"
   },
+  "afdf55c048c5": {
+    "date": "2026-08-17",
+    "dirigeant": null,
+    "name": "Groupe Fauché",
+    "sector": "BTP / Electricité industrielle",
+    "status": "pending"
+  },
   "b188284f297d": {
     "date": "2026-08-12",
     "dirigeant": null,
@@ -167,15 +174,8 @@
     "sector": "Distribution / Mode enfant",
     "status": "pending"
   },
-  "b92d92a42f9f": {
-    "date": "2026-08-03",
-    "dirigeant": null,
-    "name": "De Dietrich (groupe)",
-    "sector": "Chimie / Industrie",
-    "status": "pending"
-  },
   "b965edbf5af2": {
-    "date": "2026-08-03",
+    "date": "2026-08-17",
     "dirigeant": null,
     "name": "Boralex France",
     "sector": "Energie renouvelable",
@@ -188,18 +188,18 @@
     "sector": "Menuiserie / BTP",
     "status": "pending"
   },
+  "c292bc6d7619": {
+    "date": "2026-08-17",
+    "dirigeant": "Angélique Longeray (nouvelle DG France)",
+    "name": "Groupe Atlantic",
+    "sector": "Industrie / Chauffage",
+    "status": "pending"
+  },
   "c547e70996e2": {
     "date": "2026-08-13",
     "dirigeant": null,
     "name": "Meca Inox",
     "sector": "Industrie / Equipements",
-    "status": "pending"
-  },
-  "cc9181f524d6": {
-    "date": "2026-08-03",
-    "dirigeant": "Youssef Tagemouati (nouveau directeur général)",
-    "name": "GLS France",
-    "sector": "Transport / Logistique",
     "status": "pending"
   },
   "ce3fa3373d13": {
@@ -214,13 +214,6 @@
     "dirigeant": null,
     "name": "Flauraud",
     "sector": "Distribution / Pièces automobiles",
-    "status": "pending"
-  },
-  "dbecef286d76": {
-    "date": "2026-08-03",
-    "dirigeant": "Allan Swan (nouveau directeur général)",
-    "name": "ACC (Automotive Cells Company)",
-    "sector": "Industrie / Batteries électriques",
     "status": "pending"
   },
   "e6bfaa9da01c": {
