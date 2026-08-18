@@ -1,11 +1,4 @@
 {
-  "007d8cd98f2a": {
-    "date": "2026-08-04",
-    "dirigeant": null,
-    "name": "Maisons du Monde",
-    "sector": "Ameublement / Décoration",
-    "status": "pending"
-  },
   "01159f42eaea": {
     "date": "2026-08-14",
     "dirigeant": "Gad WEIL",
@@ -35,10 +28,10 @@
     "status": "pending"
   },
   "0cfd9b95d215": {
-    "date": "2026-08-04",
+    "date": "2026-08-18",
     "dirigeant": null,
     "name": "Fibre Excellence",
-    "sector": "Industrie papetière",
+    "sector": "Papier / Industrie",
     "status": "pending"
   },
   "27ac87c51d1c": {
@@ -228,6 +221,20 @@
     "dirigeant": null,
     "name": "Instant System",
     "sector": "Mobilité / Tech (MaaS)",
+    "status": "pending"
+  },
+  "f2d02ff59c34": {
+    "date": "2026-08-18",
+    "dirigeant": "Emmanuel BERDER",
+    "name": "CLESTRA FRANCE",
+    "sector": "Aménagement intérieur / cloisons",
+    "status": "pending"
+  },
+  "f802e0705f48": {
+    "date": "2026-08-18",
+    "dirigeant": null,
+    "name": "Groupe Urban Loisirs",
+    "sector": "Loisirs / Tourisme",
     "status": "pending"
   }
 }
