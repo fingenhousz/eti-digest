@@ -55,6 +55,13 @@
     "sector": "Courtage / Assurance-crédit",
     "status": "pending"
   },
+  "38a7bdef6e10": {
+    "date": "2026-08-19",
+    "dirigeant": null,
+    "name": "Novasep",
+    "sector": "Pharmacie / Chimie fine",
+    "status": "pending"
+  },
   "43978eaf1a1c": {
     "date": "2026-08-11",
     "dirigeant": null,
@@ -77,10 +84,10 @@
     "status": "pending"
   },
   "4abebd2924f2": {
-    "date": "2026-08-05",
+    "date": "2026-08-19",
     "dirigeant": null,
     "name": "KEP Technologies",
-    "sector": "Industrie / Technologie",
+    "sector": "Industrie / Instrumentation",
     "status": "pending"
   },
   "55412d4645e5": {
@@ -97,18 +104,25 @@
     "sector": "Distribution / Fournitures bureau",
     "status": "pending"
   },
+  "5a985b1c0f21": {
+    "date": "2026-08-19",
+    "dirigeant": null,
+    "name": "Ziegler France",
+    "sector": "Transport / Logistique",
+    "status": "pending"
+  },
+  "62e4e012916d": {
+    "date": "2026-08-19",
+    "dirigeant": null,
+    "name": "Eolane",
+    "sector": "Electronique / Défense",
+    "status": "pending"
+  },
   "6c2797a27d14": {
     "date": "2026-08-11",
     "dirigeant": "Jean-Marc GUIHARD",
     "name": "TALENDI",
     "sector": "Services / RH",
-    "status": "pending"
-  },
-  "7d03cd5243b8": {
-    "date": "2026-08-05",
-    "dirigeant": "Paul Lhotellier",
-    "name": "Groupe Lhotellier",
-    "sector": "BTP",
     "status": "pending"
   },
   "7e4ae3b981c2": {
@@ -123,13 +137,6 @@
     "dirigeant": null,
     "name": "Groupe Positive",
     "sector": "Services / Numérique",
-    "status": "pending"
-  },
-  "93d5a9606dfb": {
-    "date": "2026-08-05",
-    "dirigeant": null,
-    "name": "Groupe Bayard",
-    "sector": "Médias / Edition",
     "status": "pending"
   },
   "9dffcd4970fa": {
