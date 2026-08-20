@@ -21,10 +21,10 @@
     "status": "pending"
   },
   "0a3c884e7bea": {
-    "date": "2026-08-06",
+    "date": "2026-08-20",
     "dirigeant": null,
     "name": "Groupe Pandora",
-    "sector": "Distribution / Retail",
+    "sector": "Services / Distribution",
     "status": "pending"
   },
   "0cfd9b95d215": {
@@ -46,13 +46,6 @@
     "dirigeant": null,
     "name": "Durisotti",
     "sector": "Industrie / Carrosserie véhicules",
-    "status": "pending"
-  },
-  "3088ecd1c4fa": {
-    "date": "2026-08-06",
-    "dirigeant": null,
-    "name": "AU Group",
-    "sector": "Courtage / Assurance-crédit",
     "status": "pending"
   },
   "38a7bdef6e10": {
@@ -160,6 +153,13 @@
     "sector": "Distribution / Librairie",
     "status": "pending"
   },
+  "aaf6fc5c08f7": {
+    "date": "2026-08-20",
+    "dirigeant": null,
+    "name": "Wifirst",
+    "sector": "Télécommunications / WiFi managé",
+    "status": "pending"
+  },
   "afdf55c048c5": {
     "date": "2026-08-17",
     "dirigeant": null,
@@ -182,10 +182,10 @@
     "status": "pending"
   },
   "bd6c38fa993c": {
-    "date": "2026-08-06",
+    "date": "2026-08-20",
     "dirigeant": null,
     "name": "Groupe Bowi",
-    "sector": "Menuiserie / BTP",
+    "sector": "Construction / Menuiserie",
     "status": "pending"
   },
   "c292bc6d7619": {
@@ -235,6 +235,13 @@
     "dirigeant": "Emmanuel BERDER",
     "name": "CLESTRA FRANCE",
     "sector": "Aménagement intérieur / cloisons",
+    "status": "pending"
+  },
+  "f2d1fa1c40ab": {
+    "date": "2026-08-20",
+    "dirigeant": null,
+    "name": "Lamberet",
+    "sector": "Carrosserie industrielle",
     "status": "pending"
   },
   "f802e0705f48": {
