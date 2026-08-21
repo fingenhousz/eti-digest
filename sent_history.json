@@ -41,18 +41,25 @@
     "sector": "Vente à distance / Mode",
     "status": "pending"
   },
-  "2c08a23937db": {
-    "date": "2026-08-07",
-    "dirigeant": null,
-    "name": "Durisotti",
-    "sector": "Industrie / Carrosserie véhicules",
-    "status": "pending"
-  },
   "38a7bdef6e10": {
     "date": "2026-08-19",
     "dirigeant": null,
     "name": "Novasep",
     "sector": "Pharmacie / Chimie fine",
+    "status": "pending"
+  },
+  "3bb3f3ec4df2": {
+    "date": "2026-08-21",
+    "dirigeant": "Nicolas MAURISSET",
+    "name": "AUSAR ENERGY",
+    "sector": "Énergie",
+    "status": "pending"
+  },
+  "4149b4fbc145": {
+    "date": "2026-08-21",
+    "dirigeant": null,
+    "name": "OFF FINANCIERE ET PARTICIPATIONS",
+    "sector": "Holding / Finance",
     "status": "pending"
   },
   "43978eaf1a1c": {
@@ -90,13 +97,6 @@
     "sector": "Restauration",
     "status": "pending"
   },
-  "591d67f0fa18": {
-    "date": "2026-08-07",
-    "dirigeant": null,
-    "name": "Groupe Bruneau",
-    "sector": "Distribution / Fournitures bureau",
-    "status": "pending"
-  },
   "5a985b1c0f21": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -130,13 +130,6 @@
     "dirigeant": null,
     "name": "Groupe Positive",
     "sector": "Services / Numérique",
-    "status": "pending"
-  },
-  "9dffcd4970fa": {
-    "date": "2026-08-07",
-    "dirigeant": null,
-    "name": "Lapierre",
-    "sector": "Industrie / Vélo",
     "status": "pending"
   },
   "a61e88c9b05e": {
@@ -214,13 +207,6 @@
     "dirigeant": null,
     "name": "Flauraud",
     "sector": "Distribution / Pièces automobiles",
-    "status": "pending"
-  },
-  "e6bfaa9da01c": {
-    "date": "2026-08-07",
-    "dirigeant": null,
-    "name": "ChapsVision",
-    "sector": "Editeur logiciels / IA",
     "status": "pending"
   },
   "ee33169f59ba": {
