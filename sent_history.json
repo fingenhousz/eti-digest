@@ -34,13 +34,6 @@
     "sector": "Papier / Industrie",
     "status": "pending"
   },
-  "27ac87c51d1c": {
-    "date": "2026-08-10",
-    "dirigeant": null,
-    "name": "Afibel",
-    "sector": "Vente à distance / Mode",
-    "status": "pending"
-  },
   "38a7bdef6e10": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -76,13 +69,6 @@
     "sector": "Loisirs / Sport",
     "status": "pending"
   },
-  "47d743f4a2d5": {
-    "date": "2026-08-10",
-    "dirigeant": null,
-    "name": "HMY",
-    "sector": "Retail / Agencement",
-    "status": "pending"
-  },
   "4abebd2924f2": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -91,9 +77,9 @@
     "status": "pending"
   },
   "55412d4645e5": {
-    "date": "2026-08-10",
+    "date": "2026-08-24",
     "dirigeant": null,
-    "name": "Groupe Baudaire",
+    "name": "GROUPE BAUDAIRE",
     "sector": "Restauration",
     "status": "pending"
   },
@@ -118,6 +104,13 @@
     "sector": "Services / RH",
     "status": "pending"
   },
+  "6fc115a0d019": {
+    "date": "2026-08-24",
+    "dirigeant": "Floris DE KORT",
+    "name": "POSEIDON BIDCO",
+    "sector": "Holding / Finance",
+    "status": "pending"
+  },
   "7e4ae3b981c2": {
     "date": "2026-08-14",
     "dirigeant": null,
@@ -130,6 +123,13 @@
     "dirigeant": null,
     "name": "Groupe Positive",
     "sector": "Services / Numérique",
+    "status": "pending"
+  },
+  "9dffcd4970fa": {
+    "date": "2026-08-24",
+    "dirigeant": null,
+    "name": "LAPIERRE",
+    "sector": "Industrie / Vélos",
     "status": "pending"
   },
   "a61e88c9b05e": {
@@ -207,13 +207,6 @@
     "dirigeant": null,
     "name": "Flauraud",
     "sector": "Distribution / Pièces automobiles",
-    "status": "pending"
-  },
-  "ee33169f59ba": {
-    "date": "2026-08-10",
-    "dirigeant": null,
-    "name": "Instant System",
-    "sector": "Mobilité / Tech (MaaS)",
     "status": "pending"
   },
   "f2d02ff59c34": {
