@@ -6,11 +6,11 @@
     "sector": "Spectacle vivant / Culture",
     "status": "pending"
   },
-  "037473c3c4c4": {
-    "date": "2026-08-12",
-    "dirigeant": null,
-    "name": "Somfy",
-    "sector": "Industrie / Domotique",
+  "030084c2f5f4": {
+    "date": "2026-08-26",
+    "dirigeant": "Alain FALC",
+    "name": "BIGBEN INTERACTIVE",
+    "sector": "Jeux vidéo / Electronique",
     "status": "pending"
   },
   "03d709a3f065": {
@@ -132,13 +132,6 @@
     "sector": "Édition de logiciels immobiliers",
     "status": "pending"
   },
-  "aa574b07bc9b": {
-    "date": "2026-08-12",
-    "dirigeant": null,
-    "name": "Gibert",
-    "sector": "Distribution / Librairie",
-    "status": "pending"
-  },
   "aaf6fc5c08f7": {
     "date": "2026-08-20",
     "dirigeant": null,
@@ -151,13 +144,6 @@
     "dirigeant": null,
     "name": "Groupe Fauché",
     "sector": "BTP / Electricité industrielle",
-    "status": "pending"
-  },
-  "b188284f297d": {
-    "date": "2026-08-12",
-    "dirigeant": null,
-    "name": "Okaïdi",
-    "sector": "Distribution / Mode enfant",
     "status": "pending"
   },
   "b965edbf5af2": {
@@ -200,13 +186,6 @@
     "dirigeant": null,
     "name": "Meca Inox",
     "sector": "Industrie / Equipements",
-    "status": "pending"
-  },
-  "d6d4fad09f12": {
-    "date": "2026-08-12",
-    "dirigeant": null,
-    "name": "Flauraud",
-    "sector": "Distribution / Pièces automobiles",
     "status": "pending"
   },
   "e438345908e4": {
