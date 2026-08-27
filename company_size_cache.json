@@ -13,6 +13,13 @@
     "dirigeant": null,
     "effectif": null
   },
+  "301160180": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:02:00.251285+00:00",
+    "dirigeant": "Francois ROUX-FOUILLET (Président du conseil d’administration)",
+    "effectif": "Au moins 1 salarié"
+  },
   "301223368": {
     "ca": null,
     "categorie": "PME",
@@ -46,20 +53,6 @@
     "categorie": "PME",
     "checked": "2026-08-12T06:01:33.394154+00:00",
     "dirigeant": "Philippe GAUDECHOUX (Président du conseil d’administration et directeur général)",
-    "effectif": null
-  },
-  "309383545": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:59.201876+00:00",
-    "dirigeant": "Stephan HAINKE (Gérant)",
-    "effectif": null
-  },
-  "309506699": {
-    "ca": 0.8,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:03.822666+00:00",
-    "dirigeant": "Claude BRON (Gérant)",
     "effectif": null
   },
   "310941547": {
@@ -118,6 +111,13 @@
     "dirigeant": "Eric LEJEUNE (Gérant)",
     "effectif": null
   },
+  "316420991": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:23.274319+00:00",
+    "dirigeant": null,
+    "effectif": null
+  },
   "316829837": {
     "ca": null,
     "categorie": "PME",
@@ -153,13 +153,6 @@
     "dirigeant": "Jacqueline DOUILLOT",
     "effectif": null
   },
-  "320710247": {
-    "ca": 0.8,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:06.118674+00:00",
-    "dirigeant": "Dominique SERVEAU (Gérant)",
-    "effectif": null
-  },
   "320992977": {
     "ca": 288.0,
     "categorie": "ETI",
@@ -188,6 +181,13 @@
     "dirigeant": "Richard AUBRY (Président de SAS)",
     "effectif": null
   },
+  "325185858": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:57.881457+00:00",
+    "dirigeant": "Francois PILON-BOUCHEZ (Commissaire aux comptes suppléant)",
+    "effectif": "0 salarié"
+  },
   "325213445": {
     "ca": null,
     "categorie": "PME",
@@ -214,6 +214,13 @@
     "categorie": null,
     "checked": "2026-07-30T06:01:20.060837+00:00",
     "dirigeant": "Emilie DE YESUS (Directeur Général)",
+    "effectif": "0 salarié"
+  },
+  "326707098": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:12.226942+00:00",
+    "dirigeant": "Elisabeth DOLLO",
     "effectif": "0 salarié"
   },
   "327396784": {
@@ -342,6 +349,13 @@
     "dirigeant": "Philippe VILMIN",
     "effectif": "0 salarié"
   },
+  "340028745": {
+    "ca": 2.7,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:43.954939+00:00",
+    "dirigeant": null,
+    "effectif": null
+  },
   "340964915": {
     "ca": 0.3,
     "categorie": "PME",
@@ -439,6 +453,13 @@
     "checked": "2026-08-26T06:01:41.034974+00:00",
     "dirigeant": "Charles DEGAN (Gérant)",
     "effectif": null
+  },
+  "350864096": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:40.232058+00:00",
+    "dirigeant": "COMPAGNET OLIVIER (Gérant et associé indéfiniment responsable)",
+    "effectif": "Au moins 1 salarié"
   },
   "350963427": {
     "ca": null,
@@ -545,6 +566,13 @@
     "dirigeant": "Eric VERDIER (Gérant)",
     "effectif": null
   },
+  "388016586": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:14.983290+00:00",
+    "dirigeant": "Jean TROCARD (Gérant et associé indéfiniment responsable)",
+    "effectif": "Entre 3 et 5 salariés"
+  },
   "388694325": {
     "ca": 2.2,
     "categorie": "PME",
@@ -601,6 +629,13 @@
     "dirigeant": "Jean-christophe BRACHET-BARBUS (Gérant)",
     "effectif": null
   },
+  "391576592": {
+    "ca": 1.3,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:56.904465+00:00",
+    "dirigeant": "Mathieu ROUSSEAU (Gérant)",
+    "effectif": null
+  },
   "391736022": {
     "ca": 0.1,
     "categorie": "PME",
@@ -634,13 +669,6 @@
     "categorie": null,
     "checked": "2026-07-28T06:01:13.470196+00:00",
     "dirigeant": "Ludovic BOIVIN (Gérant)",
-    "effectif": null
-  },
-  "393173034": {
-    "ca": 0.5,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:05.774967+00:00",
-    "dirigeant": "Maximilien DIEUPART (Gérant)",
     "effectif": null
   },
   "393337837": {
@@ -755,6 +783,13 @@
     "dirigeant": "Denis VADAINE (Gérant)",
     "effectif": null
   },
+  "401845011": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:14.154929+00:00",
+    "dirigeant": "Patricio DOS SANTOS",
+    "effectif": "Entre 3 et 5 salariés"
+  },
   "402384259": {
     "ca": null,
     "categorie": "PME",
@@ -781,13 +816,6 @@
     "categorie": "PME",
     "checked": "2026-08-11T06:01:50.951780+00:00",
     "dirigeant": "Danny BASTOS (Gérant)",
-    "effectif": null
-  },
-  "403680259": {
-    "ca": 0.6,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:09.318357+00:00",
-    "dirigeant": "Antonino MESSINA (Gérant)",
     "effectif": null
   },
   "403811136": {
@@ -944,13 +972,6 @@
     "dirigeant": "Luc LENERAND (Gérant)",
     "effectif": null
   },
-  "414724807": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:08.662064+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "414997155": {
     "ca": 5.7,
     "categorie": "PME",
@@ -1035,25 +1056,11 @@
     "dirigeant": null,
     "effectif": null
   },
-  "421698713": {
-    "ca": 0.8,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:49.693147+00:00",
-    "dirigeant": "Nathalie HECART (Président de SAS)",
-    "effectif": null
-  },
   "422607200": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-08-17T06:01:54.564396+00:00",
     "dirigeant": null,
-    "effectif": null
-  },
-  "422838383": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:21.586763+00:00",
-    "dirigeant": "Bertrand PETITBOULANGER (Gérant)",
     "effectif": null
   },
   "422907352": {
@@ -1089,6 +1096,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:17.752592+00:00",
     "dirigeant": "Martine RABOU (Gérant)",
+    "effectif": null
+  },
+  "423461722": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:30.037518+00:00",
+    "dirigeant": "Christine BOSSAERT (Gérant)",
     "effectif": null
   },
   "423718345": {
@@ -1168,13 +1182,6 @@
     "dirigeant": "Gilles PRIEUR",
     "effectif": "0 salarié"
   },
-  "431417039": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:50.483459+00:00",
-    "dirigeant": "Michel SEGURA (Gérant)",
-    "effectif": null
-  },
   "431583756": {
     "ca": null,
     "categorie": "PME",
@@ -1215,13 +1222,6 @@
     "categorie": "PME",
     "checked": "2026-07-29T06:01:41.665005+00:00",
     "dirigeant": "Patrick ANACHE (Gérant)",
-    "effectif": null
-  },
-  "432534022": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:22.284892+00:00",
-    "dirigeant": "Philippe EVON (Gérant)",
     "effectif": null
   },
   "432640365": {
@@ -1392,11 +1392,11 @@
     "dirigeant": "Christian LENOBLE (Président de SAS)",
     "effectif": null
   },
-  "444531560": {
+  "444197719": {
     "ca": null,
     "categorie": "PME",
-    "checked": "2026-07-27T06:03:01.820283+00:00",
-    "dirigeant": "Christian AMOUROUX",
+    "checked": "2026-08-27T06:01:25.478922+00:00",
+    "dirigeant": "Daniel DELIGNE (Gérant)",
     "effectif": null
   },
   "444836779": {
@@ -1553,6 +1553,13 @@
     "dirigeant": "MALTA ROCHA CARLOS (Gérant)",
     "effectif": "0 salarié"
   },
+  "452976038": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:55.341727+00:00",
+    "dirigeant": "Boris LECLERCQ (Président de SAS)",
+    "effectif": null
+  },
   "453629966": {
     "ca": null,
     "categorie": "PME",
@@ -1572,13 +1579,6 @@
     "categorie": "PME",
     "checked": "2026-07-29T06:01:22.759089+00:00",
     "dirigeant": "Erik DOURDIN (Président de SAS)",
-    "effectif": null
-  },
-  "477505432": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:57.874232+00:00",
-    "dirigeant": "Laetitia PRIGENT",
     "effectif": null
   },
   "477536171": {
@@ -1616,6 +1616,13 @@
     "dirigeant": "Jean-marie BATTISTELLI (Gérant)",
     "effectif": null
   },
+  "479001265": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:39.081033+00:00",
+    "dirigeant": "Regis PRUNIER (Président de SAS)",
+    "effectif": null
+  },
   "479361651": {
     "ca": 1.7,
     "categorie": "PME",
@@ -1628,6 +1635,13 @@
     "categorie": "PME",
     "checked": "2026-07-31T06:01:18.367736+00:00",
     "dirigeant": "Georges YOUSSEFANE (Président du conseil d’administration)",
+    "effectif": null
+  },
+  "479505174": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:47.945720+00:00",
+    "dirigeant": "Jean-jacques DERBOUX (Gérant)",
     "effectif": null
   },
   "479539413": {
@@ -1672,6 +1686,13 @@
     "dirigeant": "Salvatore FURNARI (Gérant)",
     "effectif": null
   },
+  "481614535": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:42.027183+00:00",
+    "dirigeant": "Richard BISMUTH (Gérant)",
+    "effectif": null
+  },
   "482161841": {
     "ca": null,
     "categorie": "PME",
@@ -1691,13 +1712,6 @@
     "categorie": "PME",
     "checked": "2026-08-12T06:01:39.034688+00:00",
     "dirigeant": "Alain SFEZ",
-    "effectif": null
-  },
-  "483657540": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:04.597372+00:00",
-    "dirigeant": "Paula NGUEMA NCHAMA",
     "effectif": null
   },
   "483706990": {
@@ -1847,6 +1861,13 @@
     "dirigeant": "Anthony CORREIA (Gérant)",
     "effectif": null
   },
+  "489716480": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:17.605307+00:00",
+    "dirigeant": "Boris LECLERCQ (Gérant)",
+    "effectif": null
+  },
   "489782979": {
     "ca": 0.9,
     "categorie": "PME",
@@ -1938,6 +1959,20 @@
     "dirigeant": "Stephanie BERGEON (Gérant)",
     "effectif": null
   },
+  "492486758": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:22.187838+00:00",
+    "dirigeant": "Audrey PINTO (Président de SAS)",
+    "effectif": null
+  },
+  "492522487": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:51.005742+00:00",
+    "dirigeant": "Jean-francois BONNET",
+    "effectif": null
+  },
   "492941976": {
     "ca": 0.9,
     "categorie": "PME",
@@ -1958,6 +1993,13 @@
     "checked": "2026-07-30T06:01:54.969526+00:00",
     "dirigeant": "Olivier BAYET (Gérant)",
     "effectif": null
+  },
+  "493377436": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:40.985588+00:00",
+    "dirigeant": "Pascal DUDOUIT",
+    "effectif": "Au moins 1 salarié"
   },
   "493394134": {
     "ca": null,
@@ -2022,13 +2064,6 @@
     "dirigeant": "Yannis BORJON-PIRON (Gérant)",
     "effectif": null
   },
-  "497513168": {
-    "ca": null,
-    "categorie": "GE",
-    "checked": "2026-07-27T06:03:06.421067+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "497789149": {
     "ca": null,
     "categorie": "PME",
@@ -2083,6 +2118,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:20.366115+00:00",
     "dirigeant": "Joseph SANTOS (Gérant)",
+    "effectif": null
+  },
+  "499385383": {
+    "ca": 0.7,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:50.509657+00:00",
+    "dirigeant": "Ioan TATAR (Gérant)",
     "effectif": null
   },
   "499493146": {
@@ -2372,6 +2414,13 @@
     "dirigeant": "Patrice POMMIER (Gérant)",
     "effectif": null
   },
+  "511883290": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:19.627299+00:00",
+    "dirigeant": "Ali KAZEL (Gérant)",
+    "effectif": "0 salarié"
+  },
   "511931701": {
     "ca": null,
     "categorie": "PME",
@@ -2568,6 +2617,13 @@
     "dirigeant": "Arnaud MUNOZ (Gérant)",
     "effectif": null
   },
+  "521253344": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:45.086310+00:00",
+    "dirigeant": "Kada BENSABRE (Gérant)",
+    "effectif": null
+  },
   "521351866": {
     "ca": null,
     "categorie": "PME",
@@ -2587,13 +2643,6 @@
     "categorie": "PME",
     "checked": "2026-08-19T06:01:34.875405+00:00",
     "dirigeant": "Lionel LOZE (Gérant)",
-    "effectif": null
-  },
-  "522419563": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:34.097129+00:00",
-    "dirigeant": "Dominique MELOT (Gérant)",
     "effectif": null
   },
   "523032902": {
@@ -2650,13 +2699,6 @@
     "categorie": "PME",
     "checked": "2026-08-04T06:01:20.686326+00:00",
     "dirigeant": "Jean BRETEAU (Gérant)",
-    "effectif": null
-  },
-  "524212438": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:19.294492+00:00",
-    "dirigeant": null,
     "effectif": null
   },
   "524545027": {
@@ -2764,6 +2806,13 @@
     "dirigeant": "Resat ALAY (Gérant)",
     "effectif": null
   },
+  "529633828": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:32.689556+00:00",
+    "dirigeant": "Jean-philippe SAMPIERI (Président de SAS)",
+    "effectif": null
+  },
   "529881484": {
     "ca": null,
     "categorie": null,
@@ -2783,6 +2832,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:56.532644+00:00",
     "dirigeant": "Nasser FERRAT (Gérant)",
+    "effectif": null
+  },
+  "531436590": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:35.945146+00:00",
+    "dirigeant": "Marc DIAS GAMA (Président de SAS)",
     "effectif": null
   },
   "531607513": {
@@ -2862,13 +2918,6 @@
     "dirigeant": "Marie CIAVARELLI (Gérant)",
     "effectif": null
   },
-  "533022281": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:58.538886+00:00",
-    "dirigeant": "Patrick LECONTE (Gérant et associé indéfiniment responsable)",
-    "effectif": null
-  },
   "533553202": {
     "ca": null,
     "categorie": "PME",
@@ -2888,6 +2937,13 @@
     "categorie": null,
     "checked": "2026-08-20T06:01:59.246937+00:00",
     "dirigeant": "Aurelie DEZELLIS (Gérant et associé indéfiniment responsable)",
+    "effectif": "0 salarié"
+  },
+  "533773545": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:13.399475+00:00",
+    "dirigeant": "Jean-philippe MANACORDA (Gérant et associé indéfiniment responsable)",
     "effectif": "0 salarié"
   },
   "533981833": {
@@ -3016,13 +3072,6 @@
     "dirigeant": "Abdelhak AMRAOUI",
     "effectif": "0 salarié"
   },
-  "538328295": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:24.774137+00:00",
-    "dirigeant": "Stephane HUAUME (Autre)",
-    "effectif": null
-  },
   "538367608": {
     "ca": null,
     "categorie": "PME",
@@ -3107,6 +3156,13 @@
     "dirigeant": "Philippe BENQUET (Président de SAS)",
     "effectif": null
   },
+  "702027616": {
+    "ca": 1.1,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:53.855748+00:00",
+    "dirigeant": "Christian WURSTER (Président de SAS)",
+    "effectif": null
+  },
   "712052729": {
     "ca": null,
     "categorie": "PME",
@@ -3156,6 +3212,13 @@
     "dirigeant": "Yuewei SUN (Gérant)",
     "effectif": null
   },
+  "750454209": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:34.133233+00:00",
+    "dirigeant": "Corrine TEXEIRA (Président de SAS)",
+    "effectif": null
+  },
   "751180498": {
     "ca": null,
     "categorie": "PME",
@@ -3184,6 +3247,13 @@
     "dirigeant": "Christophe JULLIEN (Gérant)",
     "effectif": null
   },
+  "751439381": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:18.200830+00:00",
+    "dirigeant": "Marc MARIOTTI (Gérant)",
+    "effectif": null
+  },
   "751723461": {
     "ca": null,
     "categorie": "PME",
@@ -3203,13 +3273,6 @@
     "categorie": "PME",
     "checked": "2026-08-21T06:01:23.852216+00:00",
     "dirigeant": "Joao TINOCO (Gérant)",
-    "effectif": null
-  },
-  "752128959": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:22.938182+00:00",
-    "dirigeant": "Gordana DIMITRIJEVIC (Gérant)",
     "effectif": null
   },
   "752283341": {
@@ -3254,20 +3317,6 @@
     "dirigeant": "Jean-marc SAILLAN (Gérant)",
     "effectif": null
   },
-  "753099902": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-28T06:01:10.857491+00:00",
-    "dirigeant": "Guillaume PETIT (Gérant)",
-    "effectif": null
-  },
-  "753168350": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:14.650611+00:00",
-    "dirigeant": "Dominique MELOT (Gérant)",
-    "effectif": null
-  },
   "753191279": {
     "ca": null,
     "categorie": "PME",
@@ -3301,6 +3350,13 @@
     "categorie": "PME",
     "checked": "2026-08-13T06:02:03.219624+00:00",
     "dirigeant": "Damien GROULT (Gérant)",
+    "effectif": null
+  },
+  "754081263": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:29.434245+00:00",
+    "dirigeant": "Jean MASSOT",
     "effectif": null
   },
   "778337212": {
@@ -3380,13 +3436,6 @@
     "dirigeant": "Aline GRONDIN (Gérant)",
     "effectif": null
   },
-  "789532967": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:20.615004+00:00",
-    "dirigeant": "Sebastien CAUDAL (Gérant)",
-    "effectif": null
-  },
   "789678133": {
     "ca": null,
     "categorie": "PME",
@@ -3413,6 +3462,13 @@
     "categorie": "PME",
     "checked": "2026-08-26T06:01:17.133181+00:00",
     "dirigeant": "Sandrine RAPICAULT (Gérant)",
+    "effectif": null
+  },
+  "790621189": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:49.026410+00:00",
+    "dirigeant": "Olivier ORY MONNINI (Président de SAS)",
     "effectif": null
   },
   "790765606": {
@@ -3450,13 +3506,6 @@
     "dirigeant": "Vanessa BEN GUIGUI (Gérant)",
     "effectif": null
   },
-  "791658354": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:13.980238+00:00",
-    "dirigeant": "Katy VEYSSET (Gérant)",
-    "effectif": null
-  },
   "791743925": {
     "ca": 5.0,
     "categorie": "PME",
@@ -3492,25 +3541,11 @@
     "dirigeant": "Komlavie AYIVOR (Gérant)",
     "effectif": null
   },
-  "792509903": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:07.274422+00:00",
-    "dirigeant": "Dominique MELOT (Gérant)",
-    "effectif": null
-  },
   "792556813": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-08-06T06:01:27.572800+00:00",
     "dirigeant": "Jean-marie SALAUN (Président de SAS)",
-    "effectif": null
-  },
-  "792748089": {
-    "ca": 133.6,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:44.784892+00:00",
-    "dirigeant": null,
     "effectif": null
   },
   "792880189": {
@@ -3665,13 +3700,6 @@
     "categorie": "PME",
     "checked": "2026-08-05T06:01:15.105708+00:00",
     "dirigeant": "Thomas NAUX (Gérant et associé indéfiniment responsable)",
-    "effectif": null
-  },
-  "798941688": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:47.788491+00:00",
-    "dirigeant": "David LOVINFOSSE (Gérant)",
     "effectif": null
   },
   "799050828": {
@@ -3877,6 +3905,13 @@
     "dirigeant": "Berengere CONGIU (Gérant et associé indéfiniment responsable)",
     "effectif": null
   },
+  "804660892": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:17.122852+00:00",
+    "dirigeant": "Franck BONNION (Président de SAS)",
+    "effectif": null
+  },
   "804810307": {
     "ca": 0.4,
     "categorie": null,
@@ -4080,13 +4115,6 @@
     "dirigeant": "Fabienne HOVETTE (Président de SAS)",
     "effectif": null
   },
-  "809650211": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:26.080727+00:00",
-    "dirigeant": "Lauren CREECY (Gérant)",
-    "effectif": null
-  },
   "809775778": {
     "ca": 0.2,
     "categorie": "PME",
@@ -4120,6 +4148,13 @@
     "categorie": "PME",
     "checked": "2026-08-26T06:01:11.729058+00:00",
     "dirigeant": "Marc DANAN (Président de SAS)",
+    "effectif": null
+  },
+  "810812339": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:50.004690+00:00",
+    "dirigeant": "Frederic GUERIN (Président de SAS)",
     "effectif": null
   },
   "810834986": {
@@ -4156,6 +4191,13 @@
     "checked": "2026-08-13T06:02:04.298859+00:00",
     "dirigeant": "Gabriel AUBERT (Gérant)",
     "effectif": "0 salarié"
+  },
+  "811263102": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:20.466699+00:00",
+    "dirigeant": "Anthony JARNAC-BRETON (Gérant)",
+    "effectif": null
   },
   "811317734": {
     "ca": 0.1,
@@ -4204,6 +4246,13 @@
     "categorie": "PME",
     "checked": "2026-08-24T06:02:06.964628+00:00",
     "dirigeant": "Charlene BOUR (Gérant)",
+    "effectif": null
+  },
+  "811732700": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:43.470179+00:00",
+    "dirigeant": "Gregoire LANDEL (Président de SAS)",
     "effectif": null
   },
   "811737683": {
@@ -4260,6 +4309,13 @@
     "categorie": "PME",
     "checked": "2026-08-06T06:01:44.319457+00:00",
     "dirigeant": "Isabelle OBERLE (Gérant)",
+    "effectif": null
+  },
+  "812630168": {
+    "ca": 0.3,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:59.553789+00:00",
+    "dirigeant": "Daniel BARON (Gérant)",
     "effectif": null
   },
   "812715217": {
@@ -4352,6 +4408,13 @@
     "checked": "2026-08-24T06:01:28.376059+00:00",
     "dirigeant": "Oktay KAYA (Gérant)",
     "effectif": "0 salarié"
+  },
+  "814485595": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:51.855070+00:00",
+    "dirigeant": "Vicente FRASQUET DIAZ (Président de SAS)",
+    "effectif": null
   },
   "814533105": {
     "ca": null,
@@ -4472,13 +4535,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "819199712": {
-    "ca": 0.2,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:52.956816+00:00",
-    "dirigeant": "Regis BACOUET (Président de SAS)",
-    "effectif": null
-  },
   "819489360": {
     "ca": 2.9,
     "categorie": "PME",
@@ -4500,13 +4556,6 @@
     "dirigeant": "Ferhat SLIMI (Président de SAS)",
     "effectif": null
   },
-  "819650276": {
-    "ca": 0.7,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:08.003172+00:00",
-    "dirigeant": "Bertrand NSAMBU (Président de SAS)",
-    "effectif": null
-  },
   "819817792": {
     "ca": 0.3,
     "categorie": "PME",
@@ -4519,6 +4568,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:02:01.768148+00:00",
     "dirigeant": "Catherine MICHEL (Président de SAS)",
+    "effectif": null
+  },
+  "820092252": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:28.276830+00:00",
+    "dirigeant": "Cyrielle PROST (Gérant)",
     "effectif": null
   },
   "820228310": {
@@ -4570,13 +4626,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "821386901": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:51.270755+00:00",
-    "dirigeant": "Clement COURTEHOUX (Gérant)",
-    "effectif": null
-  },
   "821439973": {
     "ca": 0.5,
     "categorie": "PME",
@@ -4617,6 +4666,20 @@
     "categorie": "PME",
     "checked": "2026-08-19T06:01:20.296269+00:00",
     "dirigeant": "Sami FEKIR (Gérant)",
+    "effectif": null
+  },
+  "822134185": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:56.319515+00:00",
+    "dirigeant": "Patricia BOURDEL (Gérant)",
+    "effectif": null
+  },
+  "822222832": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:25.966771+00:00",
+    "dirigeant": "Youssef MIMOUNI (Gérant)",
     "effectif": null
   },
   "822276903": {
@@ -4724,13 +4787,6 @@
     "dirigeant": "Christophe ROULEAU (Gérant)",
     "effectif": null
   },
-  "824810279": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:07.322523+00:00",
-    "dirigeant": "Damien RIBIERE (Gérant)",
-    "effectif": null
-  },
   "824822878": {
     "ca": null,
     "categorie": "PME",
@@ -4750,6 +4806,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:42.578855+00:00",
     "dirigeant": "Christine GRASSET (Président de SAS)",
+    "effectif": null
+  },
+  "825012602": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:58.861308+00:00",
+    "dirigeant": "Loic VERGNAULT (Président de SAS)",
     "effectif": null
   },
   "825014905": {
@@ -4787,6 +4850,13 @@
     "dirigeant": "Jose DA SILVA PAIVA (Gérant)",
     "effectif": null
   },
+  "825394778": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:22.690700+00:00",
+    "dirigeant": "Jean AUNIORD (Président de SAS)",
+    "effectif": null
+  },
   "827589722": {
     "ca": null,
     "categorie": "PME",
@@ -4806,13 +4876,6 @@
     "categorie": "PME",
     "checked": "2026-08-19T06:01:12.049466+00:00",
     "dirigeant": "Abdelillah HALLOU (Président de SAS)",
-    "effectif": null
-  },
-  "827706748": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:42.705817+00:00",
-    "dirigeant": "Fabrice JACQUIER (Président de SAS)",
     "effectif": null
   },
   "827721051": {
@@ -4906,20 +4969,6 @@
     "dirigeant": "Toufik TALAB (Gérant)",
     "effectif": null
   },
-  "828890731": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:46.986892+00:00",
-    "dirigeant": "Medhi BELKADI (Gérant)",
-    "effectif": null
-  },
-  "828905125": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:56.112616+00:00",
-    "dirigeant": "Robin MICHEL (Gérant)",
-    "effectif": null
-  },
   "828917880": {
     "ca": 0.0,
     "categorie": "PME",
@@ -4927,25 +4976,11 @@
     "dirigeant": "Pascale DELENTE (Gérant)",
     "effectif": null
   },
-  "828961201": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:35.497750+00:00",
-    "dirigeant": "Claude GONZALEZ (Gérant)",
-    "effectif": null
-  },
   "829168129": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-08-05T06:01:37.025229+00:00",
     "dirigeant": "Agostinho CORREIA DE MATOS (Gérant)",
-    "effectif": null
-  },
-  "829253525": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:04.476043+00:00",
-    "dirigeant": "[non-diffusible] [NON-DIFFUSIBLE]",
     "effectif": null
   },
   "829281278": {
@@ -5004,11 +5039,32 @@
     "dirigeant": "Emmanuel VERNHET",
     "effectif": null
   },
+  "829848845": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:31.522508+00:00",
+    "dirigeant": "Jean-benoit CAZAUX (Président de SAS)",
+    "effectif": null
+  },
+  "829982586": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:53.077216+00:00",
+    "dirigeant": "Aithem MSADEK (Gérant)",
+    "effectif": null
+  },
   "829992551": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-08-18T06:01:16.966652+00:00",
     "dirigeant": "Ilamarane ILANGO (Président de SAS)",
+    "effectif": null
+  },
+  "830032587": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:37.767861+00:00",
+    "dirigeant": "Osama ABBAOUI (Président de SAS)",
     "effectif": null
   },
   "830043766": {
@@ -5088,13 +5144,6 @@
     "dirigeant": "Turgay TEKIN (Gérant)",
     "effectif": null
   },
-  "831026687": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:28.048918+00:00",
-    "dirigeant": "Rodolphe VINGERDER (Président de SAS)",
-    "effectif": null
-  },
   "831032107": {
     "ca": 0.0,
     "categorie": null,
@@ -5107,13 +5156,6 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:36.329460+00:00",
     "dirigeant": "Gerald QUILLE (Président de SAS)",
-    "effectif": null
-  },
-  "831223599": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:12.040168+00:00",
-    "dirigeant": "Mercedes HERNANDEZ (Gérant et associé indéfiniment responsable)",
     "effectif": null
   },
   "831269287": {
@@ -5207,6 +5249,13 @@
     "dirigeant": "Tijani KALBOUSSI (Gérant)",
     "effectif": null
   },
+  "832629265": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:36.593936+00:00",
+    "dirigeant": "Sandra MAXIMO (Président de SAS)",
+    "effectif": null
+  },
   "832630842": {
     "ca": null,
     "categorie": "PME",
@@ -5228,18 +5277,18 @@
     "dirigeant": "Marion LEROY",
     "effectif": null
   },
+  "832912703": {
+    "ca": 0.2,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:48.527941+00:00",
+    "dirigeant": "Dave ADOLPHE (Président de SAS)",
+    "effectif": null
+  },
   "832921589": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-07-28T06:01:34.557287+00:00",
     "dirigeant": "Berenger POUTRAIN (Président de SAS)",
-    "effectif": null
-  },
-  "832951271": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:53.630966+00:00",
-    "dirigeant": "Guillaume LE METOUR (Gérant)",
     "effectif": null
   },
   "833010226": {
@@ -5361,13 +5410,6 @@
     "dirigeant": "Kevin PESCE (Président de SAS)",
     "effectif": null
   },
-  "834524589": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:48.734579+00:00",
-    "dirigeant": "David DESREUMAUX (Gérant)",
-    "effectif": null
-  },
   "834612525": {
     "ca": 0.2,
     "categorie": "PME",
@@ -5415,6 +5457,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:25.448520+00:00",
     "dirigeant": "Patrice DUCROCQ (Président de SAS)",
+    "effectif": null
+  },
+  "835244724": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:55.838801+00:00",
+    "dirigeant": "Cyril DEMOGUE",
     "effectif": null
   },
   "835283136": {
@@ -5466,6 +5515,13 @@
     "dirigeant": "Perparim NISHORI (Président de SAS)",
     "effectif": null
   },
+  "837915024": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:35.461255+00:00",
+    "dirigeant": "Pierre-william VISTE (Président de SAS)",
+    "effectif": null
+  },
   "837934561": {
     "ca": 0.2,
     "categorie": "PME",
@@ -5473,18 +5529,18 @@
     "dirigeant": "Eric MARTIN (Gérant)",
     "effectif": null
   },
-  "838083186": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:13.325880+00:00",
-    "dirigeant": "Jerome GRANIER (Gérant)",
-    "effectif": null
-  },
   "838337384": {
     "ca": 0.5,
     "categorie": "PME",
     "checked": "2026-08-04T06:01:31.293343+00:00",
     "dirigeant": "Christophe LOSLIER (Président de SAS)",
+    "effectif": null
+  },
+  "838676633": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:16.471159+00:00",
+    "dirigeant": null,
     "effectif": null
   },
   "838722833": {
@@ -5541,13 +5597,6 @@
     "categorie": "PME",
     "checked": "2026-08-04T06:01:26.608290+00:00",
     "dirigeant": "Adrien DE MOUSTIER (Président de SAS)",
-    "effectif": null
-  },
-  "839120177": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:56.933384+00:00",
-    "dirigeant": null,
     "effectif": null
   },
   "839171212": {
@@ -5760,18 +5809,18 @@
     "dirigeant": "Yusuf POLAT (Président de SAS)",
     "effectif": null
   },
-  "841182678": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:05.567636+00:00",
-    "dirigeant": "David BRUMEAU (Président de SAS)",
-    "effectif": null
-  },
   "841197569": {
     "ca": null,
     "categorie": "PME",
     "checked": "2026-08-10T06:01:50.121141+00:00",
     "dirigeant": "Alexandre CHABIN (Autre)",
+    "effectif": null
+  },
+  "841292089": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:34.823024+00:00",
+    "dirigeant": "Alexia GIRARDIN (Président de SAS)",
     "effectif": null
   },
   "841375678": {
@@ -5786,6 +5835,13 @@
     "categorie": "PME",
     "checked": "2026-08-03T06:01:45.356180+00:00",
     "dirigeant": "Yacine BOUALEM",
+    "effectif": null
+  },
+  "841587579": {
+    "ca": 1.1,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:58.378222+00:00",
+    "dirigeant": "Jeremy COUTURE (Président de SAS)",
     "effectif": null
   },
   "841690712": {
@@ -5949,20 +6005,6 @@
     "dirigeant": "Fabio IAZURLO (Président de SAS)",
     "effectif": null
   },
-  "843663519": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:19.954793+00:00",
-    "dirigeant": "Abdeslam EL HARRAK (Président de SAS)",
-    "effectif": null
-  },
-  "843668260": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:02:52.286242+00:00",
-    "dirigeant": "Francois GOUBAND (Autre)",
-    "effectif": null
-  },
   "843694837": {
     "ca": null,
     "categorie": "PME",
@@ -5982,6 +6024,13 @@
     "categorie": "PME",
     "checked": "2026-08-05T06:01:28.381282+00:00",
     "dirigeant": "Ali HADIK (Président de SAS)",
+    "effectif": null
+  },
+  "843810607": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:31.012246+00:00",
+    "dirigeant": "Damien GAUTHIER (Gérant)",
     "effectif": null
   },
   "843859430": {
@@ -6208,13 +6257,6 @@
     "dirigeant": null,
     "effectif": "Au moins 1 salarié"
   },
-  "848705976": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:09.716617+00:00",
-    "dirigeant": "Jackie ARENAS (Président de SAS)",
-    "effectif": null
-  },
   "849050034": {
     "ca": 0.6,
     "categorie": "PME",
@@ -6262,6 +6304,13 @@
     "categorie": "PME",
     "checked": "2026-07-31T06:01:36.733702+00:00",
     "dirigeant": "Cedric LAVIGNAC (Président de SAS)",
+    "effectif": null
+  },
+  "849532205": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:37.222227+00:00",
+    "dirigeant": "Chloe HERMARY (Président de SAS)",
     "effectif": null
   },
   "849626213": {
@@ -6334,6 +6383,13 @@
     "dirigeant": "Bahri DRAGUSHA",
     "effectif": null
   },
+  "850526344": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:54.341781+00:00",
+    "dirigeant": "Abdelkader ABDALLAH-MILOUD (Président de SAS)",
+    "effectif": null
+  },
   "850574047": {
     "ca": null,
     "categorie": "PME",
@@ -6402,6 +6458,13 @@
     "categorie": "PME",
     "checked": "2026-07-28T06:01:47.812795+00:00",
     "dirigeant": "Riadh SKAH (Gérant)",
+    "effectif": null
+  },
+  "851819649": {
+    "ca": 0.0,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:45.780995+00:00",
+    "dirigeant": "Claudine DELEURY (Président de SAS)",
     "effectif": null
   },
   "852078948": {
@@ -6495,20 +6558,6 @@
     "dirigeant": "[non-diffusible] [NON-DIFFUSIBLE]",
     "effectif": null
   },
-  "853451854": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:06.804838+00:00",
-    "dirigeant": "Abdelkrim NEMER (Président de SAS)",
-    "effectif": null
-  },
-  "853607331": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:34.850616+00:00",
-    "dirigeant": "Francois GOUBAND (Autre)",
-    "effectif": null
-  },
   "853656502": {
     "ca": null,
     "categorie": "PME",
@@ -6593,18 +6642,18 @@
     "dirigeant": "Laurent RUCH (Gérant)",
     "effectif": null
   },
+  "878304864": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:41.467991+00:00",
+    "dirigeant": "Fermin MARTINEZ OLABARRIETA (Gérant)",
+    "effectif": null
+  },
   "878392273": {
     "ca": 0.4,
     "categorie": "PME",
     "checked": "2026-08-19T06:01:18.652551+00:00",
     "dirigeant": "Maxence MILITON (Directeur Général)",
-    "effectif": null
-  },
-  "878633221": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:10.639482+00:00",
-    "dirigeant": "Thierry DERON (Gérant)",
     "effectif": null
   },
   "878763549": {
@@ -6824,6 +6873,13 @@
     "dirigeant": "Rafael MARQUEZ DUQUE (Gérant)",
     "effectif": null
   },
+  "881342273": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:15.751270+00:00",
+    "dirigeant": "Ronan KORINEK (Gérant)",
+    "effectif": null
+  },
   "881721963": {
     "ca": null,
     "categorie": "PME",
@@ -6906,13 +6962,6 @@
     "categorie": "PME",
     "checked": "2026-08-04T06:01:48.678443+00:00",
     "dirigeant": "Guillaume CRAME (Gérant)",
-    "effectif": null
-  },
-  "882954696": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:25.428353+00:00",
-    "dirigeant": "Dominique MELOT (Gérant)",
     "effectif": null
   },
   "882966765": {
@@ -7125,6 +7174,13 @@
     "dirigeant": "Fabian SORLIER (Président de SAS)",
     "effectif": null
   },
+  "888277688": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:26.474021+00:00",
+    "dirigeant": "Claudia ALVES (Président de SAS)",
+    "effectif": null
+  },
   "888447273": {
     "ca": 0.2,
     "categorie": "PME",
@@ -7195,13 +7251,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "889632063": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:15.296639+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "890051402": {
     "ca": 0.4,
     "categorie": "PME",
@@ -7214,13 +7263,6 @@
     "categorie": "PME",
     "checked": "2026-08-14T06:01:20.588578+00:00",
     "dirigeant": "Anais REGENT (Gérant et associé indéfiniment responsable)",
-    "effectif": null
-  },
-  "890509938": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:02.496870+00:00",
-    "dirigeant": "Muhamet HAJDINI",
     "effectif": null
   },
   "890524333": {
@@ -7251,13 +7293,6 @@
     "dirigeant": "Eric BILLARD (Associé indéfiniment responsable)",
     "effectif": null
   },
-  "890905367": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:28.723099+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "890929953": {
     "ca": null,
     "categorie": "PME",
@@ -7285,6 +7320,13 @@
     "checked": "2026-07-28T06:01:25.685707+00:00",
     "dirigeant": "Pierre JAOUEN (Président de SAS)",
     "effectif": null
+  },
+  "891083982": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:52.491429+00:00",
+    "dirigeant": "Fabrice RENAUDIN",
+    "effectif": "Entre 1 et 2 salariés"
   },
   "891135576": {
     "ca": null,
@@ -7354,13 +7396,6 @@
     "categorie": "PME",
     "checked": "2026-07-28T06:01:42.673402+00:00",
     "dirigeant": "Gianni D'AVINO (Gérant)",
-    "effectif": null
-  },
-  "892281627": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:09.978875+00:00",
-    "dirigeant": null,
     "effectif": null
   },
   "892605320": {
@@ -7438,13 +7473,6 @@
     "categorie": "PME",
     "checked": "2026-07-28T06:01:25.117683+00:00",
     "dirigeant": "Laurent LIOT (Président de SAS)",
-    "effectif": null
-  },
-  "893500041": {
-    "ca": 0.0,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:11.294830+00:00",
-    "dirigeant": "Yunus GUNES (Président de SAS)",
     "effectif": null
   },
   "893636597": {
@@ -7529,13 +7557,6 @@
     "categorie": "PME",
     "checked": "2026-08-10T06:01:41.044145+00:00",
     "dirigeant": "Chehi CHARIFFOU (Président de SAS)",
-    "effectif": null
-  },
-  "895030195": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:26.754394+00:00",
-    "dirigeant": "Lucas LE QUERNEC (Président de SAS)",
     "effectif": null
   },
   "895130532": {
@@ -7685,13 +7706,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "900002072": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:07.886231+00:00",
-    "dirigeant": "Alexandre BOUILLON (Gérant)",
-    "effectif": null
-  },
   "900228263": {
     "ca": null,
     "categorie": "PME",
@@ -7720,13 +7734,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "900431073": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:18.647026+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "900599663": {
     "ca": null,
     "categorie": "PME",
@@ -7739,13 +7746,6 @@
     "categorie": "PME",
     "checked": "2026-08-06T06:01:35.542370+00:00",
     "dirigeant": "Amine BEGGAR (Président de SAS)",
-    "effectif": null
-  },
-  "900667619": {
-    "ca": 0.1,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:55.366058+00:00",
-    "dirigeant": "Melissa GODEFROY (Président de SAS)",
     "effectif": null
   },
   "900889643": {
@@ -7958,6 +7958,13 @@
     "dirigeant": "Mohamed KHARBACH (Président de SAS)",
     "effectif": null
   },
+  "902745025": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:24.246587+00:00",
+    "dirigeant": "Sandra PETITJEAN (Gérant)",
+    "effectif": null
+  },
   "902765049": {
     "ca": null,
     "categorie": "PME",
@@ -8089,27 +8096,6 @@
     "categorie": "ETI",
     "checked": "2026-08-18T06:01:15.726145+00:00",
     "dirigeant": "Paul MAIGRE (Gérant)",
-    "effectif": null
-  },
-  "904442571": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:03.153075+00:00",
-    "dirigeant": "Stephanie GROTZINGER (Gérant)",
-    "effectif": null
-  },
-  "904551561": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:43.453581+00:00",
-    "dirigeant": "Erika BROUKER (Gérant)",
-    "effectif": null
-  },
-  "904600103": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:54.623276+00:00",
-    "dirigeant": "Solange NICOLAS (Gérant)",
     "effectif": null
   },
   "904865631": {
@@ -8280,13 +8266,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "908605728": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:31.240558+00:00",
-    "dirigeant": "David MONTOIS (Président de SAS)",
-    "effectif": null
-  },
   "908686132": {
     "ca": 0.0,
     "categorie": "PME",
@@ -8322,6 +8301,13 @@
     "dirigeant": "Fethi CHOUIKHA (Président de SAS)",
     "effectif": null
   },
+  "909032815": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:18.871634+00:00",
+    "dirigeant": null,
+    "effectif": null
+  },
   "909129959": {
     "ca": null,
     "categorie": "PME",
@@ -8336,6 +8322,13 @@
     "dirigeant": "Paul BLONDY (Gérant)",
     "effectif": null
   },
+  "909276529": {
+    "ca": 0.1,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:39.594871+00:00",
+    "dirigeant": "Ahmed ELAHMADY ABDELHAFIZ MOUSA (Gérant)",
+    "effectif": null
+  },
   "909322950": {
     "ca": null,
     "categorie": "PME",
@@ -8348,6 +8341,13 @@
     "categorie": "PME",
     "checked": "2026-08-12T06:01:09.367349+00:00",
     "dirigeant": "Marie-maeva NJIKE (Président de SAS)",
+    "effectif": null
+  },
+  "909357113": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:21.228673+00:00",
+    "dirigeant": "Benjamin BRE (Gérant)",
     "effectif": null
   },
   "909572968": {
@@ -8455,13 +8455,6 @@
     "dirigeant": null,
     "effectif": null
   },
-  "910545326": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:08.409782+00:00",
-    "dirigeant": "Saoussen CHRIGUI (Président de SAS)",
-    "effectif": null
-  },
   "910617026": {
     "ca": null,
     "categorie": "PME",
@@ -8481,13 +8474,6 @@
     "categorie": "PME",
     "checked": "2026-08-11T06:01:49.439532+00:00",
     "dirigeant": "Serge LARA (Président de SAS)",
-    "effectif": null
-  },
-  "911153815": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:31.893167+00:00",
-    "dirigeant": "Frederic QUESNAY (Gérant)",
     "effectif": null
   },
   "911303550": {
@@ -8511,13 +8497,6 @@
     "dirigeant": "Lahcen BOUNKR (Président de SAS)",
     "effectif": null
   },
-  "911751113": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:02:44.130161+00:00",
-    "dirigeant": "Thierry PRUNONOSA (Président de SAS)",
-    "effectif": null
-  },
   "911877082": {
     "ca": null,
     "categorie": "PME",
@@ -8539,18 +8518,18 @@
     "dirigeant": "Morad GUETTAI (Président de SAS)",
     "effectif": null
   },
-  "912044864": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:27.407574+00:00",
-    "dirigeant": "Sophie CARLES (Président de SAS)",
-    "effectif": null
-  },
   "912145190": {
     "ca": 0.3,
     "categorie": "PME",
     "checked": "2026-08-04T06:01:13.598889+00:00",
     "dirigeant": "Dany JAMES (Président de SAS)",
+    "effectif": null
+  },
+  "912634805": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:02:00.743385+00:00",
+    "dirigeant": "Ezio LANARO (Président de SAS)",
     "effectif": null
   },
   "912649373": {
@@ -8754,13 +8733,6 @@
     "categorie": "PME",
     "checked": "2026-08-10T06:01:19.684947+00:00",
     "dirigeant": "Megane JOURNO (Président de SAS)",
-    "effectif": null
-  },
-  "914607650": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:33.438923+00:00",
-    "dirigeant": "Francois LISI (Président de SAS)",
     "effectif": null
   },
   "914617667": {
@@ -9134,6 +9106,13 @@
     "dirigeant": "Mickael BORG (Président de SAS)",
     "effectif": null
   },
+  "921847505": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:38.600406+00:00",
+    "dirigeant": "Agnieszka ROSZCZENKO (Président de SAS)",
+    "effectif": null
+  },
   "921936605": {
     "ca": null,
     "categorie": "PME",
@@ -9188,13 +9167,6 @@
     "categorie": "PME",
     "checked": "2026-08-26T06:01:30.636748+00:00",
     "dirigeant": "Sebastien BEAURAIN (Gérant)",
-    "effectif": null
-  },
-  "922483409": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:17.986832+00:00",
-    "dirigeant": "Mohamed BELHAJ (Président de SAS)",
     "effectif": null
   },
   "923853600": {
@@ -9302,33 +9274,12 @@
     "dirigeant": "Carmen BERARD (Gérant)",
     "effectif": "Au moins 1 salarié"
   },
-  "929678753": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:02:46.201709+00:00",
-    "dirigeant": "Haocheng QIAN (Président de SAS)",
-    "effectif": null
-  },
-  "929680049": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:32.769677+00:00",
-    "dirigeant": "Anna COULIOU (Gérant)",
-    "effectif": null
-  },
   "930103015": {
     "ca": null,
     "categorie": null,
     "checked": "2026-08-13T06:01:16.000103+00:00",
     "dirigeant": "Daniel-florin MAILAT (Président de SAS)",
     "effectif": "0 salarié"
-  },
-  "930236294": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:23.806525+00:00",
-    "dirigeant": "Emilie DIEUTRE (Gérant)",
-    "effectif": null
   },
   "930483383": {
     "ca": null,
@@ -9638,20 +9589,6 @@
     "dirigeant": "Michele FONTAINE (Gérant)",
     "effectif": "Au moins 1 salarié"
   },
-  "938288974": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:17.335213+00:00",
-    "dirigeant": "Thomas LUBRANO DI FIGOLO (Président de SAS)",
-    "effectif": null
-  },
-  "938295342": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:00.214442+00:00",
-    "dirigeant": "Thomas LUBRANO DI FIGOLO (Président de SAS)",
-    "effectif": null
-  },
   "938955051": {
     "ca": null,
     "categorie": null,
@@ -9666,12 +9603,12 @@
     "dirigeant": "Haron OPOKU (Président de SAS)",
     "effectif": "0 salarié"
   },
-  "939955282": {
+  "939499604": {
     "ca": null,
     "categorie": null,
-    "checked": "2026-07-27T06:03:29.741151+00:00",
-    "dirigeant": "Rodolphe WALLGREN (Gérant)",
-    "effectif": null
+    "checked": "2026-08-27T06:01:42.985833+00:00",
+    "dirigeant": "Laurent CHELLY (Président de SAS)",
+    "effectif": "Au moins 1 salarié"
   },
   "940623499": {
     "ca": null,
@@ -9729,13 +9666,6 @@
     "dirigeant": "Christophe COSTE (Gérant)",
     "effectif": "Au moins 1 salarié"
   },
-  "943018879": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-28T06:01:09.191913+00:00",
-    "dirigeant": "Olivier KATUMBA TSHIBANDA (Gérant)",
-    "effectif": null
-  },
   "943252809": {
     "ca": null,
     "categorie": null,
@@ -9743,19 +9673,19 @@
     "dirigeant": null,
     "effectif": "Au moins 1 salarié"
   },
+  "943260117": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:24.993523+00:00",
+    "dirigeant": "Magdalena LEFEBVRE (Président de SAS)",
+    "effectif": "0 salarié"
+  },
   "943317701": {
     "ca": null,
     "categorie": null,
     "checked": "2026-08-14T06:01:37.569842+00:00",
     "dirigeant": "Patricia CIRCHIRILLO (Gérant)",
     "effectif": "0 salarié"
-  },
-  "943966028": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:30.588045+00:00",
-    "dirigeant": "Rémi VIEUX (Directeur Général)",
-    "effectif": null
   },
   "944029321": {
     "ca": null,
@@ -9974,13 +9904,6 @@
     "dirigeant": "Françoise COLONNA (Président de SAS)",
     "effectif": null
   },
-  "949639504": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:01.047672+00:00",
-    "dirigeant": null,
-    "effectif": null
-  },
   "949993570": {
     "ca": null,
     "categorie": "PME",
@@ -10022,13 +9945,6 @@
     "checked": "2026-08-12T06:01:25.815419+00:00",
     "dirigeant": "Fikri EL BOUAZATI (Président de SAS)",
     "effectif": "0 salarié"
-  },
-  "951076504": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:36.141411+00:00",
-    "dirigeant": "Nicolas MONGIN",
-    "effectif": null
   },
   "951100254": {
     "ca": null,
@@ -10149,6 +10065,13 @@
     "dirigeant": "Elias MOKNECHE (Gérant)",
     "effectif": null
   },
+  "952966398": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:33.355138+00:00",
+    "dirigeant": "Thomas CARDOSO (Président de SAS)",
+    "effectif": null
+  },
   "953074150": {
     "ca": null,
     "categorie": "PME",
@@ -10175,6 +10098,13 @@
     "categorie": "PME",
     "checked": "2026-08-17T06:01:28.525781+00:00",
     "dirigeant": "Wilfried TREUILLET",
+    "effectif": null
+  },
+  "953639762": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:44.546013+00:00",
+    "dirigeant": "Elodie DA CRUZ (Gérant)",
     "effectif": null
   },
   "953866126": {
@@ -10238,13 +10168,6 @@
     "categorie": "PME",
     "checked": "2026-08-14T06:01:49.725571+00:00",
     "dirigeant": "Eddy TESSIER (Président de SAS)",
-    "effectif": null
-  },
-  "978062925": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-28T06:01:03.837976+00:00",
-    "dirigeant": "Alan KERHULU (Président de SAS)",
     "effectif": null
   },
   "978076172": {
@@ -10408,13 +10331,6 @@
     "dirigeant": "Smain MARCHOUK (Président de SAS)",
     "effectif": null
   },
-  "980480099": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:05.128773+00:00",
-    "dirigeant": "Jérôme LANDAIS (Gérant)",
-    "effectif": null
-  },
   "980599476": {
     "ca": null,
     "categorie": "PME",
@@ -10457,6 +10373,13 @@
     "dirigeant": "Ludovic HARMAND (Gérant)",
     "effectif": null
   },
+  "981258155": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:46.501510+00:00",
+    "dirigeant": "Yordan MLADENOV (Président de SAS)",
+    "effectif": null
+  },
   "981309990": {
     "ca": null,
     "categorie": "PME",
@@ -10469,13 +10392,6 @@
     "categorie": "PME",
     "checked": "2026-08-19T06:01:18.132136+00:00",
     "dirigeant": "Hamid BENNACEUR (Président de SAS)",
-    "effectif": null
-  },
-  "981349533": {
-    "ca": null,
-    "categorie": "PME",
-    "checked": "2026-07-27T06:03:12.681810+00:00",
-    "dirigeant": "Bruno ROMELOT (Président de SAS)",
     "effectif": null
   },
   "981801038": {
@@ -10541,6 +10457,13 @@
     "dirigeant": "Mohamed KHAIRI (Président de SAS)",
     "effectif": null
   },
+  "982472243": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:54.842157+00:00",
+    "dirigeant": null,
+    "effectif": null
+  },
   "982475337": {
     "ca": null,
     "categorie": "PME",
@@ -10582,6 +10505,13 @@
     "checked": "2026-08-03T06:02:04.244661+00:00",
     "dirigeant": "Cynthia ROLLET (Président de SAS)",
     "effectif": "0 salarié"
+  },
+  "983011941": {
+    "ca": null,
+    "categorie": "PME",
+    "checked": "2026-08-27T06:01:47.442191+00:00",
+    "dirigeant": "Aiman MALIGY (Gérant)",
+    "effectif": null
   },
   "983037250": {
     "ca": null,
@@ -10772,13 +10702,6 @@
     "dirigeant": "Matthieu GALLARD (Gérant)",
     "effectif": "0 salarié"
   },
-  "990490393": {
-    "ca": null,
-    "categorie": null,
-    "checked": "2026-07-27T06:03:16.320105+00:00",
-    "dirigeant": "Florian PISTER (Président de SAS)",
-    "effectif": null
-  },
   "990747842": {
     "ca": null,
     "categorie": null,
@@ -10798,6 +10721,13 @@
     "categorie": null,
     "checked": "2026-07-29T06:01:52.766603+00:00",
     "dirigeant": "Franck THOMAS (Président de SAS)",
+    "effectif": "Au moins 1 salarié"
+  },
+  "999404692": {
+    "ca": null,
+    "categorie": null,
+    "checked": "2026-08-27T06:01:27.522895+00:00",
+    "dirigeant": "Paul BALLIERE (Gérant)",
     "effectif": "Au moins 1 salarié"
   }
 }

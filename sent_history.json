@@ -62,13 +62,6 @@
     "sector": "Holding / Finance",
     "status": "pending"
   },
-  "44e2732d1f28": {
-    "date": "2026-08-13",
-    "dirigeant": null,
-    "name": "Climb Up",
-    "sector": "Loisirs / Sport",
-    "status": "pending"
-  },
   "4abebd2924f2": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -109,13 +102,6 @@
     "dirigeant": null,
     "name": "URBASOLAR",
     "sector": "Energies renouvelables",
-    "status": "pending"
-  },
-  "810db999fc6a": {
-    "date": "2026-08-13",
-    "dirigeant": null,
-    "name": "Groupe Positive",
-    "sector": "Services / Numérique",
     "status": "pending"
   },
   "9dffcd4970fa": {
@@ -181,11 +167,18 @@
     "sector": "Services numériques / IT",
     "status": "pending"
   },
-  "c547e70996e2": {
-    "date": "2026-08-13",
+  "d6d4fad09f12": {
+    "date": "2026-08-27",
     "dirigeant": null,
-    "name": "Meca Inox",
-    "sector": "Industrie / Equipements",
+    "name": "Flauraud",
+    "sector": "Distribution automobile / Pièces détachées",
+    "status": "pending"
+  },
+  "e04f64d478ca": {
+    "date": "2026-08-27",
+    "dirigeant": "Samuel BRIGANTINO",
+    "name": "Glass Express France",
+    "sector": "Industrie / Vitrage",
     "status": "pending"
   },
   "e438345908e4": {
@@ -193,6 +186,13 @@
     "dirigeant": null,
     "name": "Florentaise",
     "sector": "Horticulture / Agroalimentaire",
+    "status": "pending"
+  },
+  "ee33169f59ba": {
+    "date": "2026-08-27",
+    "dirigeant": null,
+    "name": "Instant System",
+    "sector": "Mobilité / MaaS",
     "status": "pending"
   },
   "f2d02ff59c34": {
