@@ -1,11 +1,4 @@
 {
-  "01159f42eaea": {
-    "date": "2026-08-14",
-    "dirigeant": "Gad WEIL",
-    "name": "LA FONDERIE",
-    "sector": "Spectacle vivant / Culture",
-    "status": "pending"
-  },
   "030084c2f5f4": {
     "date": "2026-08-26",
     "dirigeant": "Alain FALC",
@@ -62,6 +55,13 @@
     "sector": "Holding / Finance",
     "status": "pending"
   },
+  "44e2732d1f28": {
+    "date": "2026-08-28",
+    "dirigeant": "François Petit",
+    "name": "Climb Up",
+    "sector": "Loisirs / Escalade indoor",
+    "status": "pending"
+  },
   "4abebd2924f2": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -97,11 +97,11 @@
     "sector": "Holding / Finance",
     "status": "pending"
   },
-  "7e4ae3b981c2": {
-    "date": "2026-08-14",
+  "9d818de753cb": {
+    "date": "2026-08-28",
     "dirigeant": null,
-    "name": "URBASOLAR",
-    "sector": "Energies renouvelables",
+    "name": "La Fonderie de Bretagne",
+    "sector": "Métallurgie / Fonderie",
     "status": "pending"
   },
   "9dffcd4970fa": {
@@ -109,13 +109,6 @@
     "dirigeant": null,
     "name": "LAPIERRE",
     "sector": "Industrie / Vélos",
-    "status": "pending"
-  },
-  "a61e88c9b05e": {
-    "date": "2026-08-14",
-    "dirigeant": null,
-    "name": "LA BOITE IMMO",
-    "sector": "Édition de logiciels immobiliers",
     "status": "pending"
   },
   "aaf6fc5c08f7": {
@@ -207,6 +200,13 @@
     "dirigeant": null,
     "name": "Lamberet",
     "sector": "Carrosserie industrielle",
+    "status": "pending"
+  },
+  "f5ee811a0692": {
+    "date": "2026-08-28",
+    "dirigeant": null,
+    "name": "KAPORAL",
+    "sector": "Mode / Distribution",
     "status": "pending"
   },
   "f802e0705f48": {
