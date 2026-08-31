@@ -6,18 +6,18 @@
     "sector": "Jeux vidéo / Electronique",
     "status": "pending"
   },
-  "03d709a3f065": {
-    "date": "2026-08-17",
-    "dirigeant": null,
-    "name": "ESSOR",
-    "sector": "Services / Social",
-    "status": "pending"
-  },
   "0a3c884e7bea": {
     "date": "2026-08-20",
     "dirigeant": null,
     "name": "Groupe Pandora",
     "sector": "Services / Distribution",
+    "status": "pending"
+  },
+  "0b4236b339d1": {
+    "date": "2026-08-31",
+    "dirigeant": null,
+    "name": "TDK",
+    "sector": "Industrie / Manufacturing",
     "status": "pending"
   },
   "0cfd9b95d215": {
@@ -83,6 +83,13 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
+  "603a2358e1a0": {
+    "date": "2026-08-31",
+    "dirigeant": "Denis KUCHLY (Président de SAS)",
+    "name": "TRANSPORTS NOIZET",
+    "sector": "Transport / Logistique",
+    "status": "pending"
+  },
   "62e4e012916d": {
     "date": "2026-08-19",
     "dirigeant": null,
@@ -95,6 +102,13 @@
     "dirigeant": "Floris DE KORT",
     "name": "POSEIDON BIDCO",
     "sector": "Holding / Finance",
+    "status": "pending"
+  },
+  "79ecf85020a3": {
+    "date": "2026-08-31",
+    "dirigeant": null,
+    "name": "In Extenso",
+    "sector": "Expertise comptable / Conseil",
     "status": "pending"
   },
   "9d818de753cb": {
@@ -118,20 +132,6 @@
     "sector": "Télécommunications / WiFi managé",
     "status": "pending"
   },
-  "afdf55c048c5": {
-    "date": "2026-08-17",
-    "dirigeant": null,
-    "name": "Groupe Fauché",
-    "sector": "BTP / Electricité industrielle",
-    "status": "pending"
-  },
-  "b965edbf5af2": {
-    "date": "2026-08-17",
-    "dirigeant": null,
-    "name": "Boralex France",
-    "sector": "Energie renouvelable",
-    "status": "pending"
-  },
   "bc47637d775f": {
     "date": "2026-08-25",
     "dirigeant": null,
@@ -147,10 +147,10 @@
     "status": "pending"
   },
   "c292bc6d7619": {
-    "date": "2026-08-17",
-    "dirigeant": "Angélique Longeray (nouvelle DG France)",
+    "date": "2026-08-31",
+    "dirigeant": "Angélique Longeray (nouvelle Directrice Générale France, ancienne dirigeante de Somfy)",
     "name": "Groupe Atlantic",
-    "sector": "Industrie / Chauffage",
+    "sector": "Industrie / Génie climatique",
     "status": "pending"
   },
   "c5462c329529": {
