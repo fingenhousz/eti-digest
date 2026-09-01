@@ -21,7 +21,7 @@
     "status": "pending"
   },
   "0cfd9b95d215": {
-    "date": "2026-08-18",
+    "date": "2026-09-01",
     "dirigeant": null,
     "name": "Fibre Excellence",
     "sector": "Papier / Industrie",
@@ -39,6 +39,13 @@
     "dirigeant": null,
     "name": "Novasep",
     "sector": "Pharmacie / Chimie fine",
+    "status": "pending"
+  },
+  "3b3f0a66fa0c": {
+    "date": "2026-09-01",
+    "dirigeant": null,
+    "name": "Groupe Alquenry",
+    "sector": "Télécoms / Réseaux",
     "status": "pending"
   },
   "3bb3f3ec4df2": {
@@ -109,6 +116,13 @@
     "dirigeant": null,
     "name": "In Extenso",
     "sector": "Expertise comptable / Conseil",
+    "status": "pending"
+  },
+  "995e13d91899": {
+    "date": "2026-09-01",
+    "dirigeant": null,
+    "name": "De Dietrich",
+    "sector": "Chimie / Industrie",
     "status": "pending"
   },
   "9d818de753cb": {
@@ -188,13 +202,6 @@
     "sector": "Mobilité / MaaS",
     "status": "pending"
   },
-  "f2d02ff59c34": {
-    "date": "2026-08-18",
-    "dirigeant": "Emmanuel BERDER",
-    "name": "CLESTRA FRANCE",
-    "sector": "Aménagement intérieur / cloisons",
-    "status": "pending"
-  },
   "f2d1fa1c40ab": {
     "date": "2026-08-20",
     "dirigeant": null,
@@ -209,11 +216,11 @@
     "sector": "Mode / Distribution",
     "status": "pending"
   },
-  "f802e0705f48": {
-    "date": "2026-08-18",
+  "f6d0c06dd422": {
+    "date": "2026-09-01",
     "dirigeant": null,
-    "name": "Groupe Urban Loisirs",
-    "sector": "Loisirs / Tourisme",
+    "name": "Mastergrid",
+    "sector": "Énergie / Industrie",
     "status": "pending"
   },
   "febb5a7df0c7": {
