@@ -6,6 +6,13 @@
     "sector": "Jeux vidéo / Electronique",
     "status": "pending"
   },
+  "037473c3c4c4": {
+    "date": "2026-09-02",
+    "dirigeant": null,
+    "name": "Somfy",
+    "sector": "Industrie / Domotique",
+    "status": "pending"
+  },
   "0a3c884e7bea": {
     "date": "2026-08-20",
     "dirigeant": null,
@@ -27,18 +34,18 @@
     "sector": "Papier / Industrie",
     "status": "pending"
   },
+  "21a9d2636c3c": {
+    "date": "2026-09-02",
+    "dirigeant": null,
+    "name": "Deret (négociations avec Geodis)",
+    "sector": "Logistique / Transport",
+    "status": "pending"
+  },
   "2c08a23937db": {
     "date": "2026-08-25",
     "dirigeant": null,
     "name": "Durisotti",
     "sector": "Carrosserie industrielle",
-    "status": "pending"
-  },
-  "38a7bdef6e10": {
-    "date": "2026-08-19",
-    "dirigeant": null,
-    "name": "Novasep",
-    "sector": "Pharmacie / Chimie fine",
     "status": "pending"
   },
   "3b3f0a66fa0c": {
@@ -69,13 +76,6 @@
     "sector": "Loisirs / Escalade indoor",
     "status": "pending"
   },
-  "4abebd2924f2": {
-    "date": "2026-08-19",
-    "dirigeant": null,
-    "name": "KEP Technologies",
-    "sector": "Industrie / Instrumentation",
-    "status": "pending"
-  },
   "55412d4645e5": {
     "date": "2026-08-24",
     "dirigeant": null,
@@ -83,25 +83,11 @@
     "sector": "Restauration",
     "status": "pending"
   },
-  "5a985b1c0f21": {
-    "date": "2026-08-19",
-    "dirigeant": null,
-    "name": "Ziegler France",
-    "sector": "Transport / Logistique",
-    "status": "pending"
-  },
   "603a2358e1a0": {
     "date": "2026-08-31",
     "dirigeant": "Denis KUCHLY (Président de SAS)",
     "name": "TRANSPORTS NOIZET",
     "sector": "Transport / Logistique",
-    "status": "pending"
-  },
-  "62e4e012916d": {
-    "date": "2026-08-19",
-    "dirigeant": null,
-    "name": "Eolane",
-    "sector": "Electronique / Défense",
     "status": "pending"
   },
   "6fc115a0d019": {
@@ -174,6 +160,13 @@
     "sector": "Services numériques / IT",
     "status": "pending"
   },
+  "c547e70996e2": {
+    "date": "2026-09-02",
+    "dirigeant": null,
+    "name": "Meca Inox",
+    "sector": "Industrie / Métallurgie",
+    "status": "pending"
+  },
   "d6d4fad09f12": {
     "date": "2026-08-27",
     "dirigeant": null,
@@ -221,6 +214,13 @@
     "dirigeant": null,
     "name": "Mastergrid",
     "sector": "Énergie / Industrie",
+    "status": "pending"
+  },
+  "f802e0705f48": {
+    "date": "2026-09-02",
+    "dirigeant": null,
+    "name": "Groupe Urban Loisirs",
+    "sector": "Loisirs",
     "status": "pending"
   },
   "febb5a7df0c7": {
