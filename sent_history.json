@@ -13,13 +13,6 @@
     "sector": "Industrie / Domotique",
     "status": "pending"
   },
-  "0a3c884e7bea": {
-    "date": "2026-08-20",
-    "dirigeant": null,
-    "name": "Groupe Pandora",
-    "sector": "Services / Distribution",
-    "status": "pending"
-  },
   "0b4236b339d1": {
     "date": "2026-08-31",
     "dirigeant": null,
@@ -83,6 +76,13 @@
     "sector": "Restauration",
     "status": "pending"
   },
+  "5a985b1c0f21": {
+    "date": "2026-09-03",
+    "dirigeant": null,
+    "name": "Ziegler France",
+    "sector": "Transport / Logistique",
+    "status": "pending"
+  },
   "603a2358e1a0": {
     "date": "2026-08-31",
     "dirigeant": "Denis KUCHLY (Président de SAS)",
@@ -102,6 +102,20 @@
     "dirigeant": null,
     "name": "In Extenso",
     "sector": "Expertise comptable / Conseil",
+    "status": "pending"
+  },
+  "7d03cd5243b8": {
+    "date": "2026-09-03",
+    "dirigeant": "Paul Lhotellier (Président)",
+    "name": "Groupe Lhotellier",
+    "sector": "BTP / Construction",
+    "status": "pending"
+  },
+  "8bbe08358565": {
+    "date": "2026-09-03",
+    "dirigeant": null,
+    "name": "Groupe Nosoli",
+    "sector": "Distribution / Librairie",
     "status": "pending"
   },
   "995e13d91899": {
@@ -125,25 +139,11 @@
     "sector": "Industrie / Vélos",
     "status": "pending"
   },
-  "aaf6fc5c08f7": {
-    "date": "2026-08-20",
-    "dirigeant": null,
-    "name": "Wifirst",
-    "sector": "Télécommunications / WiFi managé",
-    "status": "pending"
-  },
   "bc47637d775f": {
     "date": "2026-08-25",
     "dirigeant": null,
     "name": "Aginode",
     "sector": "Industrie / Métallurgie",
-    "status": "pending"
-  },
-  "bd6c38fa993c": {
-    "date": "2026-08-20",
-    "dirigeant": null,
-    "name": "Groupe Bowi",
-    "sector": "Construction / Menuiserie",
     "status": "pending"
   },
   "c292bc6d7619": {
@@ -196,10 +196,10 @@
     "status": "pending"
   },
   "f2d1fa1c40ab": {
-    "date": "2026-08-20",
+    "date": "2026-09-03",
     "dirigeant": null,
     "name": "Lamberet",
-    "sector": "Carrosserie industrielle",
+    "sector": "Industrie / Carrosserie",
     "status": "pending"
   },
   "f5ee811a0692": {
