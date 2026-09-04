@@ -41,6 +41,13 @@
     "sector": "Carrosserie industrielle",
     "status": "pending"
   },
+  "387dcdeb697b": {
+    "date": "2026-09-04",
+    "dirigeant": "Sébastien Pillard",
+    "name": "Groupe Intermarché (adhérent Sébastien Pillard)",
+    "sector": "Distribution alimentaire",
+    "status": "pending"
+  },
   "3b3f0a66fa0c": {
     "date": "2026-09-01",
     "dirigeant": null,
@@ -48,25 +55,32 @@
     "sector": "Télécoms / Réseaux",
     "status": "pending"
   },
-  "3bb3f3ec4df2": {
-    "date": "2026-08-21",
-    "dirigeant": "Nicolas MAURISSET",
-    "name": "AUSAR ENERGY",
-    "sector": "Énergie",
-    "status": "pending"
-  },
-  "4149b4fbc145": {
-    "date": "2026-08-21",
-    "dirigeant": null,
-    "name": "OFF FINANCIERE ET PARTICIPATIONS",
-    "sector": "Holding / Finance",
-    "status": "pending"
-  },
   "44e2732d1f28": {
     "date": "2026-08-28",
     "dirigeant": "François Petit",
     "name": "Climb Up",
     "sector": "Loisirs / Escalade indoor",
+    "status": "pending"
+  },
+  "47d743f4a2d5": {
+    "date": "2026-09-04",
+    "dirigeant": null,
+    "name": "HMY",
+    "sector": "Agencement / Retail",
+    "status": "pending"
+  },
+  "4abebd2924f2": {
+    "date": "2026-09-04",
+    "dirigeant": null,
+    "name": "KEP Technologies",
+    "sector": "Industrie / Instrumentation",
+    "status": "pending"
+  },
+  "54c11cb78319": {
+    "date": "2026-09-04",
+    "dirigeant": null,
+    "name": "Compagnie Lea Nature",
+    "sector": "Cosmetique / Agroalimentaire bio",
     "status": "pending"
   },
   "55412d4645e5": {
