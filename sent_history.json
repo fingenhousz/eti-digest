@@ -13,6 +13,13 @@
     "sector": "Industrie / Domotique",
     "status": "pending"
   },
+  "0a3c884e7bea": {
+    "date": "2026-09-07",
+    "dirigeant": null,
+    "name": "Groupe Pandora",
+    "sector": "Services / Multi-activités",
+    "status": "pending"
+  },
   "0b4236b339d1": {
     "date": "2026-08-31",
     "dirigeant": null,
@@ -83,13 +90,6 @@
     "sector": "Cosmetique / Agroalimentaire bio",
     "status": "pending"
   },
-  "55412d4645e5": {
-    "date": "2026-08-24",
-    "dirigeant": null,
-    "name": "GROUPE BAUDAIRE",
-    "sector": "Restauration",
-    "status": "pending"
-  },
   "5a985b1c0f21": {
     "date": "2026-09-03",
     "dirigeant": null,
@@ -97,18 +97,18 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
+  "5fa21ddb32d2": {
+    "date": "2026-09-07",
+    "dirigeant": null,
+    "name": "Clestra Holding",
+    "sector": "Industrie / Aménagement intérieur",
+    "status": "pending"
+  },
   "603a2358e1a0": {
     "date": "2026-08-31",
     "dirigeant": "Denis KUCHLY (Président de SAS)",
     "name": "TRANSPORTS NOIZET",
     "sector": "Transport / Logistique",
-    "status": "pending"
-  },
-  "6fc115a0d019": {
-    "date": "2026-08-24",
-    "dirigeant": "Floris DE KORT",
-    "name": "POSEIDON BIDCO",
-    "sector": "Holding / Finance",
     "status": "pending"
   },
   "79ecf85020a3": {
@@ -147,9 +147,9 @@
     "status": "pending"
   },
   "9dffcd4970fa": {
-    "date": "2026-08-24",
+    "date": "2026-09-07",
     "dirigeant": null,
-    "name": "LAPIERRE",
+    "name": "Lapierre",
     "sector": "Industrie / Vélos",
     "status": "pending"
   },
@@ -200,6 +200,13 @@
     "dirigeant": null,
     "name": "Florentaise",
     "sector": "Horticulture / Agroalimentaire",
+    "status": "pending"
+  },
+  "e6bfaa9da01c": {
+    "date": "2026-09-07",
+    "dirigeant": null,
+    "name": "ChapsVision",
+    "sector": "Logiciels / Intelligence Artificielle",
     "status": "pending"
   },
   "ee33169f59ba": {
