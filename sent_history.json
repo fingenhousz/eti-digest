@@ -41,18 +41,18 @@
     "sector": "Logistique / Transport",
     "status": "pending"
   },
-  "2c08a23937db": {
-    "date": "2026-08-25",
-    "dirigeant": null,
-    "name": "Durisotti",
-    "sector": "Carrosserie industrielle",
-    "status": "pending"
-  },
   "387dcdeb697b": {
     "date": "2026-09-04",
     "dirigeant": "Sébastien Pillard",
     "name": "Groupe Intermarché (adhérent Sébastien Pillard)",
     "sector": "Distribution alimentaire",
+    "status": "pending"
+  },
+  "38a7bdef6e10": {
+    "date": "2026-09-08",
+    "dirigeant": null,
+    "name": "Novasep",
+    "sector": "Pharmacie / Chimie fine",
     "status": "pending"
   },
   "3b3f0a66fa0c": {
@@ -74,6 +74,13 @@
     "dirigeant": null,
     "name": "HMY",
     "sector": "Agencement / Retail",
+    "status": "pending"
+  },
+  "49b498c2adb2": {
+    "date": "2026-09-08",
+    "dirigeant": "Olivier BROVEDANI",
+    "name": "SOLUTIONS 30 ENERGIES",
+    "sector": "Energie / Services",
     "status": "pending"
   },
   "4abebd2924f2": {
@@ -153,11 +160,11 @@
     "sector": "Industrie / Vélos",
     "status": "pending"
   },
-  "bc47637d775f": {
-    "date": "2026-08-25",
+  "bc20fc39b254": {
+    "date": "2026-09-08",
     "dirigeant": null,
-    "name": "Aginode",
-    "sector": "Industrie / Métallurgie",
+    "name": "Groupe Positive / Sigilium",
+    "sector": "Numérique / Services",
     "status": "pending"
   },
   "c292bc6d7619": {
@@ -165,13 +172,6 @@
     "dirigeant": "Angélique Longeray (nouvelle Directrice Générale France, ancienne dirigeante de Somfy)",
     "name": "Groupe Atlantic",
     "sector": "Industrie / Génie climatique",
-    "status": "pending"
-  },
-  "c5462c329529": {
-    "date": "2026-08-25",
-    "dirigeant": null,
-    "name": "NSI Groupe",
-    "sector": "Services numériques / IT",
     "status": "pending"
   },
   "c547e70996e2": {
@@ -193,13 +193,6 @@
     "dirigeant": "Samuel BRIGANTINO",
     "name": "Glass Express France",
     "sector": "Industrie / Vitrage",
-    "status": "pending"
-  },
-  "e438345908e4": {
-    "date": "2026-08-25",
-    "dirigeant": null,
-    "name": "Florentaise",
-    "sector": "Horticulture / Agroalimentaire",
     "status": "pending"
   },
   "e6bfaa9da01c": {
@@ -242,13 +235,6 @@
     "dirigeant": null,
     "name": "Groupe Urban Loisirs",
     "sector": "Loisirs",
-    "status": "pending"
-  },
-  "febb5a7df0c7": {
-    "date": "2026-08-25",
-    "dirigeant": null,
-    "name": "Groupe Allard",
-    "sector": "Industrie / Groupe familial",
     "status": "pending"
   }
 }
