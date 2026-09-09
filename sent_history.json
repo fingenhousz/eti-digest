@@ -1,11 +1,4 @@
 {
-  "030084c2f5f4": {
-    "date": "2026-08-26",
-    "dirigeant": "Alain FALC",
-    "name": "BIGBEN INTERACTIVE",
-    "sector": "Jeux vidéo / Electronique",
-    "status": "pending"
-  },
   "037473c3c4c4": {
     "date": "2026-09-02",
     "dirigeant": null,
@@ -39,6 +32,13 @@
     "dirigeant": null,
     "name": "Deret (négociations avec Geodis)",
     "sector": "Logistique / Transport",
+    "status": "pending"
+  },
+  "27ac87c51d1c": {
+    "date": "2026-09-09",
+    "dirigeant": null,
+    "name": "Afibel",
+    "sector": "Distribution / Mode",
     "status": "pending"
   },
   "387dcdeb697b": {
@@ -104,6 +104,13 @@
     "sector": "Transport / Logistique",
     "status": "pending"
   },
+  "5ab8db7d1bf4": {
+    "date": "2026-09-09",
+    "dirigeant": null,
+    "name": "Transports Brelet",
+    "sector": "Transport",
+    "status": "pending"
+  },
   "5fa21ddb32d2": {
     "date": "2026-09-07",
     "dirigeant": null,
@@ -130,6 +137,13 @@
     "dirigeant": "Paul Lhotellier (Président)",
     "name": "Groupe Lhotellier",
     "sector": "BTP / Construction",
+    "status": "pending"
+  },
+  "7f0ea4bd37f0": {
+    "date": "2026-09-09",
+    "dirigeant": null,
+    "name": "Penet",
+    "sector": "BTP",
     "status": "pending"
   },
   "8bbe08358565": {
@@ -165,6 +179,13 @@
     "dirigeant": null,
     "name": "Groupe Positive / Sigilium",
     "sector": "Numérique / Services",
+    "status": "pending"
+  },
+  "bd6c38fa993c": {
+    "date": "2026-09-09",
+    "dirigeant": null,
+    "name": "Groupe Bowi",
+    "sector": "Construction / Menuiserie",
     "status": "pending"
   },
   "c292bc6d7619": {
