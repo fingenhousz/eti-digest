@@ -41,6 +41,13 @@
     "sector": "Distribution / Mode",
     "status": "pending"
   },
+  "2c08a23937db": {
+    "date": "2026-09-10",
+    "dirigeant": null,
+    "name": "Durisotti",
+    "sector": "Carrosserie industrielle",
+    "status": "pending"
+  },
   "387dcdeb697b": {
     "date": "2026-09-04",
     "dirigeant": "Sébastien Pillard",
@@ -181,11 +188,25 @@
     "sector": "Numérique / Services",
     "status": "pending"
   },
+  "bc47637d775f": {
+    "date": "2026-09-10",
+    "dirigeant": null,
+    "name": "Aginode",
+    "sector": "Industrie / Métallurgie",
+    "status": "pending"
+  },
   "bd6c38fa993c": {
     "date": "2026-09-09",
     "dirigeant": null,
     "name": "Groupe Bowi",
     "sector": "Construction / Menuiserie",
+    "status": "pending"
+  },
+  "bf7241c833fa": {
+    "date": "2026-09-10",
+    "dirigeant": null,
+    "name": "Groupe Finadorm",
+    "sector": "Distribution / Literie",
     "status": "pending"
   },
   "c292bc6d7619": {
@@ -202,20 +223,6 @@
     "sector": "Industrie / Métallurgie",
     "status": "pending"
   },
-  "d6d4fad09f12": {
-    "date": "2026-08-27",
-    "dirigeant": null,
-    "name": "Flauraud",
-    "sector": "Distribution automobile / Pièces détachées",
-    "status": "pending"
-  },
-  "e04f64d478ca": {
-    "date": "2026-08-27",
-    "dirigeant": "Samuel BRIGANTINO",
-    "name": "Glass Express France",
-    "sector": "Industrie / Vitrage",
-    "status": "pending"
-  },
   "e6bfaa9da01c": {
     "date": "2026-09-07",
     "dirigeant": null,
@@ -224,10 +231,10 @@
     "status": "pending"
   },
   "ee33169f59ba": {
-    "date": "2026-08-27",
+    "date": "2026-09-10",
     "dirigeant": null,
     "name": "Instant System",
-    "sector": "Mobilité / MaaS",
+    "sector": "Mobilité / MaaS / Logiciel",
     "status": "pending"
   },
   "f2d1fa1c40ab": {
