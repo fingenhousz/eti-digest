@@ -69,11 +69,18 @@
     "sector": "Télécoms / Réseaux",
     "status": "pending"
   },
+  "43978eaf1a1c": {
+    "date": "2026-09-11",
+    "dirigeant": null,
+    "name": "Fonderie de Bretagne",
+    "sector": "Industrie / Fonderie",
+    "status": "pending"
+  },
   "44e2732d1f28": {
-    "date": "2026-08-28",
+    "date": "2026-09-11",
     "dirigeant": "François Petit",
     "name": "Climb Up",
-    "sector": "Loisirs / Escalade indoor",
+    "sector": "Loisirs / Escalade",
     "status": "pending"
   },
   "47d743f4a2d5": {
@@ -167,13 +174,6 @@
     "sector": "Chimie / Industrie",
     "status": "pending"
   },
-  "9d818de753cb": {
-    "date": "2026-08-28",
-    "dirigeant": null,
-    "name": "La Fonderie de Bretagne",
-    "sector": "Métallurgie / Fonderie",
-    "status": "pending"
-  },
   "9dffcd4970fa": {
     "date": "2026-09-07",
     "dirigeant": null,
@@ -237,18 +237,18 @@
     "sector": "Mobilité / MaaS / Logiciel",
     "status": "pending"
   },
+  "eebe71dd1b28": {
+    "date": "2026-09-11",
+    "dirigeant": null,
+    "name": "C&C France",
+    "sector": "Distribution / IT",
+    "status": "pending"
+  },
   "f2d1fa1c40ab": {
     "date": "2026-09-03",
     "dirigeant": null,
     "name": "Lamberet",
     "sector": "Industrie / Carrosserie",
-    "status": "pending"
-  },
-  "f5ee811a0692": {
-    "date": "2026-08-28",
-    "dirigeant": null,
-    "name": "KAPORAL",
-    "sector": "Mode / Distribution",
     "status": "pending"
   },
   "f6d0c06dd422": {
