@@ -13,13 +13,6 @@
     "sector": "Services / Multi-activités",
     "status": "pending"
   },
-  "0b4236b339d1": {
-    "date": "2026-08-31",
-    "dirigeant": null,
-    "name": "TDK",
-    "sector": "Industrie / Manufacturing",
-    "status": "pending"
-  },
   "0cfd9b95d215": {
     "date": "2026-09-01",
     "dirigeant": null,
@@ -111,6 +104,13 @@
     "sector": "Cosmetique / Agroalimentaire bio",
     "status": "pending"
   },
+  "55412d4645e5": {
+    "date": "2026-09-14",
+    "dirigeant": null,
+    "name": "Groupe Baudaire",
+    "sector": "Restauration",
+    "status": "pending"
+  },
   "5a985b1c0f21": {
     "date": "2026-09-03",
     "dirigeant": null,
@@ -132,18 +132,11 @@
     "sector": "Industrie / Aménagement intérieur",
     "status": "pending"
   },
-  "603a2358e1a0": {
-    "date": "2026-08-31",
-    "dirigeant": "Denis KUCHLY (Président de SAS)",
-    "name": "TRANSPORTS NOIZET",
-    "sector": "Transport / Logistique",
-    "status": "pending"
-  },
-  "79ecf85020a3": {
-    "date": "2026-08-31",
+  "77c8f287e56c": {
+    "date": "2026-09-14",
     "dirigeant": null,
-    "name": "In Extenso",
-    "sector": "Expertise comptable / Conseil",
+    "name": "Polyart",
+    "sector": "Industrie / Etiquettes",
     "status": "pending"
   },
   "7d03cd5243b8": {
@@ -158,6 +151,13 @@
     "dirigeant": null,
     "name": "Penet",
     "sector": "BTP",
+    "status": "pending"
+  },
+  "88519ffd838e": {
+    "date": "2026-09-14",
+    "dirigeant": null,
+    "name": "Lebronze Alloys",
+    "sector": "Industrie / Alliages de cuivre",
     "status": "pending"
   },
   "8bbe08358565": {
@@ -209,13 +209,6 @@
     "sector": "Distribution / Literie",
     "status": "pending"
   },
-  "c292bc6d7619": {
-    "date": "2026-08-31",
-    "dirigeant": "Angélique Longeray (nouvelle Directrice Générale France, ancienne dirigeante de Somfy)",
-    "name": "Groupe Atlantic",
-    "sector": "Industrie / Génie climatique",
-    "status": "pending"
-  },
   "c547e70996e2": {
     "date": "2026-09-02",
     "dirigeant": null,
@@ -223,11 +216,25 @@
     "sector": "Industrie / Métallurgie",
     "status": "pending"
   },
+  "e04f64d478ca": {
+    "date": "2026-09-14",
+    "dirigeant": "Samuel Brigantino",
+    "name": "Glass Express France",
+    "sector": "Distribution / Vitrage automobile",
+    "status": "pending"
+  },
   "e6bfaa9da01c": {
     "date": "2026-09-07",
     "dirigeant": null,
     "name": "ChapsVision",
     "sector": "Logiciels / Intelligence Artificielle",
+    "status": "pending"
+  },
+  "e80c366379d4": {
+    "date": "2026-09-14",
+    "dirigeant": null,
+    "name": "Rydge Conseil",
+    "sector": "Conseil / Expertise comptable",
     "status": "pending"
   },
   "ee33169f59ba": {
