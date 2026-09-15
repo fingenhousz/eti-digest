@@ -14,10 +14,10 @@
     "status": "pending"
   },
   "0cfd9b95d215": {
-    "date": "2026-09-01",
+    "date": "2026-09-15",
     "dirigeant": null,
     "name": "Fibre Excellence",
-    "sector": "Papier / Industrie",
+    "sector": "Industrie papetière",
     "status": "pending"
   },
   "21a9d2636c3c": {
@@ -53,13 +53,6 @@
     "dirigeant": null,
     "name": "Novasep",
     "sector": "Pharmacie / Chimie fine",
-    "status": "pending"
-  },
-  "3b3f0a66fa0c": {
-    "date": "2026-09-01",
-    "dirigeant": null,
-    "name": "Groupe Alquenry",
-    "sector": "Télécoms / Réseaux",
     "status": "pending"
   },
   "43978eaf1a1c": {
@@ -109,6 +102,13 @@
     "dirigeant": null,
     "name": "Groupe Baudaire",
     "sector": "Restauration",
+    "status": "pending"
+  },
+  "591d67f0fa18": {
+    "date": "2026-09-15",
+    "dirigeant": null,
+    "name": "Groupe Bruneau",
+    "sector": "Distribution fournitures bureau",
     "status": "pending"
   },
   "5a985b1c0f21": {
@@ -167,13 +167,6 @@
     "sector": "Distribution / Librairie",
     "status": "pending"
   },
-  "995e13d91899": {
-    "date": "2026-09-01",
-    "dirigeant": null,
-    "name": "De Dietrich",
-    "sector": "Chimie / Industrie",
-    "status": "pending"
-  },
   "9dffcd4970fa": {
     "date": "2026-09-07",
     "dirigeant": null,
@@ -207,6 +200,20 @@
     "dirigeant": null,
     "name": "Groupe Finadorm",
     "sector": "Distribution / Literie",
+    "status": "pending"
+  },
+  "c292bc6d7619": {
+    "date": "2026-09-15",
+    "dirigeant": "Angélique Longeray (nouvelle directrice générale France)",
+    "name": "Groupe Atlantic",
+    "sector": "Industrie / Génie climatique",
+    "status": "pending"
+  },
+  "c3bb6b9e0694": {
+    "date": "2026-09-15",
+    "dirigeant": null,
+    "name": "Maury Imprimeur",
+    "sector": "Imprimerie",
     "status": "pending"
   },
   "c547e70996e2": {
@@ -256,13 +263,6 @@
     "dirigeant": null,
     "name": "Lamberet",
     "sector": "Industrie / Carrosserie",
-    "status": "pending"
-  },
-  "f6d0c06dd422": {
-    "date": "2026-09-01",
-    "dirigeant": null,
-    "name": "Mastergrid",
-    "sector": "Énergie / Industrie",
     "status": "pending"
   },
   "f802e0705f48": {
