@@ -1,11 +1,4 @@
 {
-  "037473c3c4c4": {
-    "date": "2026-09-02",
-    "dirigeant": null,
-    "name": "Somfy",
-    "sector": "Industrie / Domotique",
-    "status": "pending"
-  },
   "0a3c884e7bea": {
     "date": "2026-09-07",
     "dirigeant": null,
@@ -18,13 +11,6 @@
     "dirigeant": null,
     "name": "Fibre Excellence",
     "sector": "Industrie papetière",
-    "status": "pending"
-  },
-  "21a9d2636c3c": {
-    "date": "2026-09-02",
-    "dirigeant": null,
-    "name": "Deret (négociations avec Geodis)",
-    "sector": "Logistique / Transport",
     "status": "pending"
   },
   "27ac87c51d1c": {
@@ -55,11 +41,25 @@
     "sector": "Pharmacie / Chimie fine",
     "status": "pending"
   },
+  "3b3f0a66fa0c": {
+    "date": "2026-09-16",
+    "dirigeant": null,
+    "name": "Groupe Alquenry",
+    "sector": "Télécoms / Réseaux",
+    "status": "pending"
+  },
   "43978eaf1a1c": {
     "date": "2026-09-11",
     "dirigeant": null,
     "name": "Fonderie de Bretagne",
     "sector": "Industrie / Fonderie",
+    "status": "pending"
+  },
+  "443902220fce": {
+    "date": "2026-09-16",
+    "dirigeant": null,
+    "name": "Evernex",
+    "sector": "Data centers / Maintenance IT",
     "status": "pending"
   },
   "44e2732d1f28": {
@@ -102,6 +102,13 @@
     "dirigeant": null,
     "name": "Groupe Baudaire",
     "sector": "Restauration",
+    "status": "pending"
+  },
+  "573c558c1878": {
+    "date": "2026-09-16",
+    "dirigeant": null,
+    "name": "Duralex",
+    "sector": "Industrie verrerie",
     "status": "pending"
   },
   "591d67f0fa18": {
@@ -174,6 +181,13 @@
     "sector": "Industrie / Vélos",
     "status": "pending"
   },
+  "b188284f297d": {
+    "date": "2026-09-16",
+    "dirigeant": null,
+    "name": "Okaïdi",
+    "sector": "Distribution retail textile enfant",
+    "status": "pending"
+  },
   "bc20fc39b254": {
     "date": "2026-09-08",
     "dirigeant": null,
@@ -216,13 +230,6 @@
     "sector": "Imprimerie",
     "status": "pending"
   },
-  "c547e70996e2": {
-    "date": "2026-09-02",
-    "dirigeant": null,
-    "name": "Meca Inox",
-    "sector": "Industrie / Métallurgie",
-    "status": "pending"
-  },
   "e04f64d478ca": {
     "date": "2026-09-14",
     "dirigeant": "Samuel Brigantino",
@@ -263,13 +270,6 @@
     "dirigeant": null,
     "name": "Lamberet",
     "sector": "Industrie / Carrosserie",
-    "status": "pending"
-  },
-  "f802e0705f48": {
-    "date": "2026-09-02",
-    "dirigeant": null,
-    "name": "Groupe Urban Loisirs",
-    "sector": "Loisirs",
     "status": "pending"
   }
 }
