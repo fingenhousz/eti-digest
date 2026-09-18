@@ -27,13 +27,6 @@
     "sector": "Carrosserie industrielle",
     "status": "pending"
   },
-  "387dcdeb697b": {
-    "date": "2026-09-04",
-    "dirigeant": "Sébastien Pillard",
-    "name": "Groupe Intermarché (adhérent Sébastien Pillard)",
-    "sector": "Distribution alimentaire",
-    "status": "pending"
-  },
   "38a7bdef6e10": {
     "date": "2026-09-08",
     "dirigeant": null,
@@ -69,32 +62,11 @@
     "sector": "Loisirs / Escalade",
     "status": "pending"
   },
-  "47d743f4a2d5": {
-    "date": "2026-09-04",
-    "dirigeant": null,
-    "name": "HMY",
-    "sector": "Agencement / Retail",
-    "status": "pending"
-  },
   "49b498c2adb2": {
     "date": "2026-09-08",
     "dirigeant": "Olivier BROVEDANI",
     "name": "SOLUTIONS 30 ENERGIES",
     "sector": "Energie / Services",
-    "status": "pending"
-  },
-  "4abebd2924f2": {
-    "date": "2026-09-04",
-    "dirigeant": null,
-    "name": "KEP Technologies",
-    "sector": "Industrie / Instrumentation",
-    "status": "pending"
-  },
-  "54c11cb78319": {
-    "date": "2026-09-04",
-    "dirigeant": null,
-    "name": "Compagnie Lea Nature",
-    "sector": "Cosmetique / Agroalimentaire bio",
     "status": "pending"
   },
   "55412d4645e5": {
@@ -158,6 +130,13 @@
     "dirigeant": null,
     "name": "Lebronze Alloys",
     "sector": "Industrie / Alliages de cuivre",
+    "status": "pending"
+  },
+  "8ea60720227c": {
+    "date": "2026-09-18",
+    "dirigeant": null,
+    "name": "Groupe Poussin",
+    "sector": "Industrie / Énergie solaire",
     "status": "pending"
   },
   "9dffcd4970fa": {
@@ -263,6 +242,13 @@
     "dirigeant": null,
     "name": "Lamberet",
     "sector": "Carrosserie / Remorques",
+    "status": "pending"
+  },
+  "f44e63f9a6c4": {
+    "date": "2026-09-18",
+    "dirigeant": "Jean-pierre CARO (Commissaire aux comptes suppléant)",
+    "name": "FICA-HPCI",
+    "sector": "Industrie chimique / agro-industrielle",
     "status": "pending"
   }
 }
