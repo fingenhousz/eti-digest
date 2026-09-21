@@ -75,9 +75,8 @@ def main():
         since = days_since(entry.get("interested_at"), now)
         if since is None or since < REMINDER_AFTER_DAYS:
             continue
-        last_reminded = days_since(entry.get("reminded_at"), now)
-        if last_reminded is not None and last_reminded < REMINDER_AFTER_DAYS:
-            continue  # already nudged recently — don't spam every day
+        if entry.get('reminded_at'):
+            continue  # One follow-up per prospect, never an endless weekly loop.
         stale.append((cid, entry, since))
 
     if not stale:
