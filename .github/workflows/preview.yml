@@ -1,0 +1,30 @@
+name: Isolated morning preview
+on:
+  push:
+    branches: [codex/preview-morning-digest]
+    paths: [.github/workflows/preview.yml]
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Reconstruct 21 September at 8am Paris
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
+          PREVIEW_AT: '2026-09-21T06:00:00+00:00'
+          PREVIEW_HISTORY_REF: '77a0103258a026cc6e13c8e5534ad1617d9c840b'
+        run: python preview_digest.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: morning-preview
+          path: preview.json
+          retention-days: 3
