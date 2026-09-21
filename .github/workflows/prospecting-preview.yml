@@ -23,6 +23,7 @@ jobs:
           PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
         run: python prospecting_preview.py --max-pappers-calls 5 --lookback-days 30
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: prospecting-preview
           path: |

@@ -136,8 +136,9 @@ def select(client, sources, exclusions):
                                         tool_choice={'type': 'tool', 'name': TOOL['name'], 'disable_parallel_tool_use': True})
         try:
             return [r for r in validate(message, sources) if not company_keys(r['company']) & excluded]
-        except ValueError:
-            pass
+        except ValueError as error:
+            print('Validation de sélection : ' + str(error))
+            prompt += '\nLa tentative précédente a échoué : ' + str(error) + '. Vérifie chaque champ et copie les citations exactement depuis text.'
     raise ValueError('Sélection invalide après deux essais ; aperçu interrompu')
 
 
@@ -197,6 +198,7 @@ def main():
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     client = PappersClient(os.environ.get('PAPPERS_API_KEY', ''), output / 'pappers_cache.json', args.max_pappers_calls)
+    (output / 'sources.json').write_text(json.dumps(sources, ensure_ascii=False, indent=2), encoding='utf-8')
     rows = select(anthropic.Anthropic(), sources, excluded_names(eti_digest.load_sent_history())) if sources else []
     qualified = qualify(rows, sources, client, contacts, bool(args.connections))
     diagnostics = {'run_at': datetime.now(timezone.utc).isoformat(),
