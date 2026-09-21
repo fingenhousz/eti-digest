@@ -1,9 +1,9 @@
 {
   "0a3c884e7bea": {
-    "date": "2026-09-07",
+    "date": "2026-09-21",
     "dirigeant": null,
     "name": "Groupe Pandora",
-    "sector": "Services / Multi-activités",
+    "sector": "Services / Multisectoriel",
     "status": "pending"
   },
   "0cfd9b95d215": {
@@ -97,13 +97,6 @@
     "sector": "Transport",
     "status": "pending"
   },
-  "5fa21ddb32d2": {
-    "date": "2026-09-07",
-    "dirigeant": null,
-    "name": "Clestra Holding",
-    "sector": "Industrie / Aménagement intérieur",
-    "status": "pending"
-  },
   "77c8f287e56c": {
     "date": "2026-09-14",
     "dirigeant": null,
@@ -140,10 +133,10 @@
     "status": "pending"
   },
   "9dffcd4970fa": {
-    "date": "2026-09-07",
+    "date": "2026-09-21",
     "dirigeant": null,
     "name": "Lapierre",
-    "sector": "Industrie / Vélos",
+    "sector": "Industrie / Cycles",
     "status": "pending"
   },
   "b188284f297d": {
@@ -209,13 +202,6 @@
     "sector": "Distribution / Vitrage automobile",
     "status": "pending"
   },
-  "e6bfaa9da01c": {
-    "date": "2026-09-07",
-    "dirigeant": null,
-    "name": "ChapsVision",
-    "sector": "Logiciels / Intelligence Artificielle",
-    "status": "pending"
-  },
   "e80c366379d4": {
     "date": "2026-09-14",
     "dirigeant": null,
@@ -235,6 +221,13 @@
     "dirigeant": null,
     "name": "C&C France",
     "sector": "Distribution / IT",
+    "status": "pending"
+  },
+  "f05933c761b1": {
+    "date": "2026-09-21",
+    "dirigeant": null,
+    "name": "NanoXplore (PME défense/spatial)",
+    "sector": "Industrie / Défense / Spatial",
     "status": "pending"
   },
   "f2d1fa1c40ab": {
