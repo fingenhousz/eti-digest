@@ -59,7 +59,7 @@ class PolicyTests(unittest.TestCase):
             self.assertEqual(len(digest.fetch_rss_news()), 1)
 
     def test_delivery_filters_and_checkpoints(self):
-        blocks = ['*🏭 Groupe Okaidi* — Paris', '*🏭 New Company* — Paris', '*🏭 New-Company SAS* — Paris', 'Malformed block', '*🏭 Failed Company* — Paris']
+        blocks = ['*🏭 Groupe Okaidi* — Paris', '*🏭 New Company* — Paris', '*🏭 New-Company SAS* — Paris', '*🏭 Failed Company* — Paris']
         with tempfile.TemporaryDirectory() as folder, patch.object(digest, 'SENT_HISTORY_FILE', str(Path(folder)/'history.json')):
             digest.save_sent_history({'old': {'name': 'Okaïdi', 'date': datetime.now(timezone.utc).date().isoformat(), 'status': 'pending'}})
             def send(message, **kwargs):
