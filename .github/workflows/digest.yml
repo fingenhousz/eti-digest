@@ -14,6 +14,10 @@ permissions:
   contents: write
   actions: read
 
+concurrency:
+  group: eti-state-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   digest:
     runs-on: ubuntu-latest
@@ -40,6 +44,9 @@ jobs:
       - name: Checkout
         if: steps.dedup.outputs.skip != 'true'
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Python
         if: steps.dedup.outputs.skip != 'true'
@@ -59,7 +66,9 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
-        run: python eti_digest.py
+        run: |
+          python restore_history.py
+          python eti_digest.py
 
       # Persist the dedup history and the company-size cache the script just
       # wrote locally — GitHub Actions runners are ephemeral, so without this

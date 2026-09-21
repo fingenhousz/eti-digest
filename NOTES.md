@@ -1,5 +1,31 @@
 # Ops notes — scheduling & delivery reliability
 
+## Repeated-alert fix (2026-09-21)
+
+- Keep the complete company history; exclude companies for 90 days instead
+  of deleting their records after 14. Interested/ignored prospects remain
+  excluded regardless of age. Existing Telegram callback IDs stay valid.
+- Normalize accents, punctuation, group prefixes, legal suffixes and
+  parenthetical descriptions; reject duplicate companies within one digest
+  and blocks whose company header cannot be parsed. These are conservative
+  name rules, not a full corporate-group/SIREN alias database.
+- Accept only dated RSS articles published within 72 hours, remove duplicate
+  headlines across feeds and pass dates/links to the model. The prompt also
+  rejects retrospectives, but publication date alone cannot prove that the
+  underlying event is new. Source references are requested in each block.
+- Disable additional sector notifications by default (`SECTOR_ALERTS=1` opts
+  in). Send only one follow-up for each interested prospect.
+- Save each company only after confirmed delivery, checkpoint immediately,
+  and stop if history is unreadable. Shared workflow concurrency and fresh
+  branch checkouts serialize digest, button polling and reminder writes.
+  Telegram send + Git push is not atomic: an uncertain send response or failed
+  state push can still require manual investigation.
+- `restore_history.py` runs before the digest with full Git history and
+  recovers missing records from the last 90 days of commits. Current entries
+  always win. Local validation recovered 84 records (119 total); deployment
+  recalculates against current production state instead of overwriting it.
+- Validation: `python -m unittest -v test_alerts` (mocked services; no sends).
+
 Written 2026-07-03 after investigating missing WhatsApp notifications.
 
 ## Findings (2026-07-03)

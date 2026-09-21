@@ -18,6 +18,7 @@ from datetime import datetime, timedelta, timezone
 
 import feedparser
 import anthropic
+from alert_policy import DEDUP_WINDOW_DAYS, company_keys, excluded_names, fresh_article_date, as_utc
 
 APOSTROPHE_RE = re.compile("[‘’‚‛ʼʻ′‵]")
 
@@ -31,7 +32,6 @@ ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
 PAPPERS_API_KEY = os.environ.get("PAPPERS_API_KEY", "").strip()
 
 SENT_HISTORY_FILE = "sent_history.json"
-DEDUP_WINDOW_DAYS = 14
 
 
 def company_id(name):
@@ -42,7 +42,7 @@ def company_id(name):
 
 
 def load_sent_history():
-    """Returns {company_id: {...}}, pruned to the dedup window. Transparently
+    """Returns permanent {company_id: {...}} history. Transparently
     migrates the legacy {name: date_str} format from before pipeline-status
     tracking existed. Preserves any extra fields (dirigeant, interested_at,
     reminded_at) added by poll_telegram.py / send_reminders.py — this script
@@ -52,9 +52,8 @@ def load_sent_history():
     try:
         with open(SENT_HISTORY_FILE, encoding="utf-8") as f:
             raw = json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return {}
-    cutoff = datetime.now(timezone.utc) - timedelta(days=DEDUP_WINDOW_DAYS)
+    except (json.JSONDecodeError, OSError) as exc:
+        raise RuntimeError('Cannot read alert history; refusing to send duplicates') from exc
     pruned = {}
     for key, value in raw.items():
         if isinstance(value, str):
@@ -67,20 +66,17 @@ def load_sent_history():
             entry.setdefault("date", "")
             entry.setdefault("status", "pending")
             entry.setdefault("sector", None)
-        try:
-            if entry["date"] and datetime.fromisoformat(entry["date"]).replace(tzinfo=timezone.utc) >= cutoff:
-                pruned[cid] = entry
-        except ValueError:
-            continue
+        pruned[cid] = entry
     return pruned
 
 
 def save_sent_history(history):
-    with open(SENT_HISTORY_FILE, "w", encoding="utf-8") as f:
+    with open(SENT_HISTORY_FILE + '.tmp', "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2, sort_keys=True)
+    os.replace(SENT_HISTORY_FILE + '.tmp', SENT_HISTORY_FILE)
 
 
-BLOCK_HEADER_RE = re.compile(r"\*([^*]+)\*")
+BLOCK_HEADER_RE = re.compile(r"^\*{1,2}([^*\n]+)\*{1,2}\s*[—–-]", re.MULTILINE)
 
 
 def extract_company_names(digest_text):
@@ -88,8 +84,7 @@ def extract_company_names(digest_text):
     (strips the leading emoji token)."""
     names = []
     for raw in BLOCK_HEADER_RE.findall(digest_text):
-        parts = raw.strip().split(None, 1)
-        name = parts[1].strip() if len(parts) == 2 else (parts[0].strip() if parts else "")
+        name = re.sub(r'^[^\w]+', '', raw.strip()).strip()
         if name:
             names.append(name)
     return names
@@ -217,19 +212,28 @@ def fetch_bodacc_events():
 
 def fetch_rss_news():
     articles = []
+    seen = set()
     for source_name, url in RSS_FEEDS:
         try:
             feed = feedparser.parse(url)
             for entry in feed.entries[:40]:
+                published = fresh_article_date(entry.get('published'))
+                if not published:
+                    continue
                 title = entry.get("title", "")
+                identity = re.sub(r'\W+', ' ', title.casefold()).strip()
+                if not identity or identity in seen:
+                    continue
                 summary = entry.get("summary", "")
                 combined = (title + " " + summary).lower()
                 if any(word in combined for word in ETI_SIGNAL_WORDS):
+                    seen.add(identity)
                     articles.append({
                         "source": source_name,
                         "title": title,
                         "summary": summary[:400],
-                        "date": entry.get("published", ""),
+                        "date": published,
+                        "url": entry.get('link', ''),
                     })
         except Exception as e:
             print(f"  RSS {source_name} error: {e}")
@@ -442,7 +446,7 @@ def build_digest(bodacc_events, rss_articles, excluded_companies=None):
 
     bodacc_text = "\n".join(fmt_event(e) for e in bodacc_events) or "Aucune annonce Bodacc aujourd’hui."
     rss_text = "\n".join(
-        "- [{}] {} - {}".format(e.get("source", ""), e.get("title", ""), e.get("summary", ""))
+        "- [{} | {}] {} - {} | {}".format(e.get("source", ""), e.get('date', ''), e.get("title", ""), e.get("summary", ""), e.get('url', ''))
         for e in rss_articles
     ) or "Aucun article presse aujourd’hui."
 
@@ -468,7 +472,7 @@ Voici les signaux du jour. Les entreprises listées ont été pré-filtrées : c
 
 Sélectionne entre 0 et 5 opportunités de prospection parmi ces signaux — UNIQUEMENT celles qui remplissent réellement les critères. S'il n'y a aucun signal suffisamment solide aujourd'hui, n'en sélectionne aucune plutôt que de forcer un choix médiocre : réponds alors avec une chaîne vide, sans aucun texte.
 
-Critères : moment de vie fort (transmission, cession, procédure collective, fusion, changement de dirigeant), fenêtre de prospection ouverte, entreprise de taille ETI.
+Critères : moment de vie fort (transmission, cession, procédure collective, fusion, changement de dirigeant), fenêtre de prospection ouverte, entreprise de taille ETI. Le fait lui-même doit être récent : exclus les rétrospectives et republications d'un événement ancien. Privilégie la découverte de nouvelles entreprises. N'utilise jamais une variante de nom pour contourner les exclusions. Un seul bloc par entreprise.
 
 REGLE DE TAILLE (stricte) : si le CA n'est pas vérifié, ne selectionne l'entreprise QUE si le texte source contient un indice fort et explicite de taille ETI (effectif >= 250 salaries mentionne, chiffre d'affaires mentionne dans le texte, groupe/filiale connue, notoriete manifeste). En cas de doute sur la taille, EXCLUS l'entreprise plutot que de la retenir — mieux vaut 2 opportunites solides (ou meme 0) que 5 dont certaines sont des PME/TPE.
 
@@ -482,13 +486,14 @@ Dirigeant : [nom identifie dans les donnees ci-dessus, ou "non identifie" si abs
 Signal : [4-6 mots]
 Contexte : [1 phrase]
 Opportunité : [1 phrase]
+Source : [date et URL exactes de l'article fourni, ou date et SIREN Bodacc]
 
 Sépare chaque bloc par "---SPLIT---" seul sur sa ligne. Apostrophes droites uniquement (').
 """
 
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=1200,
+        max_tokens=2500,
         messages=[{"role": "user", "content": prompt}],
     )
 
@@ -543,6 +548,11 @@ def detect_sector_patterns(history, todays_names):
     by_sector = defaultdict(list)
     display_name = {}
     for v in history.values():
+        try:
+            if as_utc(v['date']) < datetime.now(timezone.utc) - timedelta(days=14):
+                continue
+        except (KeyError, ValueError, TypeError):
+            continue
         sector = (v.get("sector") or "").strip()
         if not sector:
             continue
@@ -575,14 +585,14 @@ def main():
         return
 
     history = load_sent_history()
-    excluded_names = [v["name"] for v in history.values()]
-    print(f"  {len(history)} companie(s) sent in the last {DEDUP_WINDOW_DAYS} days, excluded from re-selection")
+    exclusions = excluded_names(history)
+    print(f"  {len(exclusions)} companie(s) excluded (last {DEDUP_WINDOW_DAYS} days or tracked/ignored)")
 
     # Selectivity + Pappers-quota savings: drop obvious non-candidates BEFORE
     # spending a call on them, rather than filtering them out afterwards.
-    excluded_lower = {n.lower() for n in excluded_names}
+    excluded_lower = set().union(*(company_keys(n) for n in exclusions))
     before = len(bodacc_events)
-    bodacc_events = [e for e in bodacc_events if e["company"].lower() not in excluded_lower]
+    bodacc_events = [e for e in bodacc_events if not company_keys(e['company']) & excluded_lower]
     bodacc_events = [e for e in bodacc_events if not looks_like_small_business(e["company"], e["content"])]
     print(f"  Pre-filter: {before} -> {len(bodacc_events)} Bodacc events (dropped dedup/non-ETI legal forms)")
 
@@ -590,7 +600,7 @@ def main():
     bodacc_events = filter_with_size_data(bodacc_events)
 
     print("Building digest with Claude...")
-    digest = build_digest(bodacc_events, rss_articles, excluded_companies=excluded_names)
+    digest = build_digest(bodacc_events, rss_articles, excluded_companies=exclusions)
 
     blocks = [b.strip() for b in digest.split("---SPLIT---") if b.strip()]
 
@@ -600,10 +610,14 @@ def main():
     kept_blocks = []
     for block in blocks:
         names = extract_company_names(block)
-        if names and names[0].lower() in excluded_lower:
+        if len(names) != 1 or not company_keys(names[0]):
+            print('  Dropping unidentifiable company block')
+            continue
+        if company_keys(names[0]) & excluded_lower:
             print(f"  Dropping block for '{names[0]}' — already sent within the last {DEDUP_WINDOW_DAYS} days")
             continue
         kept_blocks.append(block)
+        excluded_lower.update(company_keys(names[0]))
     blocks = kept_blocks
 
     if not blocks:
@@ -627,9 +641,9 @@ def main():
         name = names[0] if names else None
         reply_markup = None
         if name:
-            todays_names.append(name)
             cid = company_id(name)
-            history[cid] = {
+            entry = {
+                **history.get(cid, {}),
                 "name": name, "date": today_str,
                 "status": "pending", "sector": extract_sector(block),
                 "dirigeant": extract_dirigeant_line(block),
@@ -642,14 +656,20 @@ def main():
 
         if not send_telegram(tagged_block, reply_markup=reply_markup):
             failures += 1
+        elif name:
+            history[cid] = entry
+            todays_names.append(name)
+            save_sent_history(history)
 
     save_sent_history(history)
 
-    for sector, names in detect_sector_patterns(history, todays_names):
+    # Extra sector notifications repeat company lists; opt in explicitly.
+    patterns = detect_sector_patterns(history, todays_names) if os.environ.get('SECTOR_ALERTS') == '1' else []
+    for sector, names in patterns:
         time.sleep(3)
         pattern_msg = (
             f"\U0001f4ca *Pattern sectoriel detecte : {sector}*\n"
-            f"{len(names)} entreprises de ce secteur signalees en {DEDUP_WINDOW_DAYS} jours : "
+            f"{len(names)} entreprises de ce secteur signalees en 14 jours : "
             f"{', '.join(names)} — signal de consolidation, opportunite de prospection elargie sur ce secteur."
         )
         if not send_telegram(pattern_msg):
