@@ -1,5 +1,6 @@
 name: Isolated morning preview
 # Capture only structural diagnostics, never raw selection or source data.
+# Verify the structured-output fix with the same morning reconstruction.
 on:
   push:
     branches: [codex/preview-morning-digest]
