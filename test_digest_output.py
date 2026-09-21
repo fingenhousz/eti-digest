@@ -36,6 +36,11 @@ class OutputTests(unittest.TestCase):
         self.assertEqual(eti_digest.extract_company_names(text), ['Fibre Excellence'])
         self.assertNotIn('---SPLIT---', text)
 
+    def test_invented_size_evidence_rejected(self):
+        with self.assertRaises(InvalidSelection):
+            render_selection(response([self.row]), {'R0': 'source'}, {'R0': 'A group acquired a small company'})
+        self.assertTrue(render_selection(response([self.row]), {'R0': 'source'}, {'R0': 'Example'}))
+
     def test_retry_and_explicit_failure(self):
         bad = NS(stop_reason='end_turn', content=[])
         with patch.object(eti_digest.anthropic, 'Anthropic') as client:

@@ -1,7 +1,7 @@
 """Validate structured selections and render company cards deterministically."""
 import re
 
-FIELDS = ('company', 'city', 'revenue', 'sector', 'dirigeant', 'signal', 'context', 'opportunity', 'source_id')
+FIELDS = ('company', 'city', 'revenue', 'sector', 'dirigeant', 'signal', 'context', 'opportunity', 'source_id', 'size_evidence')
 SELECTION_TOOL = {
     'name': 'select_opportunities',
     'description': 'Return zero to five grounded ETI prospects; empty opportunities means no eligible prospect.',
@@ -27,7 +27,7 @@ def clean(value):
     return re.sub(r'\s+', ' ', re.sub(r'[*_`\[\]]', '', value)).replace('---SPLIT---', ' ').strip()
 
 
-def render_selection(message, sources):
+def render_selection(message, sources, source_texts=None):
     if message.stop_reason != 'tool_use':
         raise InvalidSelection('Selection did not finish with a complete tool response')
     calls = [b for b in message.content if getattr(b, 'type', None) == 'tool_use']
@@ -47,6 +47,11 @@ def render_selection(message, sources):
             raise InvalidSelection('Invalid company field')
         if row['source_id'] not in sources:
             raise InvalidSelection('Unknown source reference')
+        if source_texts is not None:
+            quote = ' '.join(row['size_evidence'].casefold().split())
+            source = ' '.join(source_texts[row['source_id']].casefold().split())
+            if quote not in source:
+                raise InvalidSelection('Size evidence is not present in the selected source')
         r = {k: clean(v) for k, v in row.items()}
         if not re.search(r'\w', r['company']):
             raise InvalidSelection('Invalid company name')
