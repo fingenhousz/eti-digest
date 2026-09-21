@@ -1,5 +1,6 @@
 name: Prospecting qualification preview
 # Titles are quoted directly from sources; the model only proposes mission hypotheses.
+# Current scope: general-management strategy over 3–5 years.
 on:
   workflow_dispatch:
   push:

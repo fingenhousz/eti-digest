@@ -14,7 +14,7 @@ from prospecting import (OFFERS, OFFER_PROMPT, PappersClient, budget_assessment,
 from alert_policy import company_key, company_keys, excluded_names
 
 FIELDS = ('company', 'offer', 'source_id', 'mission', 'buyer_role', 'question')
-TOOL = {'name': 'qualify_prospects', 'description': 'Select up to five grounded situations for the three offers.',
+TOOL = {'name': 'qualify_prospects', 'description': 'Select up to five grounded situations for a general-management strategy over 3–5 years.',
         'input_schema': {'type': 'object', 'additionalProperties': False, 'required': ['opportunities'],
                          'properties': {'opportunities': {'type': 'array', 'maxItems': 5,
                             'items': {'type': 'object', 'additionalProperties': False, 'required': list(FIELDS),
@@ -22,21 +22,21 @@ TOOL = {'name': 'qualify_prospects', 'description': 'Select up to five grounded 
                                                          {'type': 'string', 'minLength': 1, 'maxLength': 600}) for k in FIELDS}}}}}}
 
 EXTRA_QUERIES = [
-    ('Diagnostic IA', 'ETI "intelligence artificielle"'),
-    ('Diagnostic IA', 'entreprise industrielle "productivité" France'),
-    ('Diagnostic IA', 'groupe familial "transformation"'),
-    ('Diagnostic IA', 'ETI "nouveau directeur général"'),
-    ('Diagnostic IA', 'ETI "automatisation"'),
-    ('Préparation vente', 'entreprise "prépare" "cession"'),
-    ('Préparation vente', 'groupe familial "transmission"'),
-    ('Préparation vente', 'entreprise "ouverture du capital"'),
-    ('Préparation vente', 'groupe "revue stratégique" France'),
-    ('Préparation vente', 'entreprise "cherche un repreneur"'),
-    ('Adaptation climat', 'usine "sécheresse" France'),
-    ('Adaptation climat', 'industrie "adaptation" "climatique"'),
-    ('Adaptation climat', 'usine "inondation" France'),
-    ('Adaptation climat', 'industrie "eau" "investissement" France'),
-    ('Adaptation climat', 'entreprise "chaleur" "production"'),
+    ('Préparation cession', '"entreprise" "prépare" "cession"'),
+    ('Préparation cession', '"groupe familial" "transmission"'),
+    ('Préparation cession', '"groupe" "revue stratégique" France'),
+    ('Préparation cession', '"entreprise" "ouverture du capital"'),
+    ('Changement actionnaire', '"ETI" "fonds" "stratégie"'),
+    ('Changement actionnaire', '"groupe familial" "nouvel actionnaire"'),
+    ('Changement actionnaire', '"entreprise" "changement de contrôle" France'),
+    ('Changement actionnaire', '"LBO" "plan stratégique" France'),
+    ('Choc stratégique', '"entreprise" "intelligence artificielle" "modèle économique"'),
+    ('Choc stratégique', '"groupe" "IA" "réorientation"'),
+    ('Choc stratégique', '"industrie" "transition énergétique" "stratégie"'),
+    ('Choc stratégique', '"entreprise" "énergie" "compétitivité"'),
+    ('Choc stratégique', '"groupe" "adaptation climatique" "stratégie"'),
+    ('Choc stratégique', '"entreprise" "diversification" "rupture"'),
+    ('Choc stratégique', '"ETI" "plan stratégique"'),
 ]
 
 
@@ -118,7 +118,7 @@ def select(client, sources, exclusions):
         'Sélectionne 0 à 5 situations ; ne force pas le nombre. Le titre source sera cité automatiquement. '
         'Une mission est une hypothèse, jamais un besoin avéré. buyer_role est un rôle potentiel, pas un nom inventé. '
         'Priorité aux ETI industrielles et de services ; la taille sera vérifiée après sélection. '
-        'Les champs mission et question doivent être spécifiques à la situation. '
+        'mission doit décrire un arbitrage stratégique de la DG à 3–5 ans ; question doit qualifier cet arbitrage. '
         'Date du run : ' + datetime.now(timezone.utc).date().isoformat() + '. '
         'Les articles couvrent plusieurs semaines. Distingue publication et événement : '
         'écarte rétrospectives, événements anciens et opérations déjà achevées pour preparation_vente. '
@@ -149,7 +149,11 @@ def qualify(rows, sources, pappers, contacts, has_network=False, resolver=resolv
         siren = source.get('siren') if company_key(source.get('company', '')) == company_key(row['company']) else None
         siren = siren or resolver(row['company'])
         company, status = pappers.company(siren)
+        headquarters = ', '.join(str((company.get('siege') or {}).get(k)) for k in
+                                 ('adresse_ligne_1', 'adresse_ligne_2', 'code_postal', 'ville', 'pays')
+                                 if (company.get('siege') or {}).get(k))
         row.update(siren=siren, enrichment=status, source=source['reference'],
+                   headquarters=headquarters or 'Non confirmé',
                    network_company={k: company.get(k) for k in ('denomination', 'nom_entreprise', 'representants')},
                    budget=budget_assessment(company), network=network_paths(row['company'], company, contacts),
                    network_status='Aucune correspondance établie' if has_network else 'En attente de l’export LinkedIn')

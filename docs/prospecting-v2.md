@@ -1,12 +1,25 @@
 # Qualification commerciale — aperçu V2
 
+## Cadrage commercial en vigueur — 21 septembre 2026
+
+Accompagner une direction générale dans la définition de sa trajectoire stratégique
+à 3–5 ans. Trois déclencheurs : préparation de cession, changement d'actionnaire,
+choc stratégique majeur (notamment IA, transition énergétique ou climat).
+Les anciennes catégories IA / vente / climat ne définissent plus trois prestations.
+Chaque piste doit relier un fait documenté à un arbitrage ouvert de la DG :
+portefeuille d'activités, marchés, offre, modèle économique, allocation du capital.
+Un projet technique ou un incident local seul ne qualifie pas une opportunité.
+Conserver siège social, confort honoraires 10–15 k€/mois et chemin d'accès au décideur.
+Ces règles orientent le modèle ; elles ne constituent pas une preuve automatique
+du besoin. Les rapports historiques ci-dessous ne sont pas requalifiés rétroactivement.
+
 Cette version est indépendante des envois Telegram. Le digest actuel, ses statuts
 et son historique ne sont pas modifiés. Aucun abonnement supplémentaire requis.
 
 ## Fonctionnement
 
 1. Collecte presse sur 30 jours par défaut (`--lookback-days`), 15 requêtes ciblant
-   IA, préparation de vente et risques climatiques physiques. Les dates de
+   cession, changement d'actionnaire et chocs stratégiques. Les dates de
    publication sont conservées ; une publication récente ne prouve pas un événement récent.
    Le collecteur Bodacc de difficultés reste dans le digest historique, hors de cet aperçu.
 2. Présélection structurée de zéro à cinq situations avec citation exacte,

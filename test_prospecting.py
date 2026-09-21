@@ -125,7 +125,7 @@ class QualificationTests(unittest.TestCase):
         self.assertEqual(paths[0]['confidence'], 'à confirmer')
 
     def test_structured_provenance_and_offer(self):
-        row = {'company': 'Exemple Industrie', 'offer': 'diagnostic_ia', 'source_id': 'R0',
+        row = {'company': 'Exemple Industrie', 'offer': 'choc_strategique', 'source_id': 'R0',
                'mission': 'Hypothèse',
                'buyer_role': 'DG', 'question': 'Quel périmètre ?'}
         sources = {'R0': {'text': 'Exemple Industrie annonce un projet'}}
@@ -139,7 +139,7 @@ class QualificationTests(unittest.TestCase):
             validate(response([row, row]), sources)
 
     def test_end_to_end_preview_missing_data_and_wrong_source_company(self):
-        row = {'company': 'Exemple Industrie', 'offer': 'diagnostic_ia', 'source_id': 'B0',
+        row = {'company': 'Exemple Industrie', 'offer': 'choc_strategique', 'source_id': 'B0',
                'fact_quote': 'Projet annoncé', 'mission': 'Diagnostic des processus',
                'buyer_role': 'DG', 'question': 'Qui porte le projet ?'}
         sources = {'B0': {'company': 'Autre entreprise', 'siren': '987654321', 'reference': 'Source test'}}
