@@ -1,14 +1,15 @@
 import json
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
+from email.utils import format_datetime
 from pathlib import Path
 from types import SimpleNamespace as NS
 from unittest.mock import patch
 
 from prospecting import (PappersClient, budget_assessment, eligible_size, load_connections,
                          network_paths, render_report, resolve_siren)
-from prospecting_preview import qualify, validate
+from prospecting_preview import qualify, validate, collect_press
 
 
 def healthy():
@@ -20,6 +21,25 @@ def healthy():
 
 
 class QualificationTests(unittest.TestCase):
+    def test_expanded_collection_freshness_duplicates_and_html(self):
+        now = datetime.now(timezone.utc)
+        entries = [{'title': 'Entreprise A prépare sa transmission', 'summary': '<b>Décision ouverte</b>',
+                    'published': format_datetime(now-timedelta(days=d)), 'link': 'https://example.org'}
+                   for d in (15, 15, 35, -1)]
+        with patch('prospecting_preview.EXTRA_QUERIES', [('vente', 'transmission')]), \
+             patch('prospecting_preview.urllib.request.urlopen'), \
+             patch('feedparser.parse', return_value=NS(entries=entries, bozo=False)):
+            sources, diagnostics = collect_press(30)
+        self.assertEqual(len(sources), 1)
+        self.assertNotIn('<b>', sources['R0']['text'])
+        self.assertEqual(diagnostics[0]['accepted'], 1)
+
+    def test_failed_collection_is_not_empty_success(self):
+        with patch('prospecting_preview.EXTRA_QUERIES', [('vente', 'transmission')]), \
+             patch('prospecting_preview.urllib.request.urlopen', side_effect=TimeoutError):
+            with self.assertRaises(RuntimeError):
+                collect_press(30)
+
     def assess(self, data):
         return budget_assessment(data, today=date(2026, 9, 21))
 
