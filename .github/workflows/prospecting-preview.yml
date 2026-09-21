@@ -1,4 +1,5 @@
 name: Prospecting qualification preview
+# Titles are quoted directly from sources; the model only proposes mission hypotheses.
 on:
   workflow_dispatch:
   push:

@@ -182,15 +182,20 @@ def network_paths(name, company, contacts):
                        for r in company.get('representants') or [] if r.get('nom')}
     paths = []
     names = {company_key(n) for n in (name, company.get('denomination'), company.get('nom_entreprise')) if n}
+    corporate_representatives = {company_key(r['denomination']) for r in company.get('representants') or []
+                                if r.get('denomination')}
     for contact in contacts:
         person = ' '.join((contact['First Name'], contact['Last Name'])).strip()
         employer_match = bool(contact['Company']) and company_key(contact['Company']) in names
         person_match = company_key(person) in representatives
-        if employer_match or person_match:
+        representative_employer = bool(contact['Company']) and company_key(contact['Company']) in corporate_representatives
+        if employer_match or person_match or representative_employer:
             paths.append({'contact': person, 'company': contact['Company'], 'position': contact['Position'],
                           'profile': contact['URL'],
                           'basis': 'Nom de représentant et entreprise concordants' if employer_match and person_match else
-                                   'Entreprise concordante' if employer_match else 'Nom concordant : homonymie à vérifier',
+                                   'Entreprise concordante' if employer_match else
+                                   'Employeur identifié comme représentant de la cible : accès à vérifier' if representative_employer else
+                                   'Nom concordant : homonymie à vérifier',
                           'confidence': 'à confirmer', 'relationship': 'Force du lien à qualifier par Florian'})
     return paths
 
@@ -232,8 +237,13 @@ def render_report(rows):
         for account in b['evidence']:
             lines.append(f"Comptes clos le {account['closing']} (EUR) : " + ', '.join(
                 f"{k}={v:,.0f}" for k, v in account.items() if k != 'closing' and v is not None))
-        lines += [f"**Réseau :** {json.dumps(row['network'], ensure_ascii=False) if row['network'] else row['network_status']}",
-                  f"**Source :** {row['source']}", '']
+        if row['network']:
+            lines += ['**Pistes dans ton réseau :**', '']
+            for path in row['network']:
+                lines.append(f"- {path['contact']} — {path['position']}, {path['company']}. {path['basis']}. {path['relationship']}.")
+        else:
+            lines.append(f"**Réseau :** {row['network_status']}")
+        lines += [f"**Source :** {row['source']}", '']
     if not rows:
         lines.append('Aucune situation suffisamment étayée dans les sources analysées.')
     return '\n'.join(lines) + '\n'

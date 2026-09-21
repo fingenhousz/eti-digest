@@ -115,14 +115,23 @@ class QualificationTests(unittest.TestCase):
                 {'siren': '987654321', 'nom_complet': 'Exemple Industrie'}]})
             self.assertIsNone(resolve_siren('Exemple Industrie'))
 
+    def test_contact_at_corporate_representative_is_only_an_access_hypothesis(self):
+        contact = {'First Name': 'Alice', 'Last Name': 'Exemple', 'Company': 'Holding Exemple',
+                   'Position': 'DAF', 'URL': ''}
+        company = {'representants': [{'denomination': 'Holding Exemple'}]}
+        paths = network_paths('Cible Exemple', company, [contact])
+        self.assertEqual(len(paths), 1)
+        self.assertIn('accès à vérifier', paths[0]['basis'])
+        self.assertEqual(paths[0]['confidence'], 'à confirmer')
+
     def test_structured_provenance_and_offer(self):
         row = {'company': 'Exemple Industrie', 'offer': 'diagnostic_ia', 'source_id': 'R0',
-               'fact_quote': 'Exemple Industrie annonce un projet', 'mission': 'Hypothèse',
+               'mission': 'Hypothèse',
                'buyer_role': 'DG', 'question': 'Quel périmètre ?'}
-        sources = {'R0': {'text': row['fact_quote']}}
+        sources = {'R0': {'text': 'Exemple Industrie annonce un projet'}}
         def response(rows):
             return NS(stop_reason='tool_use', content=[NS(type='tool_use', name='qualify_prospects', input={'opportunities': rows})])
-        self.assertEqual(validate(response([row]), sources), [row])
+        self.assertEqual(validate(response([row]), sources), [{**row, 'fact_quote': sources['R0']['text']}])
         for bad in [{**row, 'fact_quote': 'Invented'}, {**row, 'offer': 'decarbonation'}, {**row, 'company': 'Autre'}]:
             with self.assertRaises(ValueError):
                 validate(response([bad]), sources)
