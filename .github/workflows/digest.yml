@@ -9,6 +9,15 @@ on:
     # Offset from the top of the hour to reduce scheduler congestion.
     - cron: '30 6 * * 1-5'
   workflow_dispatch:
+    inputs:
+      preview_at:
+        description: 'Preview only: ISO timestamp (empty for normal delivery)'
+        default: ''
+        type: string
+      history_ref:
+        description: 'Preview only: exact pre-delivery history commit SHA'
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -60,7 +69,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run ETI digest
-        if: steps.dedup.outputs.skip != 'true'
+        if: steps.dedup.outputs.skip != 'true' && inputs.preview_at == ''
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -70,12 +79,29 @@ jobs:
           python restore_history.py
           python eti_digest.py
 
+      - name: Preview without sending
+        if: inputs.preview_at != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
+          PREVIEW_AT: ${{ inputs.preview_at }}
+          PREVIEW_HISTORY_REF: ${{ inputs.history_ref }}
+        run: python preview_digest.py
+
+      - name: Save preview
+        if: inputs.preview_at != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: morning-preview
+          path: preview.json
+          retention-days: 3
+
       # Persist the dedup history and the company-size cache the script just
       # wrote locally — GitHub Actions runners are ephemeral, so without this
       # every run starts from blank state (re-sending the same companies AND
       # re-spending a Pappers call on every SIREN, every single day).
       - name: Commit updated state files
-        if: always() && steps.dedup.outputs.skip != 'true'
+        if: always() && steps.dedup.outputs.skip != 'true' && inputs.preview_at == ''
         run: |
           FILES="sent_history.json company_size_cache.json"
           if [ -n "$(git status --porcelain $FILES)" ]; then

@@ -8,12 +8,12 @@ from pathlib import Path
 import subprocess
 
 
-def restore():
+def restore(ref='HEAD'):
     path = Path('sent_history.json')
     history = json.loads(path.read_text(encoding='utf-8'))
     original_count = len(history)
     revisions = subprocess.check_output(
-        ['git', 'log', '--since=90 days ago', '--format=%H', '--', str(path)], text=True
+        ['git', 'log', ref, '--since=90 days ago', '--format=%H', '--', str(path)], text=True
     ).splitlines()
     for revision in revisions:
         old = json.loads(subprocess.check_output(
